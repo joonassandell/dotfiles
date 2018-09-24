@@ -24,7 +24,6 @@ brew 'zsh'
 brew 'zsh-completions'
 
 cask '1password'
-cask 'adobe-creative-cloud'
 cask 'alfred'
 cask 'appzapper'
 cask 'google-backup-and-sync'
