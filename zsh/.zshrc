@@ -52,9 +52,31 @@ alias yarn-reinstall='sudo rm -rf node_modules/ && yarn'
 # Load additional dotfiles from Dropbox
 source ~/Dropbox/Apps/macOS/.zshrc.secret
 
-# Node version manager
+# Node Version Manager
 export NVM_DIR="$HOME/.nvm"
 . "/usr/local/opt/nvm/nvm.sh"
+
+# https://github.com/creationix/nvm#zsh
+autoload -U add-zsh-hook
+load-nvmrc() {
+  local node_version="$(nvm version)"
+  local nvmrc_path="$(nvm_find_nvmrc)"
+
+  if [ -n "$nvmrc_path" ]; then
+    local nvmrc_node_version=$(nvm version "$(cat "${nvmrc_path}")")
+
+    if [ "$nvmrc_node_version" = "N/A" ]; then
+      nvm install
+    elif [ "$nvmrc_node_version" != "$node_version" ]; then
+      nvm use
+    fi
+  elif [ "$node_version" != "$(nvm version default)" ]; then
+    echo "Reverting to nvm default version"
+    nvm use default
+  fi
+}
+add-zsh-hook chpwd load-nvmrc
+load-nvmrc
 
 # Docker
 # https://github.com/docker/compose/issues/5696
