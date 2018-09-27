@@ -15,11 +15,15 @@ git clone git@github.com:joonasy/dotfiles.git && cd dotfiles
 
 Alternatively you may run individual `setup.sh` files found in subfolders.
 
-## Additional information
+## Manually needed installs
 
-* My [VS Code settings](https://gist.github.com/joonasy/379b80eee8560b28b45ddcbe407fbee2) synced with [Settings Sync](https://marketplace.visualstudio.com/items?itemName=Shan.code-settings-sync) (which obviously needs to be synced with the plugin).
-* I'm syncing my iTerm prefs, Alfred settings and 1Password vault automatically with Dropbox
-* I have extra secret shell settings synced from Dropbox 
+* My [VS Code settings](https://gist.github.com/joonasy/379b80eee8560b28b45ddcbe407fbee2) synced with [Settings Sync](https://marketplace.visualstudio.com/items?itemName=Shan.code-settings-sync) (which obviously needs to be synced with the plugin)
+* I'm syncing my iTerm prefs, Alfred settings and 1Password vault with Dropbox
+* Manually synced (w/ Dropbox & symlinks)
+    - Extra secret shell settings
+    - Sketch plugins & templates
+    - Sequel Pro favorites
+    - Transmit favorites
 
 ## Thanks to
 
