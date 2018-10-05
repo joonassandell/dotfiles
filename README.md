@@ -21,9 +21,9 @@ Alternatively you may run individual `setup.sh` files found in subfolders.
 * I'm syncing my iTerm prefs, Alfred settings and 1Password vault with Dropbox
 * Manually synced (w/ Dropbox & symlinks)
     - Extra secret shell settings
-    - Sketch plugins & templates
-    - Sequel Pro favorites
-    - Transmit favorites
+    - Sketch plugins & templates (e.g. `$ ln -s ~/Dropbox/Apps/Sketch/Plugins ~/Library/Application\ Support/com.bohemiancoding.sketch/Plugins`)
+    - Sequel Pro favorites (e.g. `$ ln -s ~/Dropbox/Apps/Sequel\ Pro ~/Library/Application\ Support/Sequel\ Pro`)
+    - Transmit favorites (e.g. `$ ln -s ~/Dropbox/Apps/Transmit/Favorites ~/Library/Application\ Support/Transmit/Favorites`)
 
 ## Thanks to
 
