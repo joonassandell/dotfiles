@@ -1,5 +1,5 @@
 [core]
-	excludesfile = /Users/joonasy/.gitignore_global
+	excludesfile = /Users/jsandell/.gitignore_global
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path = 
@@ -7,7 +7,7 @@
 	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
 [user]
-	name = Joonas Ylitalo
-	email = ylitalo.joonas@gmail.com
+	name = Joonas Sandell
+	email = me@joonassandell.com
 [commit]
-	template = /Users/joonasy/.stCommitMsg
+	template = /Users/jsandell/.stCommitMsg
