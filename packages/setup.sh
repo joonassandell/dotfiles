@@ -21,12 +21,11 @@ info "Preinstalling node packages..."
 mkdir -p $HOME/.nvm
 export NVM_DIR="$HOME/.nvm"
 . "/usr/local/opt/nvm/nvm.sh"
-nvm install 8
-nvm install 10
+nvm install 12
+nvm install node
 nvm alias default node
 info "Finished preinstalling node packages."
 
 info "Installing packages from the App Store..."
 mas install 417375580 # BetterSnapTool
-mas install 587748131 # Claquette
 success "Finished installing packages from the App Store."

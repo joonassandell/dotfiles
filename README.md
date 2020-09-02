@@ -1,6 +1,6 @@
 # My dotfiles for macOS
 
-I maintain this repo as my personal dotfiles, so fork this to your own needs. Tested succesfully w/ macOS High Sierra v10.13.6. 
+I maintain this repo as my personal dotfiles, so fork this to your own needs. Last tested succesfully w/ macOS High Sierra v10.13.6. 
 
 ## Getting started
 
