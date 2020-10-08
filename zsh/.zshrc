@@ -49,6 +49,7 @@ alias simulator='open /Applications/Xcode.app/Contents/Developer/Applications/Si
 alias simple-server='python -m SimpleHTTPServer'
 alias npm-upgrade='ncu -u && npm install'
 alias npm-reinstall='sudo rm -rf node_modules/ && npm install'
+alias nrw='DISABLE_OPEN=true npm run watch'
 
 # Load additional dotfiles from Dropbox
 source ~/Dropbox/Apps/macOS/.zshrc.secret
