@@ -18,12 +18,11 @@ Alternatively you may run individual `setup.sh` files found in subfolders.
 ## Manually needed installs
 
 * My [VS Code settings](https://gist.github.com/joonassandell/379b80eee8560b28b45ddcbe407fbee2) synced with [Settings Sync](https://marketplace.visualstudio.com/items?itemName=Shan.code-settings-sync) (which obviously needs to be synced with the plugin)
-* I'm syncing my iTerm prefs, Alfred settings and 1Password vault with Dropbox
-* Manually synced (w/ Dropbox & symlinks)
+* I'm syncing my iTerm2 prefs, Alfred settings and 1Password vault with my NAS
+* Manually synced (w/ NAS & symlinks)
     - Extra secret shell settings
-    - Sketch plugins & templates (e.g. `$ ln -s ~/Dropbox/Apps/Sketch/Plugins ~/Library/Application\ Support/com.bohemiancoding.sketch/Plugins`)
-    - Sequel Pro favorites (e.g. `$ ln -s ~/Dropbox/Apps/Sequel\ Pro ~/Library/Application\ Support/Sequel\ Pro`)
-    - Transmit favorites (e.g. `$ ln -s ~/Dropbox/Apps/Transmit/Favorites ~/Library/Application\ Support/Transmit/Favorites`)
+    - Sketch plugins & templates (e.g. `$ ln -s ~/Joonas\ Sandell/Apps/Sketch/Plugins ~/Library/Application\ Support/com.bohemiancoding.sketch3/Plugins`)
+    - Sequel Pro favorites (e.g. `$ ln -s ~/Joonas\ Sandell/Apps/Sequel\ Pro ~/Library/Application\ Support/Sequel\ Pro`)
 
 ## Thanks to
 
