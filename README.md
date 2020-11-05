@@ -9,7 +9,7 @@ Sign in to App Store and install everything by running:
 ```
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 brew install git
-git clone git@github.com:joonassandell/dotfiles.git && cd dotfiles
+git clone https://github.com/joonassandell/dotfiles.git && cd dotfiles
 ./bootstrap.sh
 ```
 
