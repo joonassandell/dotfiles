@@ -5,6 +5,9 @@
 # Template found here https://github.com/robbyrussell/oh-my-zsh/blob/master/templates/zshrc.zsh-template
 #
 
+# Skip the verification of [oh-my-zsh] insecure directories
+ZSH_DISABLE_COMPFIX="true"
+
 # Add '~/bin' to the '$PATH'
 export PATH="$HOME/bin:$PATH"
 
@@ -39,17 +42,17 @@ alias cd..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
 alias .....="cd ../../../.."
-alias db='cd ~/Dropbox/'
-alias git-log='git log --oneline --decorate --all --graph'
-alias hosts='sudo $EDITOR /etc/hosts'
+alias db="cd ~/Dropbox/"
+alias git-log="git log --oneline --decorate --all --graph"
+alias hosts="sudo $EDITOR /etc/hosts"
 alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
-alias ls='ls -aFhlG'
-alias repo='cd ~/Repositories/'
-alias simulator='open /Applications/Xcode.app/Contents/Developer/Applications/Simulator.app'
-alias simple-server='python -m SimpleHTTPServer'
-alias npm-upgrade='ncu -u && npm install'
-alias npm-reinstall='sudo rm -rf node_modules/ && npm install'
-alias nrw='DISABLE_OPEN=true npm run watch'
+alias ls="ls -aFhlG"
+alias repo="cd ~/Repositories/"
+alias simulator="open /Applications/Xcode.app/Contents/Developer/Applications/Simulator.app"
+alias simple-server="python -m SimpleHTTPServer"
+alias npm-upgrade="ncu -u && npm install"
+alias npm-reinstall="sudo rm -rf node_modules/ && npm install"
+alias nrw="DISABLE_OPEN=true npm run watch"
 
 # Load additional dotfiles from Dropbox
 source ~/Dropbox/Apps/macOS/.zshrc.secret

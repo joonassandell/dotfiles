@@ -6,6 +6,7 @@ tap 'buo/cask-upgrade'
 tap 'jesseduffield/lazydocker'
 
 brew 'composer'
+brew 'coreutils'
 brew 'git'
 brew 'glib'
 brew 'lazydocker'
