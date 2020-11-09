@@ -14,6 +14,14 @@ export PATH="$HOME/bin:$PATH"
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 
+# If I need zsh-completions
+# if type brew &>/dev/null; then
+#   FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
+#   autoload -Uz compinit
+#   compinit
+#   compaudit | xargs chmod g-w
+# fi
+
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
@@ -26,7 +34,10 @@ ZSH_THEME="robbyrussell"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
+  docker
   git
+  ssh-agent
+  zsh-interactive-cd
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -37,12 +48,11 @@ source $ZSH/oh-my-zsh.sh
 # ======
 
 # Aliases
-alias ..="cd .."
-alias cd..="cd .."
-alias ...="cd ../.."
-alias ....="cd ../../.."
-alias .....="cd ../../../.."
-alias db="cd ~/Dropbox/"
+# alias ..="cd .."
+# alias cd..="cd .."
+# alias ...="cd ../.."
+# alias ....="cd ../../.."
+# alias .....="cd ../../../.."
 alias git-log="git log --oneline --decorate --all --graph"
 alias hosts="sudo /etc/hosts"
 alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
@@ -53,6 +63,7 @@ alias simple-server="python -m SimpleHTTPServer"
 alias npm-upgrade="ncu -u && npm install"
 alias npm-reinstall="sudo rm -rf node_modules/ && npm install"
 alias nrw="DISABLE_OPEN=true npm run watch"
+alias hw-info="networksetup -listallhardwareports"
 
 # Load additional dotfiles from NAS
 source ~/Joonas\ Sandell/Apps/macOS/.zshrc.secret
