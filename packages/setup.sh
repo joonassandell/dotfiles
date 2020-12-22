@@ -21,7 +21,7 @@ info "Preinstalling node packages..."
 mkdir -p $HOME/.nvm
 export NVM_DIR="$HOME/.nvm"
 . "/usr/local/opt/nvm/nvm.sh"
-nvm install 12
+nvm install 14.15.3
 nvm install node
 nvm alias default node
 info "Finished preinstalling node packages."
