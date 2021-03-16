@@ -63,6 +63,7 @@ alias simple-server="python -m SimpleHTTPServer"
 alias npm-upgrade="ncu -u && npm install"
 alias npm-reinstall="sudo rm -rf node_modules/ && npm install"
 alias nrw="DISABLE_OPEN=true npm run watch"
+alias nrd="DISABLE_OPEN=true npm run dev"
 alias hw-info="networksetup -listallhardwareports"
 
 # Load additional dotfiles from NAS
