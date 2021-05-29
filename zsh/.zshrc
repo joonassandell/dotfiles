@@ -37,7 +37,6 @@ plugins=(
   docker
   git
   ssh-agent
-  zsh-interactive-cd
 )
 
 source $ZSH/oh-my-zsh.sh

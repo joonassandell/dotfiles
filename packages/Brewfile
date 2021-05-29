@@ -17,7 +17,6 @@ brew 'notion'
 brew 'nvm'
 brew 'php'
 brew 'zsh'
-brew 'zsh-completions'
 
 cask '1password6'
 cask 'alfred3'
