@@ -64,6 +64,7 @@ alias npm-reinstall="sudo rm -rf node_modules/ && npm install"
 alias nrw="DISABLE_OPEN=true npm run watch"
 alias nrd="DISABLE_OPEN=true npm run dev"
 alias hw-info="networksetup -listallhardwareports"
+alias kill-port-3000="npx kill-port 3000"
 
 # Load additional dotfiles from NAS
 source ~/Joonas\ Sandell/Apps/macOS/.zshrc.secret
