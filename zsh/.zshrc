@@ -10,6 +10,7 @@ ZSH_DISABLE_COMPFIX="true"
 
 # Add '~/bin' to the '$PATH'
 export PATH="$HOME/bin:$PATH"
+# export PATH="/usr/local/bin/:$PATH"
 
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
@@ -41,31 +42,29 @@ plugins=(
 
 source $ZSH/oh-my-zsh.sh
 
-
 # ======
 # User Configuration
 # ======
 
 # Aliases
-# alias ..="cd .."
-# alias cd..="cd .."
-# alias ...="cd ../.."
-# alias ....="cd ../../.."
-# alias .....="cd ../../../.."
 alias git-log="git log --oneline --decorate --all --graph"
-alias hosts="sudo /etc/hosts"
+alias hosts="sudo code /etc/hosts"
 alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
 alias ls="ls -aFhlG"
 alias repo="cd ~/Repositories/"
 alias simulator="open /Applications/Xcode.app/Contents/Developer/Applications/Simulator.app"
 alias simple-server="python -m SimpleHTTPServer"
-alias npm-upgrade="ncu -u && npm install"
+alias npm-check-updates="npx npm-check-updates"
+alias npm-upgrade-interactive="npx npm-check-updates -i"
+alias npm-upgrade="npx npm-check-updates -u"
 alias npm-reinstall="sudo rm -rf node_modules/ && npm install"
+alias npm-reinstall-delete-lock="sudo rm -rf node_modules/ && rm -rf package-lock.json && npm install"
 alias nrw="DISABLE_OPEN=true npm run watch"
 alias nrd="DISABLE_OPEN=true npm run dev"
 alias hw-info="networksetup -listallhardwareports"
 alias kill-port-3000="npx kill-port 3000"
 alias matrix="npx matrix-rain"
+alias zsh-secret="code ~/Joonas\ Sandell/Apps/macOS/.zshrc.secret"
 
 # Load additional dotfiles from NAS
 source ~/Joonas\ Sandell/Apps/macOS/.zshrc.secret
@@ -99,3 +98,10 @@ load-nvmrc
 # Docker
 # https://github.com/docker/compose/issues/5696
 export COMPOSE_INTERACTIVE_NO_CLI=1
+
+# Bun completions
+[ -s "/Users/jsandell/.bun/_bun" ] && source "/Users/jsandell/.bun/_bun"
+
+# Bun
+export BUN_INSTALL="/Users/jsandell/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
