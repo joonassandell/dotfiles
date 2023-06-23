@@ -46,7 +46,7 @@ source $ZSH/oh-my-zsh.sh
 # User Configuration
 # ======
 
-# Aliases
+# General aliases
 alias git-log="git log --oneline --decorate --all --graph"
 alias hosts="sudo code /etc/hosts"
 alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
@@ -54,6 +54,8 @@ alias ls="ls -aFhlG"
 alias repo="cd ~/Repositories/"
 alias simulator="open /Applications/Xcode.app/Contents/Developer/Applications/Simulator.app"
 alias simple-server="python -m SimpleHTTPServer"
+
+# Node, npm aliases
 alias npm-check-updates="npx npm-check-updates"
 alias npm-upgrade-interactive="npx npm-check-updates -i"
 alias npm-upgrade="npx npm-check-updates -u"
@@ -61,6 +63,8 @@ alias npm-reinstall="sudo rm -rf node_modules/ && npm install"
 alias npm-reinstall-delete-lock="sudo rm -rf node_modules/ && rm -rf package-lock.json && npm install"
 alias nrw="DISABLE_OPEN=true npm run watch"
 alias nrd="DISABLE_OPEN=true npm run dev"
+
+# Various aliases
 alias hw-info="networksetup -listallhardwareports"
 alias kill-port-3000="npx kill-port 3000"
 alias matrix="npx matrix-rain"
@@ -69,7 +73,7 @@ alias zsh-secret="code ~/Joonas\ Sandell/Apps/macOS/.zshrc.secret"
 # Load additional dotfiles from NAS
 source ~/Joonas\ Sandell/Apps/macOS/.zshrc.secret
 
-# Node Version Manager
+# Node Version Manager (nvm)
 export NVM_DIR="$HOME/.nvm"
 . "/usr/local/opt/nvm/nvm.sh"
 
