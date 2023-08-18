@@ -102,10 +102,3 @@ load-nvmrc
 # Docker
 # https://github.com/docker/compose/issues/5696
 export COMPOSE_INTERACTIVE_NO_CLI=1
-
-# Bun completions
-[ -s "/Users/jsandell/.bun/_bun" ] && source "/Users/jsandell/.bun/_bun"
-
-# Bun
-export BUN_INSTALL="/Users/jsandell/.bun"
-export PATH="$BUN_INSTALL/bin:$PATH"
