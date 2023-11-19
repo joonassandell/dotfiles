@@ -64,7 +64,7 @@ alias npm-reinstall-delete-lock="sudo rm -rf node_modules/ && rm -rf package-loc
 alias nrw="DISABLE_OPEN=true npm run watch"
 alias nrd="DISABLE_OPEN=true npm run dev"
 
-# Bun aliaes
+# Bun aliases
 alias bun-check-updates="bunx npm-check-updates"
 alias bun-upgrade-interactive="bunx npm-check-updates -i"
 alias bun-upgrade="bunx npm-check-updates -u"
@@ -72,10 +72,12 @@ alias bun-reinstall="sudo rm -rf node_modules/ && bun install"
 alias bun-reinstall-delete-lock="sudo rm -rf node_modules/ && rm -rf bun.lockb && bun install"
 
 # Various aliases
+alias headers="httpstat"
 alias hw-info="networksetup -listallhardwareports"
 alias kill-port-3000="bunx kill-port 3000"
 alias matrix="bunx matrix-rain"
 alias zsh-secret="code ~/Joonas\ Sandell/Apps/macOS/.zshrc.secret"
+alias reload="omz reload"
 
 # Load additional dotfiles from NAS
 source ~/Joonas\ Sandell/Apps/macOS/.zshrc.secret
