@@ -46,14 +46,26 @@ source $ZSH/oh-my-zsh.sh
 # User Configuration
 # ======
 
-# General aliases
+# Various aliases
+alias cat="bat"
+alias csv-json="mlr --icsv --ojson tail" # Add -n2 to limit lines 
+alias csv-table="mlr --icsv --opprint cat"
 alias git-log="git log --oneline --decorate --all --graph"
+alias headers="httpstat"
 alias hosts="sudo code /etc/hosts"
+alias hw-info="networksetup -listallhardwareports"
 alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
+alias kill-port-3000="bunx kill-port 3000"
 alias ls="ls -aFhlG"
+alias matrix="bunx matrix-rain"
+alias preview="fzf --preview 'bat --color=always {}'"
+alias reload="omz reload"
 alias repo="cd ~/Repositories/"
-alias simulator="open /Applications/Xcode.app/Contents/Developer/Applications/Simulator.app"
+alias search="rg -i"
 alias simple-server="python -m SimpleHTTPServer"
+alias simulator="open /Applications/Xcode.app/Contents/Developer/Applications/Simulator.app"
+alias top="bunx vtop"
+alias zsh-secret="code ~/Joonas\ Sandell/Apps/macOS/.zshrc.secret"
 
 # Node, npm aliases
 alias npm-check-updates="npx npm-check-updates"
@@ -70,17 +82,6 @@ alias bun-upgrade-interactive="bunx npm-check-updates -i"
 alias bun-upgrade="bunx npm-check-updates -u"
 alias bun-reinstall="sudo rm -rf node_modules/ && bun install"
 alias bun-reinstall-delete-lock="sudo rm -rf node_modules/ && rm -rf bun.lockb && bun install"
-
-# Various aliases
-alias headers="httpstat"
-alias hw-info="networksetup -listallhardwareports"
-alias kill-port-3000="bunx kill-port 3000"
-alias matrix="bunx matrix-rain"
-alias zsh-secret="code ~/Joonas\ Sandell/Apps/macOS/.zshrc.secret"
-alias reload="omz reload"
-alias cat="bat"
-alias preview="fzf --preview 'bat --color=always {}'"
-alias search="rg -i"
 
 # Load additional dotfiles from NAS
 source ~/Joonas\ Sandell/Apps/macOS/.zshrc.secret
