@@ -78,6 +78,9 @@ alias kill-port-3000="bunx kill-port 3000"
 alias matrix="bunx matrix-rain"
 alias zsh-secret="code ~/Joonas\ Sandell/Apps/macOS/.zshrc.secret"
 alias reload="omz reload"
+alias cat="bat"
+alias preview="fzf --preview 'bat --color=always {}'"
+alias search="rg -i"
 
 # Load additional dotfiles from NAS
 source ~/Joonas\ Sandell/Apps/macOS/.zshrc.secret
