@@ -66,7 +66,8 @@ alias search="rg -i"
 alias simple-server="python -m SimpleHTTPServer"
 alias simulator="open /Applications/Xcode.app/Contents/Developer/Applications/Simulator.app"
 alias top="bunx vtop"
-alias zsh-secret="code ~/Joonas\ Sandell/Apps/macOS/.zshrc.secret"
+alias zsh-open="code ~/Repositories/dotfiles/zsh/.zshrc"
+alias zsh-open-secret="code ~/Joonas\ Sandell/Apps/macOS/.zshrc.secret"
 
 # Node, npm aliases
 alias npm-check-updates="npx npm-check-updates"
