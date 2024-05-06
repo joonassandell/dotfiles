@@ -5,3 +5,5 @@
 	email = me@joonassandell.com
 [commit]
 	template = /Users/jsandell/.stCommitMsg
+[init]
+  defaultBranch = main
