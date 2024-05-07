@@ -18,11 +18,10 @@ Alternatively you may run individual `setup.sh` files found in subfolders. Boots
 ## Manually needed installs
 
 - I'm syncing my Visual Studio Code settings with [Settings Sync](https://code.visualstudio.com/docs/editor/settings-sync). However, I'm not very happy with this approach since it uses [dedicated service](https://code.visualstudio.com/docs/editor/settings-sync#_can-i-use-a-different-backend-or-service-for-settings-sync) and I'd rather like to sync to my own repository.
-- I'm syncing my iTerm2 preferences, Raycast settings and 1Password vault with my NAS
+- I'm syncing Raycast settings and 1Password vault with my NAS
 - Manually synced (w/ NAS & symlinks)
   - Extra secret shell settings
   - Sequel Pro favorites (e.g. `$ ln -s ~/Joonas\ Sandell/Apps/Sequel\ Pro ~/Library/Application\ Support/Sequel\ Pro`)
-- Might start using [Warp](https://www.warp.dev) or [Fig](https://fig.io/) later
 
 ## Thanks to
 
