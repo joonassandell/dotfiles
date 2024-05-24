@@ -20,5 +20,5 @@ export NVM_DIR="$HOME/.nvm"
 nvm install 14.16.0
 nvm install --lts
 nvm install node
-nvm alias default node
+nvm alias default 'lts/*'
 info "Finished preinstalling node packages."
