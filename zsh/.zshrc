@@ -46,6 +46,9 @@ source $ZSH/oh-my-zsh.sh
 # User Configuration
 # ======
 
+# Load additional dotfiles from NAS
+source ~/Joonas\ Sandell/Apps/macOS/.zshrc.secret
+
 # Various aliases
 alias cat="bat"
 alias csv-json="mlr --icsv --ojson tail" # Add -n2 to limit lines 
@@ -61,7 +64,7 @@ alias kill-port-3000="bunx kill-port 3000"
 alias ls="ls -aFhlG"
 alias matrix="bunx matrix-rain"
 alias preview="fzf --preview 'bat --color=always {}'"
-alias reload="omz reload"
+alias reload="clear && reset && source ~/.zshrc" # Run CMD+K to remove Wrap history
 alias repo="cd ~/Repositories/"
 alias search="rg -i"
 alias show-ssh-keys="ssh-add -l"
@@ -88,8 +91,15 @@ alias bun-reinstall="sudo rm -rf node_modules/ && bun install"
 alias bun-upgrade-interactive="bunx npm-check-updates -i"
 alias bun-upgrade="bunx npm-check-updates -u"
 
-# Load additional dotfiles from NAS
-source ~/Joonas\ Sandell/Apps/macOS/.zshrc.secret
+# Copy to clipboard
+copy-to-clipboard() {
+  if [ -e "$1" ]; then
+    cat "$1" | pbcopy
+    echo "Contents of $1 copied to clipboard."
+  else
+    echo "File $1 does not exist."
+  fi
+}
 
 # Node Version Manager (nvm)
 export NVM_DIR="$HOME/.nvm"
