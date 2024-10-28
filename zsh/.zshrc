@@ -12,7 +12,7 @@ ZSH_DISABLE_COMPFIX="true"
 export PATH="$HOME/bin:$PATH"
 # export PATH="/usr/local/bin/:$PATH"
 
-# Path to your oh-my-zsh installation.
+# Path to your oh-my-zsh installation
 export ZSH=$HOME/.oh-my-zsh
 
 # If I need zsh-completions
@@ -23,7 +23,7 @@ export ZSH=$HOME/.oh-my-zsh
 #   compaudit | xargs chmod g-w
 # fi
 
-# Set name of the theme to load.
+# Set name of the theme to load
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
@@ -50,12 +50,13 @@ source $ZSH/oh-my-zsh.sh
 alias cat="bat"
 alias csv-json="mlr --icsv --ojson tail" # Add -n2 to limit lines 
 alias csv-table="mlr --icsv --opprint cat"
+alias dotfiles="cursor ~/Repositories/dotfiles"
 alias git-log="git log --oneline --decorate --all --graph"
 alias headers="httpstat"
-alias hosts="sudo code /etc/hosts"
+alias hosts="sudo cursor /etc/hosts"
 alias hw-info="networksetup -listallhardwareports"
-alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
 alias ip-local="ifconfig | grep broadcast"
+alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
 alias kill-port-3000="bunx kill-port 3000"
 alias ls="ls -aFhlG"
 alias matrix="bunx matrix-rain"
@@ -63,27 +64,29 @@ alias preview="fzf --preview 'bat --color=always {}'"
 alias reload="omz reload"
 alias repo="cd ~/Repositories/"
 alias search="rg -i"
+alias show-ssh-keys="ssh-add -l"
 alias simple-server="python -m SimpleHTTPServer"
 alias simulator="open /Applications/Xcode.app/Contents/Developer/Applications/Simulator.app"
 alias top="bunx vtop"
-alias zsh-open="code ~/Repositories/dotfiles/zsh/.zshrc"
-alias zsh-open-secret="code ~/Joonas\ Sandell/Apps/macOS/.zshrc.secret"
+alias zsh-open-secret="cursor ~/Joonas\ Sandell/Apps/macOS/.zshrc.secret"
+alias zsh-open="cursor ~/Repositories/dotfiles/zsh/.zshrc"
 
-# Node, npm aliases
+# Npm aliases
 alias npm-check-updates="npx npm-check-updates"
+alias npm-reinstall-delete-lock="sudo rm -rf node_modules/ && rm -rf package-lock.json && npm install"
+alias npm-reinstall="sudo rm -rf node_modules/ && npm install"
 alias npm-upgrade-interactive="npx npm-check-updates -i"
 alias npm-upgrade="npx npm-check-updates -u"
-alias npm-reinstall="sudo rm -rf node_modules/ && npm install"
-alias npm-reinstall-delete-lock="sudo rm -rf node_modules/ && rm -rf package-lock.json && npm install"
-alias nrw="DISABLE_OPEN=true npm run watch"
 alias nrd="DISABLE_OPEN=true npm run dev"
+alias nrw="DISABLE_OPEN=true npm run watch"
 
 # Bun aliases
 alias bun-check-updates="bunx npm-check-updates"
+alias bun-npm-name="bunx npm-name-cli"
+alias bun-reinstall-delete-lock="sudo rm -rf node_modules/ && rm -rf bun.lockb && bun install"
+alias bun-reinstall="sudo rm -rf node_modules/ && bun install"
 alias bun-upgrade-interactive="bunx npm-check-updates -i"
 alias bun-upgrade="bunx npm-check-updates -u"
-alias bun-reinstall="sudo rm -rf node_modules/ && bun install"
-alias bun-reinstall-delete-lock="sudo rm -rf node_modules/ && rm -rf bun.lockb && bun install"
 
 # Load additional dotfiles from NAS
 source ~/Joonas\ Sandell/Apps/macOS/.zshrc.secret
