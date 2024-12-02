@@ -25,6 +25,7 @@ brew 'zsh'
 
 cask '1password6'
 cask 'brave-browser'
+cask 'cleanshot'
 cask 'cyberduck'
 cask 'cyberghost-vpn'
 cask 'docker'
