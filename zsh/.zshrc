@@ -101,6 +101,11 @@ copy-to-clipboard() {
   fi
 }
 
+# React Scan (https://react-scan.com)
+react-scan() {
+  bunx react-scan@latest $1
+}
+
 # Node Version Manager (nvm)
 export NVM_DIR="$HOME/.nvm"
 . "/usr/local/opt/nvm/nvm.sh"
