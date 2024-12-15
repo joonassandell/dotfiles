@@ -1,9 +1,7 @@
-[core]
-	excludesfile = /Users/jsandell/.gitignore_global
 [user]
 	name = Joonas Sandell
 	email = me@joonassandell.com
 [commit]
-	template = /Users/jsandell/.stCommitMsg
+	template = /Users/joonassandell/.stCommitMsg
 [init]
   defaultBranch = main

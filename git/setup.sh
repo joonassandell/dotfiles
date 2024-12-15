@@ -15,4 +15,4 @@ find . -name ".git*" | while read fn; do
     symlink "$SOURCE/$fn" "$DESTINATION/$fn"
 done
 
-success "Finished configuring git."
+success "Finished configuring git"
