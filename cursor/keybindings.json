@@ -1,0 +1,43 @@
+[
+  {
+    "key": "cmd+'",
+    "command": "editor.action.blockComment",
+    "when": "editorFocus"
+  },
+  {
+    "key": "cmd+[Quote]",
+    "command": "editor.action.commentLine",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "cmd+s",
+    "command": "extension.multiCommand.execute",
+    "args": {
+      "sequence": ["postcssSorting.execute", "workbench.action.files.save"]
+    },
+    "when": "editorLangId == scss || editorLangId == css || editorLangId == sass"
+  },
+  {
+    "key": "cmd+l",
+    "command": "expandLineSelection",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "ctrl+l",
+    "command": "aichat.newchataction"
+  },
+  {
+    "key": "ctrl+shift+l",
+    "command": "aichat.close-sidebar"
+  },
+  {
+    "key": "ctrl+shift+up",
+    "command": "editor.action.insertCursorAbove",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "ctrl+shift+down",
+    "command": "editor.action.insertCursorBelow",
+    "when": "editorTextFocus"
+  }
+]

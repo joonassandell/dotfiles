@@ -1,0 +1,29 @@
+{
+  "Major comment heading": {
+    "scope": "javascript,typescript,typescriptreact,scss,php",
+    "prefix": "***",
+    "body": [
+      "/* =======================================",
+      " * $1",
+      " * ======================================= $2*/"
+    ]
+  },
+  "Minor comment heading": {
+    "scope": "javascript,typescript,typescriptreact,scss,php",
+    "prefix": "**",
+    "body": [
+      "/* ======",
+      " * $1",
+      " * ====== $2*/"
+    ]
+  },
+  "Block comment": {
+    "scope": "javascript,typescript,typescriptreact,scss,php",
+    "prefix": "*",
+    "body": [
+      "/**",
+      " * $1",
+      " */"
+    ]
+  }
+}

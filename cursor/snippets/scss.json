@@ -1,0 +1,17 @@
+{
+  "Media Query": {
+    "prefix": "mq",
+    "body": ["@include mq(${1:m}) {", "  $2", "}"],
+    "description": "Media Query mixin for sass-mq"
+  },
+  "Rem mixin": {
+    "prefix": "rem",
+    "body": ["rem(${1:\\$space}$2);"],
+    "description": "Convert pixels to rems with rem()"
+  },
+  "BDS: Space": {
+    "prefix": "b-s",
+    "body": ["var(--b-space$1)$2"],
+    "description": "Convert pixels to rems with rem()"
+  }
+}

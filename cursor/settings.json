@@ -1,0 +1,155 @@
+{
+  "workbench.sideBar.location": "left",
+  "editor.tabCompletion": "onlySnippets",
+  "editor.wordWrap": "on",
+  "workbench.iconTheme": null,
+  "sublimeTextKeymap.promptV3Features": true,
+  "editor.multiCursorModifier": "ctrlCmd",
+  "editor.snippetSuggestions": "top",
+  "editor.formatOnPaste": false,
+  "editor.tabSize": 2,
+  "editor.insertSpaces": true,
+  "explorer.openEditors.visible": 1,
+  "autofold.default": 0,
+  "editor.tokenColorCustomizations": {
+    "comments": "#818998"
+  },
+  "editor.rulers": [80],
+  "workbench.statusBar.visible": true,
+  "php.suggest.basic": false,
+  "update.mode": "none",
+  "eslint.run": "onSave",
+  "workbench.startupEditor": "none",
+  "git.enableSmartCommit": true,
+  "search.exclude": {
+    "**/.next": true,
+    "**/~": true,
+    "**/build/**": true,
+    "**/dist/**": true,
+    "**/node_modules": true,
+    "**/tests": true,
+    "**/vendor/**": true,
+    "**/web/wp/**": true,
+    "**/wp-content/plugins/**": true
+  },
+  "npm.packageManager": "bun",
+  "search.useIgnoreFiles": false,
+  "files.associations": {
+    "*.ts": "typescript",
+    "*.twig": "twig"
+  },
+  "editor.fontLigatures": true,
+  "workbench.colorTheme": "Atom One Dark",
+  "editor.fontSize": 16,
+  "editor.fontFamily": "Operator Mono Lig, Fira Code, Menlo, Monaco, 'Courier New', monospace",
+  "explorer.confirmDragAndDrop": false,
+  "twig-language.tabSize": 2,
+  "twig-language-2.tabSize": 2,
+  "twig-language-2.formatting": false,
+  "twig-language.formatting": false,
+  "workbench.editor.enablePreviewFromQuickOpen": false,
+  "explorer.confirmDelete": false,
+  "editor.glyphMargin": false,
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "emmet.includeLanguages": {
+    "twig": "html",
+    "javascript": "javascriptreact",
+    "postcss": "css"
+  },
+  "files.watcherExclude": {
+    "**/wp-content/plugins/**": true
+  },
+  "editor.renderWhitespace": "all",
+  "editor.formatOnSave": true,
+  "files.exclude": {
+    "**/.netlify": true,
+    "**/.next": false,
+    "**/.vercel": true,
+    "**/~": true,
+    "**/dist/*": false,
+    "**/node_modules": false,
+    "**/out": true
+  },
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "beautify.language": {
+    "js": [],
+    "css": ["css", "less", "scss"],
+    "html": ["htm", "html"]
+  },
+  "beautify.config": {
+    "css": {
+      "indent_size": 2,
+      "selector_separator_newline": true
+    },
+    "html": {
+      "indent_size": 2
+    }
+  },
+  "postcssSorting.config": {
+    "order": [
+      "custom-properties",
+      "dollar-variables",
+      // {
+      //   "type": "at-rule",
+      //   "name": "if"
+      // },
+      // {
+      //   "type": "at-rule",
+      //   "name": "else"
+      // },
+      // {
+      //   "type": "at-rule",
+      //   "name": "else if"
+      // },
+      {
+        "type": "at-rule",
+        "hasBlock": false
+      },
+      "declarations",
+      "rules",
+      {
+        "type": "at-rule",
+        "hasBlock": true
+      }
+    ],
+    "properties-order": "alphabetical",
+    "unspecified-properties-position": "bottom"
+  },
+  "extensions.ignoreRecommendations": false,
+  "editor.quickSuggestions": {
+    "other": true,
+    "comments": false,
+    "strings": true
+  },
+  "editor.renderControlCharacters": true,
+  "eslint.debug": true,
+  "eslint.format.enable": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit"
+  },
+  "git.ignoreMissingGitWarning": true,
+  "security.workspace.trust.untrustedFiles": "open",
+  "explorer.autoReveal": false,
+  "eslint.validate": ["json", "html", "handlebars", "jsonc"],
+  "auto-comment-blocks.singleLineBlockOnEnter": true,
+  "chatgpt.apiKey": "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",
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "window.commandCenter": false,
+  "editor.accessibilitySupport": "off",
+  "git.openRepositoryInParentFolders": "always",
+  "eslint.enable": true,
+  "scss.lint.unknownAtRules": "ignore",
+  "auto-close-tag.disableOnLanguage": ["typescript"],
+  "eslint.codeAction.showDocumentation": {
+    "enable": false
+  },
+  "tailwindCSS.validate": false,
+  "sync.autoUpload": false,
+  "sync.gist": "fbadd50ed5576356eb92ed853057879a",
+  "sync.quietSync": false,
+  "typescript.tsserver.experimental.enableProjectDiagnostics": true,
+  "editor.minimap.enabled": true,
+  "tailwind-fold.foldedText": "…",
+  "tailwind-fold.autoFold": false,
+  "git.confirmSync": false
+}
