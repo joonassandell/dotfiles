@@ -1,4 +1,4 @@
-#! /usr/bin/env sh
+#!/bin/bash
 # https://macos-defaults.com
 # https://git.herrbischoff.com/awesome-macos-command-line/about
 

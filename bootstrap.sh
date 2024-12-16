@@ -1,4 +1,4 @@
-#! /usr/bin/env sh
+#!/bin/bash
 
 DIR=$(dirname "$0")
 cd "$DIR"
@@ -33,4 +33,4 @@ find * -name "setup.sh" -not -wholename "packages*" | while read setup; do
     ./$setup
 done
 
-success_final "Finished installing dotfiles"
+success_final "Finished installing dotfiles!"

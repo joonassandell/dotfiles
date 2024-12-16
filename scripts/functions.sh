@@ -16,7 +16,7 @@ symlink() {
 color_echo() {
   local exp="$1";
   local color="$2";
-  local arrow="$3";
+  local symbol="$3";
   if ! [[ $color =~ '^[0-9]$' ]] ; then
     case $(echo $color | tr '[:upper:]' '[:lower:]') in
     black) color=0 ;;
@@ -30,16 +30,16 @@ color_echo() {
     esac
   fi
   tput setaf "$color";
-  echo "$arrow $exp";
+  echo "$symbol $exp";
   tput sgr0;
 }
 
 info() {
-  color_echo "$1" blue "::"
+  color_echo "$1" blue "🔧"
 }
 
 success() {
-  color_echo "$1" green "✅"
+  color_echo "$1" green "✅"; echo
 }
 
 success_final() {
@@ -47,11 +47,11 @@ success_final() {
 }
 
 error() {
-  color_echo "$1" red "🔴"
+  color_echo "$1" red "❌"; echo
 }
 
 substep_info() {
-  color_echo "$1" blue ">"
+  color_echo "$1" cyan ">"
 }
 
 substep_success() {

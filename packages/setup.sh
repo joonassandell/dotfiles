@@ -1,6 +1,5 @@
-#! /usr/bin/env sh
+#!/bin/bash
 
-echo "$DIR"
 DIR=$(dirname "$0")
 cd "$DIR"
 
