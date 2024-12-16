@@ -28,7 +28,7 @@ set_zsh() {
             fi
         fi
         substep_info "Changing shell to zsh"
-        if sudo chsh -s /usr/local/bin/zsh; then 
+        if sudo chsh -s /usr/local/bin/zsh; then
             substep_success "Changed shell to zsh"
         else
             substep_error "Failed changing shell to zsh"

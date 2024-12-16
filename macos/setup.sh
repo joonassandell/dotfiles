@@ -19,17 +19,17 @@ sudo -v
 # Keep-alive: update existing `sudo` time stamp until `.setup` has finished
 while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
-# ======
+# =======================================
 # Create essential directories
-# ======
+# =======================================
 
 mkdir -p $HOME/.ssh
 mkdir -p $HOME/Joonas\ Sandell
 mkdir -p $HOME/Drive
 
-# ======
+# =======================================
 # General UI
-# ======
+# =======================================
 
 # Disable natural scrolling
 defaults write -g com.apple.swipescrolldirection -bool false
@@ -41,9 +41,9 @@ defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode2 -bool true
 # Save to disk (not to iCloud) by default
 defaults write NSGlobalDomain NSDocumentSaveNewDocumentsToCloud -bool false
 
-# ======
+# =======================================
 # Finder
-# ======
+# =======================================
 
 # Set the default location for new Finder windows
 defaults write com.apple.finder NewWindowTarget -string "PfLo"
@@ -102,9 +102,9 @@ chflags nohidden ~/Library
 # Show the /Volumes folder
 sudo chflags nohidden /Volumes
 
-# ======
+# =======================================
 # Dock
-# ======
+# =======================================
 
 # Automatically hide and show the Dock
 defaults write com.apple.dock autohide -bool true
@@ -118,9 +118,9 @@ defaults write com.apple.dock autohide-time-modifier -float 0.5s
 # Show only open applications in the Dock
 defaults write com.apple.dock static-only -bool true
 
-# ======
+# =======================================
 # Kill affected applications
-# ======
+# =======================================
 
 for app in "Finder" \
 	"Dock"; do

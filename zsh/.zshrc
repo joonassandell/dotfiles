@@ -1,6 +1,8 @@
-# ======
-# Zsh config (https://github.com/robbyrussell/oh-my-zsh/blob/master/templates/zshrc.zsh-template)
-# ======
+# =======================================
+# Zsh config
+# =======================================
+#
+# https://github.com/robbyrussell/oh-my-zsh/blob/master/templates/zshrc.zsh-template
 
 # Skip the verification of oh-my-zsh insecure directories
 ZSH_DISABLE_COMPFIX="true"
@@ -23,16 +25,16 @@ plugins=(
 
 source $ZSH/oh-my-zsh.sh
 
-# ======
+# =======================================
 # User config
-# ======
+# =======================================
 
 # Load additional dotfiles from NAS
 source ~/Joonas\ Sandell/Apps/macOS/.zshrc.secret
 
 # Various aliases
 alias cat="bat"
-alias csv-json="mlr --icsv --ojson tail" # Add -n2 to limit lines 
+alias csv-json="mlr --icsv --ojson tail" # Add -n2 to limit lines
 alias csv-table="mlr --icsv --opprint cat"
 alias dotfiles="cursor ~/Repositories/dotfiles"
 alias git-log="git log --oneline --decorate --all --graph"
