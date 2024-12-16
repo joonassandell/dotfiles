@@ -3,7 +3,6 @@
 echo "$DIR"
 DIR=$(dirname "$0")
 cd "$DIR"
-echo "$DIR"
 
 . ../scripts/functions.sh
 
@@ -11,14 +10,14 @@ sudo -v
 
 info "Installing Brewfile packages..."
 brew bundle
-success "Finished installing Brewfile packages."
+success "Finished installing Brewfile packages"
 
-info "Preinstalling node packages..."
+info "Installing node packages..."
 mkdir -p $HOME/.nvm
 export NVM_DIR="$HOME/.nvm"
-. "/usr/local/opt/nvm/nvm.sh"
+[ -s "$HOMEBREW_PREFIX/opt/nvm/nvm.sh" ] && \. "$HOMEBREW_PREFIX/opt/nvm/nvm.sh"
 nvm install 14.16.0
 nvm install --lts
 nvm install node
 nvm alias default 'lts/*'
-info "Finished preinstalling node packages."
+success "Finished installing node packages"
