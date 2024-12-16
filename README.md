@@ -1,12 +1,12 @@
 # Dotfiles of Joonas Sandell
 
-I maintain this repository as my personal dotfiles. Last tested succesfully with macOS `Sequoia 15.1`.
+I maintain this repository as my personal dotfiles. Last tested succesfully with Macbook Pro M4, macOS `Sequoia 15.1`.
 
-<img src="./terminal.png" alt="Warp terminal" with="100%" />
+<img src="./terminal.png" alt="Warp terminal" width="100%" />
 
 ## Getting started
 
-Make sure you're connected to the internet and logged in to App Store.
+Verify that you're connected to the internet and logged in to App Store.
 
 ```shell
 # 1. Install brew and follow the instructions for adding `brew` to the path
@@ -19,7 +19,7 @@ brew install git
 mkdir ~/Repositories && cd ~/Repositories
 git clone https://github.com/joonassandell/dotfiles.git && cd dotfiles
 
-# 4. Setup and install packages. Prepare to prompt your password frequently as it maybe required.
+# 4. Setup and install packages, prepare to prompt password frequently as it maybe required
 ./bootstrap.sh
 ```
 
@@ -27,29 +27,29 @@ git clone https://github.com/joonassandell/dotfiles.git && cd dotfiles
 
 <details>
 <summary>
-Perform manual configurations after completing the automatic setup especially if you're setting up a new machine
+Perform manual configurations after completing the setup especially if setting up a new machine
 </summary>
 
 - [Synology Drive](https://www.synology.com/en-global/dsm/feature/drive)
-  - Configure first before everything
+  - **Configure before everything else!**
   - Check the `Locally deleted files will be removed from your NAS` and `Use minimalist tray icon`
   - Add `Sync files and folders with the prefix "."` to all synced folders
-  - Sync initially only the essential folders: `Drive/1Password` and `Joonas Sandell/Design Resources/Fonts`
+  - Initially sync only the essential folders: `Drive/1Password` and `Joonas Sandell/Design Resources/Fonts`
 - Keyboard shortcuts
   - Modifier Keys:
     - `Control key ^` → `Command ⌘`,
     - `Command ⌘` → `Control key ^`
     - `Function (fn)` / `Globe` → `Command ⌘`
-  - App Shortcuts: `Sleep` → `^ ⌥ ⌘ Q` at `All Applications` for [Stream Deck](https://vninja.net/2021/04/15/elgato-stream-deck-sleep-button)
+  - App Shortcuts → All Applications: `Sleep` → `^ ⌥ ⌘ Q` for [Stream Deck](https://vninja.net/2021/04/15/elgato-stream-deck-sleep-button)
   - Uncheck `Show Spotligh search` and `Show Finder search window`
   - Uncheck `Turn Dock hiding on/off`
   - Uncheck all the Screenshot shortcuts for CleanShot X
 - System Settings and related
-  - Configure Lock Screen, Screen Saver, Background, Mouse Tracking and Scrolling speed, and Hot corners
-  - Check `Use scroll gesture with modifier keys to zoom` at `Accessibility → Zoom`
+  - Configure Lock Screen, Screen Saver, Background, Mouse Tracking/Scrolling speed and Hot corners
+  - Accessibility → Zoom: Check `Use scroll gesture with modifier keys to zoom`
   - Configure Finder sidebar: Add essential folders and remove Recents etc.
-  - Install `Operator Mono` and other fonts from NAS
-- [One Password 6](https://c.1password.com/dist/1P/mac4/1Password-6.8.9.pkg): Install and sync it to `~/Drive/1Password`
+  - Install `Operator Mono` and other typefaces from NAS
+- [One Password 6](https://c.1password.com/dist/1P/mac4/1Password-6.8.9.pkg): Install and sync to `~/Drive/1Password`
 - [Brave](https://brave.com/):
   - Sync and set it as the default browser
   - Install SoundCloud web app
@@ -72,7 +72,6 @@ Perform manual configurations after completing the automatic setup especially if
   - Configure accounts
   - Add `Default Source Folder` → `~/Repositories`
   - Change `Terminal Client` → `Warp`
-- [Sync Visual Studio](https://code.visualstudio.com): Sync settings with the native [Settings Sync](https://code.visualstudio.com/docs/editor/settings-sync). I'm not very happy with this approach since it uses [dedicated service](https://code.visualstudio.com/docs/editor/settings-sync#_can-i-use-a-different-backend-or-service-for-settings-sync) and I'd rather like to sync to my own repository.
 - [Twitch](https://twitch.tv): Create a standalone app `cd /Applications && bunx nativefier https://www.twitch.tv && mv Twitch-darwin-arm64 Twitch`
 - [Slack](https://slack.com): Configure workspaces and [add API token](https://github.com/ellreka/streamdeck-slack-status#setup) for Stream Deck for the wanted workspaces
 - [Warp](https://www.warp.dev)
@@ -81,8 +80,16 @@ Perform manual configurations after completing the automatic setup especially if
     - Clear `Move Cursor Home Within an Executing Command`
     - `Activate Next Tab` → `⌥ ⌘ →`
     - `Activate Previous Tab` → `⌥ ⌘ ←`
+    - `Activate Next Pane` → `⇧ ⌘ →`
+    - `Activate Previous Pane` → `⇧ ⌘ ←`
     - `Move to Start of Line` → `⌘ ←`
     - `Move to End of Line` → `⌘ →`
+  - Appearance
+    - Window Opacity → `60` and Window Blur Radius → `64`
+    - Terminal font → `Operator Mono Lig` with Font size `15` and Line height `1.2`
+    - Check `Focus follows mouse`
+  - Privacy
+    - Check `Secret redaction`
 
 There are probably essential settings that are missing from this guide so do whatever is necessary.
 
