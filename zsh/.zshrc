@@ -1,39 +1,20 @@
 # ======
-# Defaults
+# Zsh config (https://github.com/robbyrussell/oh-my-zsh/blob/master/templates/zshrc.zsh-template)
 # ======
-#
-# Template found here https://github.com/robbyrussell/oh-my-zsh/blob/master/templates/zshrc.zsh-template
-#
 
 # Skip the verification of oh-my-zsh insecure directories
 ZSH_DISABLE_COMPFIX="true"
 
 # Add '~/bin' to the '$PATH'
 export PATH="$HOME/bin:$PATH"
-# export PATH="/usr/local/bin/:$PATH"
 
-# Path to your oh-my-zsh installation
+# Path to oh-my-zsh installation
 export ZSH=$HOME/.oh-my-zsh
 
-# If I need zsh-completions
-# if type brew &>/dev/null; then
-#   FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
-#   autoload -Uz compinit
-#   compinit
-#   compaudit | xargs chmod g-w
-# fi
-
-# Set name of the theme to load
-# Look in ~/.oh-my-zsh/themes/
-# Optionally, if you set this to "random", it'll load a random theme each
-# time that oh-my-zsh is loaded.
+# Theme
 ZSH_THEME="robbyrussell"
 
-# Which plugins would you like to load?
-# Standard plugins can be found in ~/.oh-my-zsh/plugins/*
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-# Add wisely, as too many plugins slow down shell startup.
+# Plugins
 plugins=(
   docker
   git
@@ -43,7 +24,7 @@ plugins=(
 source $ZSH/oh-my-zsh.sh
 
 # ======
-# User Configuration
+# User config
 # ======
 
 # Load additional dotfiles from NAS
@@ -106,11 +87,12 @@ react-scan() {
   bunx react-scan@latest $1
 }
 
-# Node Version Manager (nvm)
+# NVM (https://github.com/nvm-sh/nvm)
 export NVM_DIR="$HOME/.nvm"
-. "/usr/local/opt/nvm/nvm.sh"
+[ -s "$HOMEBREW_PREFIX/opt/nvm/nvm.sh" ] && \. "$HOMEBREW_PREFIX/opt/nvm/nvm.sh"
+[ -s "$HOMEBREW_PREFIX/opt/nvm/etc/bash_completion.d/nvm" ] && \. "$HOMEBREW_PREFIX/opt/nvm/etc/bash_completion.d/nvm"
 
-# https://github.com/creationix/nvm#zsh
+# Install the specified Node version when an .nvmrc is found (https://github.com/creationix/nvm#zsh)
 autoload -U add-zsh-hook
 load-nvmrc() {
   local node_version="$(nvm version)"
@@ -132,9 +114,8 @@ load-nvmrc() {
 add-zsh-hook chpwd load-nvmrc
 load-nvmrc
 
-# Docker
-# https://github.com/docker/compose/issues/5696
-export COMPOSE_INTERACTIVE_NO_CLI=1
+# Docker (https://www.docker.com)
+export COMPOSE_INTERACTIVE_NO_CLI=1 # https://github.com/docker/compose/issues/5696
 
 # Bun completions
-[ -s "/Users/jsandell/.bun/_bun" ] && source "/Users/jsandell/.bun/_bun"
+[ -s "/Users/joonassandell/.bun/_bun" ] && source "/Users/joonassandell/.bun/_bun"
