@@ -26,14 +26,15 @@ git clone https://github.com/joonassandell/dotfiles.git && cd dotfiles
 ## Manual setup
 
 <details>
+
 <summary>
 Perform manual configurations after completing the setup especially if setting up a new machine
 </summary>
 
 - [Synology Drive](https://www.synology.com/en-global/dsm/feature/drive)
-  - **Configure before everything else!**
+  - **Configure this before anything else!**
   - Check the `Locally deleted files will be removed from your NAS` and `Use minimalist tray icon`
-  - Add `Sync files and folders with the prefix "."` to all synced folders
+  - Check `Sync files and folders with the prefix "."` to all synced folders
   - Initially sync only the essential folders: `Drive/1Password` and `Joonas Sandell/Design Resources/Fonts`
 - Keyboard shortcuts
   - Modifier Keys:
@@ -56,24 +57,24 @@ Perform manual configurations after completing the setup especially if setting u
 - [Raycast](https://www.raycast.com): Import settings from `~/Joonas Sandell/Apps/Raycast`
 - [Stream Deck](https://www.elgato.com/ww/en/s/welcome-to-stream-deck)
   - Import Stream Deck profiles from `~/Joonas Sandell/Apps/Stream Deck`
-  - Add all the plugins and icon packs from [Marketplace](https://marketplace.elgato.com/stream-deck)
+  - Add the plugins and icon packs from [Marketplace](https://marketplace.elgato.com/stream-deck)
 - [CleanShot X](https://cleanshot.com/)
   - [Change the license](https://licenses.maketheweb.io)
   - Check `Start at login`
-  - Add shorcut: `Capture Area & Copy to Clipboard` to `^ ⇧ ⌘ 4`
-  - Add export location to: `~/Joonas Sandell/Photos/Screenshots`
+  - Add shorcut: `Capture Area & Copy to Clipboard` → `^ ⇧ ⌘ 4`
+  - Add export location to `~/Joonas Sandell/Photos/Screenshots`
 - [Camera Hub](https://www.elgato.com/us/en/s/downloads)
   - Add Snapshop Location to NAS
-  - Make sure to check [System Setting](https://help.elgato.com/hc/en-us/articles/30069817477777-Elgato-Camera-Hub-How-to-enable-Virtual-Camera-on-macOS-15-Sequoia) `General/Camera Extenions` → `Elgato Camera Hub`
+  - Check [System Setting](https://help.elgato.com/hc/en-us/articles/30069817477777-Elgato-Camera-Hub-How-to-enable-Virtual-Camera-on-macOS-15-Sequoia): General → Camera Extenions → `Elgato Camera Hub`
   - Possibly uninstall the installed `DisplayLink Manager`
 - [Sequel Pro](https://sequelpro.com): Symlink favorites `ln -s ~/Joonas\ Sandell/Apps/Sequel\ Pro ~/Library/Application\ Support/Sequel\ Pro`
-- [Cursor](https://cursor.com): Install extensions from `cursor/profile/Default.code-profile` at Cursor Profiles
+- [Cursor](https://cursor.com): Install extensions from `cursor/profile/Default.code-profile` in Cursor Profiles
 - [Fork](https://git-fork.com)
   - Configure accounts
-  - Add `Default Source Folder` → `~/Repositories`
+  - Change `Default Source Folder` → `~/Repositories`
   - Change `Terminal Client` → `Warp`
 - [Twitch](https://twitch.tv): Create a standalone app `cd /Applications && bunx nativefier https://www.twitch.tv && mv Twitch-darwin-arm64 Twitch`
-- [Slack](https://slack.com): Configure workspaces and [add API token](https://github.com/ellreka/streamdeck-slack-status#setup) for Stream Deck for the wanted workspaces
+- [Slack](https://slack.com): Login to workspaces and [add API token (Stream Deck)](https://github.com/ellreka/streamdeck-slack-status#setup) for the wanted workspaces
 - [Warp](https://www.warp.dev)
   - Keyboard Shortcuts:
     - Clear `Move Cursor End Within an Executing Command`
@@ -97,4 +98,4 @@ There are probably essential settings that are missing from this guide so do wha
 
 ## Copyright
 
-Copyright © [Joonas Sandell](https://x.com/joonassandell). Thanks to [paulirish/dotfiles](https://github.com/paulirish/dotfiles), [aleksik/dotfiles](https://github.com/aleksik/dotfiles) and [https://github.com/Sajjadhosn/dotfiles](https://github.com/Sajjadhosn/dotfiles).
+Copyright © [Joonas Sandell](https://x.com/joonassandell). Thanks to [paulirish/dotfiles](https://github.com/paulirish/dotfiles), [aleksik/dotfiles](https://github.com/aleksik/dotfiles) and [sajjadhosn/dotfiles](https://github.com/sajjadhosn/dotfiles).
