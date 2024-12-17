@@ -41,6 +41,7 @@ Perform manual configurations after completing the setup especially if setting u
     - Control key ^ → `Command ⌘`
     - Command ⌘ → `Control key ^`
     - Function (fn) / Globe → `Command ⌘`
+    - Mission Control → `F12`
   - App Shortcuts → All Applications → `Sleep` → `^ ⌥ ⌘ Q` for [Stream Deck](https://vninja.net/2021/04/15/elgato-stream-deck-sleep-button)
   - Spotlight → Uncheck `Show Spotligh search` and `Show Finder search window`
   - Launchpad & Dock → Uncheck `Turn Dock hiding on/off`
