@@ -87,6 +87,7 @@ Perform manual configurations after completing the setup especially if setting u
     - Activate Previous Tab → `⌥ ⌘ ←`
     - Activate Next Pane → `⇧ ⌥ →`
     - Activate Previous Pane → `⇧ ⌥ ←`
+    - Increase Font Size → `⌘ +`
     - Move to Start of Line → `⌘ ←`
     - Move to End of Line → `⌘ →`
   - Appearance
