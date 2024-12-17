@@ -50,6 +50,7 @@ Perform manual configurations after completing the setup especially if setting u
   - Accessibility → Zoom: Check `Use scroll gesture with modifier keys to zoom`
   - Configure Finder sidebar: Add essential folders and remove Recents etc.
   - Install `Operator Mono` and other typefaces from NAS
+  - If the keyboard layout is not recognized correctly: Run `sudo open /System/Library/CoreServices/KeyboardSetupAssistant.app/Contents/MacOS/KeyboardSetupAssistant` and edit Keyboard → Text Input → Input sources again to `Finnish and U.S.`
 - [One Password 6](https://c.1password.com/dist/1P/mac4/1Password-6.8.9.pkg): Install and sync to `~/Drive/1Password`
 - [Brave](https://brave.com/):
   - Sync and set it as the default browser
@@ -58,17 +59,17 @@ Perform manual configurations after completing the setup especially if setting u
 - [Stream Deck](https://www.elgato.com/ww/en/s/welcome-to-stream-deck)
   - Import Stream Deck profiles from `~/Joonas Sandell/Apps/Stream Deck`
   - Add the plugins and icon packs from [Marketplace](https://marketplace.elgato.com/stream-deck)
+- [Camera Hub](https://www.elgato.com/us/en/s/downloads)
+  - Add Snapshop Location to NAS
+  - Check [System Setting](https://help.elgato.com/hc/en-us/articles/30069817477777-Elgato-Camera-Hub-How-to-enable-Virtual-Camera-on-macOS-15-Sequoia): General → Camera Extenions → `Elgato Camera Hub`
+  - Possibly uninstall the installed `DisplayLink Manager`
 - [CleanShot X](https://cleanshot.com/)
   - [Change the license](https://licenses.maketheweb.io)
   - Check `Start at login`
   - Add shorcut: `Capture Area & Copy to Clipboard` → `^ ⇧ ⌘ 4`
   - Add export location to `~/Joonas Sandell/Photos/Screenshots`
-- [Camera Hub](https://www.elgato.com/us/en/s/downloads)
-  - Add Snapshop Location to NAS
-  - Check [System Setting](https://help.elgato.com/hc/en-us/articles/30069817477777-Elgato-Camera-Hub-How-to-enable-Virtual-Camera-on-macOS-15-Sequoia): General → Camera Extenions → `Elgato Camera Hub`
-  - Possibly uninstall the installed `DisplayLink Manager`
-- [Sequel Pro](https://sequelpro.com): Symlink favorites `ln -s ~/Joonas\ Sandell/Apps/Sequel\ Pro ~/Library/Application\ Support/Sequel\ Pro`
 - [Cursor](https://cursor.com): Install extensions from `cursor/profile/Default.code-profile` in Cursor Profiles
+- [Sequel Pro](https://sequelpro.com): Symlink favorites `ln -s ~/Joonas\ Sandell/Apps/Sequel\ Pro ~/Library/Application\ Support/Sequel\ Pro`
 - [Fork](https://git-fork.com)
   - Configure accounts
   - Change `Default Source Folder` → `~/Repositories`
