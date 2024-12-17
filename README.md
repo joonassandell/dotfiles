@@ -31,9 +31,9 @@ git clone https://github.com/joonassandell/dotfiles.git && cd dotfiles
 Perform manual configurations after completing the setup especially if setting up a new machine
 </summary>
 
-- [Synology Drive](https://www.synology.com/en-global/dsm/feature/drive)
+- [Synology Drive (NAS)](https://www.synology.com/en-global/dsm/feature/drive)
   - **Configure this before anything else!**
-  - Check the `Locally deleted files will be removed from your NAS` and `Use minimalist tray icon`
+  - Check `Locally deleted files will be removed from your NAS` and `Use minimalist tray icon`
   - Check `Sync files and folders with the prefix "."` to all synced folders
   - Initially sync only the essential folders: `Drive/1Password` and `Joonas Sandell/Design Resources/Fonts`
 - Keyboard shortcuts
@@ -42,18 +42,18 @@ Perform manual configurations after completing the setup especially if setting u
     - Command ⌘ → `Control key ^`
     - Function (fn) / Globe → `Command ⌘`
   - App Shortcuts → All Applications → `Sleep` → `^ ⌥ ⌘ Q` for [Stream Deck](https://vninja.net/2021/04/15/elgato-stream-deck-sleep-button)
-  - Uncheck Spotlight → `Show Spotligh search` and `Show Finder search window`
-  - Uncheck Launchpad & Dock → `Turn Dock hiding on/off`
-  - Uncheck Screenshots → All the shortcuts
+  - Spotlight → Uncheck `Show Spotligh search` and `Show Finder search window`
+  - Launchpad & Dock → Uncheck `Turn Dock hiding on/off`
+  - Screenshots → Uncheck all the shortcuts
 - System Settings and related
   - Configure Lock Screen, Screen Saver, Background, Mouse Tracking/Scrolling speed and Hot corners
-  - Accessibility → Zoom: Check `Use scroll gesture with modifier keys to zoom`
-  - Configure Finder sidebar: Add essential folders and remove Recents etc.
+  - Accessibility → Zoom → Check `Use scroll gesture with modifier keys to zoom`
+  - Finder sidebar: Add essential directories and remove Recents etc.
   - Install `Operator Mono` and other typefaces from NAS
   - If the keyboard layout is not recognized correctly: Run `sudo open /System/Library/CoreServices/KeyboardSetupAssistant.app/Contents/MacOS/KeyboardSetupAssistant` and edit Keyboard → Text Input → Input sources again to `Finnish and U.S.`
 - [One Password 6](https://c.1password.com/dist/1P/mac4/1Password-6.8.9.pkg): Install and sync to `~/Drive/1Password`
 - [Brave](https://brave.com)
-  - Sync and set as default browser
+  - Sync and set as the default browser
   - Install [SoundCloud](https://soundcloud.com) web app
 - [Raycast](https://www.raycast.com): Import settings from `~/Joonas Sandell/Apps/Raycast`
 - [Stream Deck](https://www.elgato.com/ww/en/s/welcome-to-stream-deck)
@@ -65,10 +65,10 @@ Perform manual configurations after completing the setup especially if setting u
   - Possibly uninstall the installed `DisplayLink Manager`
 - [CleanShot X](https://cleanshot.com)
   - [Change the license](https://licenses.maketheweb.io)
-  - Check General → `Start at login`
+  - General → Check `Start at login`
   - General → Export location → `~/Joonas Sandell/Photos/Screenshots`
-  - Uncheck Quick Access → `Move to active screen`
-  - Uncheck Screenshots → `Scale Retina screenshots to 1x`
+  - Quick Access → Uncheck `Move to active screen`
+  - Screenshots → Uncheck `Scale Retina screenshots to 1x`
   - Shortcuts → Capture Area & Copy to Clipboard → `^ ⇧ ⌘ 4`
 - [Cursor](https://cursor.com): Install extensions from `cursor/profile/Default.code-profile` in Cursor Profiles
 - [Sequel Pro](https://sequelpro.com): Symlink favorites `ln -s ~/Joonas\ Sandell/Apps/Sequel\ Pro ~/Library/Application\ Support/Sequel\ Pro`
