@@ -37,14 +37,14 @@ Perform manual configurations after completing the setup especially if setting u
   - Check `Sync files and folders with the prefix "."` to all synced folders
   - Initially sync only the essential folders: `Drive/1Password` and `Joonas Sandell/Design Resources/Fonts`
 - Keyboard shortcuts
-  - Modifier Keys:
-    - `Control key ^` → `Command ⌘`,
-    - `Command ⌘` → `Control key ^`
-    - `Function (fn)` / `Globe` → `Command ⌘`
-  - App Shortcuts → All Applications: `Sleep` → `^ ⌥ ⌘ Q` for [Stream Deck](https://vninja.net/2021/04/15/elgato-stream-deck-sleep-button)
-  - Uncheck `Show Spotligh search` and `Show Finder search window`
-  - Uncheck `Turn Dock hiding on/off`
-  - Uncheck all the Screenshot shortcuts for CleanShot X
+  - Modifier Keys
+    - Control key ^ → `Command ⌘`
+    - Command ⌘ → `Control key ^`
+    - Function (fn) / Globe → `Command ⌘`
+  - App Shortcuts → All Applications → `Sleep` → `^ ⌥ ⌘ Q` for [Stream Deck](https://vninja.net/2021/04/15/elgato-stream-deck-sleep-button)
+  - Uncheck Spotlight → `Show Spotligh search` and `Show Finder search window`
+  - Uncheck Launchpad & Dock → `Turn Dock hiding on/off`
+  - Uncheck Screenshots → All the shortcuts
 - System Settings and related
   - Configure Lock Screen, Screen Saver, Background, Mouse Tracking/Scrolling speed and Hot corners
   - Accessibility → Zoom: Check `Use scroll gesture with modifier keys to zoom`
@@ -52,41 +52,43 @@ Perform manual configurations after completing the setup especially if setting u
   - Install `Operator Mono` and other typefaces from NAS
   - If the keyboard layout is not recognized correctly: Run `sudo open /System/Library/CoreServices/KeyboardSetupAssistant.app/Contents/MacOS/KeyboardSetupAssistant` and edit Keyboard → Text Input → Input sources again to `Finnish and U.S.`
 - [One Password 6](https://c.1password.com/dist/1P/mac4/1Password-6.8.9.pkg): Install and sync to `~/Drive/1Password`
-- [Brave](https://brave.com/):
-  - Sync and set it as the default browser
-  - Install SoundCloud web app
+- [Brave](https://brave.com)
+  - Sync and set as default browser
+  - Install [SoundCloud](https://soundcloud.com) web app
 - [Raycast](https://www.raycast.com): Import settings from `~/Joonas Sandell/Apps/Raycast`
 - [Stream Deck](https://www.elgato.com/ww/en/s/welcome-to-stream-deck)
   - Import Stream Deck profiles from `~/Joonas Sandell/Apps/Stream Deck`
   - Add the plugins and icon packs from [Marketplace](https://marketplace.elgato.com/stream-deck)
 - [Camera Hub](https://www.elgato.com/us/en/s/downloads)
-  - Add Snapshop Location to NAS
+  - Settings → Snapshop Location → NAS
   - Check [System Setting](https://help.elgato.com/hc/en-us/articles/30069817477777-Elgato-Camera-Hub-How-to-enable-Virtual-Camera-on-macOS-15-Sequoia): General → Camera Extenions → `Elgato Camera Hub`
   - Possibly uninstall the installed `DisplayLink Manager`
 - [CleanShot X](https://cleanshot.com)
   - [Change the license](https://licenses.maketheweb.io)
-  - Check `Start at login`
-  - Add shorcut: `Capture Area & Copy to Clipboard` → `^ ⇧ ⌘ 4`
-  - Add export location to `~/Joonas Sandell/Photos/Screenshots`
+  - Check General → `Start at login`
+  - General → Export location → `~/Joonas Sandell/Photos/Screenshots`
+  - Uncheck Quick Access → `Move to active screen`
+  - Uncheck Screenshots → `Scale Retina screenshots to 1x`
+  - Shortcuts → Capture Area & Copy to Clipboard → `^ ⇧ ⌘ 4`
 - [Cursor](https://cursor.com): Install extensions from `cursor/profile/Default.code-profile` in Cursor Profiles
 - [Sequel Pro](https://sequelpro.com): Symlink favorites `ln -s ~/Joonas\ Sandell/Apps/Sequel\ Pro ~/Library/Application\ Support/Sequel\ Pro`
 - [Fork](https://git-fork.com)
-  - Configure accounts
-  - Change `Default Source Folder` → `~/Repositories`
-  - Change `Terminal Client` → `Warp`
+  - Configure Accounts
+  - General → Default Source Folder → `~/Repositories`
+  - Integration → Terminal Client → `Warp`
 - [Twitch](https://twitch.tv): Create a standalone app `cd /Applications && bunx nativefier https://www.twitch.tv && mv Twitch-darwin-arm64 Twitch`
 - [Slack](https://slack.com): Login to workspaces and [add API token (Stream Deck)](https://github.com/ellreka/streamdeck-slack-status#setup) for the wanted workspaces
-- [Screenflow 7.3.2](https://www.telestream.net/download-files/screenflow/7-3/ScreenFlow-7.3.2.dmg): Download and install
+- [Screenflow 7](https://www.telestream.net/download-files/screenflow/7-3/ScreenFlow-7.3.2.dmg): Download and install
 - [Warp](https://www.warp.dev)
   - Keyboard Shortcuts:
     - Clear `Move Cursor End Within an Executing Command`
     - Clear `Move Cursor Home Within an Executing Command`
-    - `Activate Next Tab` → `⌥ ⌘ →`
-    - `Activate Previous Tab` → `⌥ ⌘ ←`
-    - `Activate Next Pane` → `⇧ ⌘ →`
-    - `Activate Previous Pane` → `⇧ ⌘ ←`
-    - `Move to Start of Line` → `⌘ ←`
-    - `Move to End of Line` → `⌘ →`
+    - Activate Next Tab → `⌥ ⌘ →`
+    - Activate Previous Tab → `⌥ ⌘ ←`
+    - Activate Next Pane → `⇧ ⌥ →`
+    - Activate Previous Pane → `⇧ ⌥ ←`
+    - Move to Start of Line → `⌘ ←`
+    - Move to End of Line → `⌘ →`
   - Appearance
     - Window Opacity → `60` and Window Blur Radius → `64`
     - Terminal font → `Operator Mono Lig` with Font size `15` and Line height `1.2`
