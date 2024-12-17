@@ -25,6 +25,7 @@
   "editor.formatOnSave": true,
   "editor.glyphMargin": false,
   "editor.insertSpaces": true,
+  "editor.minimap.enabled": true,
   "editor.multiCursorModifier": "ctrlCmd",
   "editor.tokenColorCustomizations": {
     "comments": "#818998"

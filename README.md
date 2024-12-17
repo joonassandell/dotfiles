@@ -63,7 +63,7 @@ Perform manual configurations after completing the setup especially if setting u
   - Add Snapshop Location to NAS
   - Check [System Setting](https://help.elgato.com/hc/en-us/articles/30069817477777-Elgato-Camera-Hub-How-to-enable-Virtual-Camera-on-macOS-15-Sequoia): General → Camera Extenions → `Elgato Camera Hub`
   - Possibly uninstall the installed `DisplayLink Manager`
-- [CleanShot X](https://cleanshot.com/)
+- [CleanShot X](https://cleanshot.com)
   - [Change the license](https://licenses.maketheweb.io)
   - Check `Start at login`
   - Add shorcut: `Capture Area & Copy to Clipboard` → `^ ⇧ ⌘ 4`
@@ -76,6 +76,7 @@ Perform manual configurations after completing the setup especially if setting u
   - Change `Terminal Client` → `Warp`
 - [Twitch](https://twitch.tv): Create a standalone app `cd /Applications && bunx nativefier https://www.twitch.tv && mv Twitch-darwin-arm64 Twitch`
 - [Slack](https://slack.com): Login to workspaces and [add API token (Stream Deck)](https://github.com/ellreka/streamdeck-slack-status#setup) for the wanted workspaces
+- [Screenflow 7.3.2](https://www.telestream.net/download-files/screenflow/7-3/ScreenFlow-7.3.2.dmg): Download and install
 - [Warp](https://www.warp.dev)
   - Keyboard Shortcuts:
     - Clear `Move Cursor End Within an Executing Command`
