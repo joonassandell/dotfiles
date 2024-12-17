@@ -1,7 +1,5 @@
 [user]
 	name = Joonas Sandell
 	email = me@joonassandell.com
-[commit]
-	template = /Users/joonassandell/.stCommitMsg
 [init]
   defaultBranch = main

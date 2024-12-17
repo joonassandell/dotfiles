@@ -27,10 +27,6 @@
     "command": "aichat.newchataction"
   },
   {
-    "key": "ctrl+shift+l",
-    "command": "aichat.close-sidebar"
-  },
-  {
     "key": "ctrl+shift+up",
     "command": "editor.action.insertCursorAbove",
     "when": "editorTextFocus"
@@ -39,5 +35,10 @@
     "key": "ctrl+shift+down",
     "command": "editor.action.insertCursorBelow",
     "when": "editorTextFocus"
+  },
+  {
+    "key": "shift+cmd+g",
+    "command": "workbench.view.scm",
+    "when": "workbench.scm.active"
   }
 ]
