@@ -52,7 +52,9 @@ Perform manual configurations after completing the setup especially if setting u
   - Finder sidebar: Add essential directories and remove Recents etc.
   - Install `Operator Mono` and other typefaces from NAS
   - If the keyboard layout is not recognized correctly: Run `sudo open /System/Library/CoreServices/KeyboardSetupAssistant.app/Contents/MacOS/KeyboardSetupAssistant` and edit Keyboard → Text Input → Input sources again to `Finnish and U.S.`
-- [One Password 6](https://c.1password.com/dist/1P/mac4/1Password-6.8.9.pkg): Install and sync to `~/Drive/1Password`
+- [One Password 6](https://c.1password.com/dist/1P/mac4/1Password-6.8.9.pkg)
+  - Install and sync to `~/Drive/1Password`
+  - Updates → Uncheck `Automatically check for updates`
 - [Brave](https://brave.com)
   - Sync and set as the default browser
   - Install [SoundCloud](https://soundcloud.com) web app
@@ -61,7 +63,7 @@ Perform manual configurations after completing the setup especially if setting u
   - Import Stream Deck profiles from `~/Joonas Sandell/Apps/Stream Deck`
   - Add the plugins and icon packs from [Marketplace](https://marketplace.elgato.com/stream-deck)
 - [Camera Hub](https://www.elgato.com/us/en/s/downloads)
-  - Settings → Snapshop Location → NAS
+  - Settings → Snapshop Location → `~/Joonas Sandell/Photos/Snapshots`
   - Check [System Setting](https://help.elgato.com/hc/en-us/articles/30069817477777-Elgato-Camera-Hub-How-to-enable-Virtual-Camera-on-macOS-15-Sequoia): General → Camera Extenions → `Elgato Camera Hub`
   - Possibly uninstall the installed `DisplayLink Manager`
 - [CleanShot X](https://cleanshot.com)
