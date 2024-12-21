@@ -97,8 +97,6 @@ Perform manual configurations after completing the setup especially if setting u
     - Window Opacity → `60` and Window Blur Radius → `64`
     - Terminal font → `Operator Mono Lig` with Font size `15` and Line height `1.2`
     - Check `Focus follows mouse`
-  - Privacy
-    - Check `Secret redaction`
 
 There are probably essential settings that are missing from this guide so do whatever is necessary.
 
