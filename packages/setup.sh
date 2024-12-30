@@ -20,3 +20,7 @@ nvm install --lts
 nvm install node
 nvm alias default 'lts/*'
 success "Finished installing node packages"
+
+# info "Installing packages from the App Store..."
+# mas install 1494023538 # Plash (https://apps.apple.com/us/app/plash/id1494023538)
+# success "Finished installing packages from the App Store."
