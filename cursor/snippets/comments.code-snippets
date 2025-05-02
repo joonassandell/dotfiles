@@ -1,6 +1,6 @@
 {
   "Major comment heading": {
-    "scope": "javascript,typescript,typescriptreact,scss,php",
+    "scope": "javascript,typescript,typescriptreact,scss,css,php",
     "prefix": "***",
     "body": [
       "/* =======================================",
@@ -9,7 +9,7 @@
     ]
   },
   "Minor comment heading": {
-    "scope": "javascript,typescript,typescriptreact,scss,php",
+    "scope": "javascript,typescript,typescriptreact,scss,css,php",
     "prefix": "**",
     "body": [
       "/* ======",
@@ -18,7 +18,7 @@
     ]
   },
   "Block comment": {
-    "scope": "javascript,typescript,typescriptreact,scss,php",
+    "scope": "javascript,typescript,typescriptreact,scss,css,php",
     "prefix": "*",
     "body": [
       "/**",
