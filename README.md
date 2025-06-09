@@ -79,7 +79,7 @@ Perform manual configurations after completing the setup especially if setting u
   - Configure Accounts
   - General → Default Source Folder → `~/Repositories`
   - Integration → Terminal Client → `Warp`
-- [Twitch](https://twitch.tv): Create a standalone app `cd /Applications && bunx nativefier https://www.twitch.tv && mv Twitch-darwin-arm64 Twitch`
+- [Twitch](https://twitch.tv): Create a standalone app `cd /Applications && bunx nativefier https://www.twitch.tv && mv Twitch-darwin-arm64/Twitch.app ./Twitch.app && rm -rf Twitch-darwin-arm64`
 - [Slack](https://slack.com): Login to workspaces and [add API token (Stream Deck)](https://github.com/ellreka/streamdeck-slack-status#setup) for the wanted workspaces
 - [Screenflow 7](https://www.telestream.net/download-files/screenflow/7-3/ScreenFlow-7.3.2.dmg): Download and install
 - [Warp](https://www.warp.dev)
