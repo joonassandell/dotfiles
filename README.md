@@ -46,6 +46,7 @@ Perform manual configurations after completing the setup especially if setting u
   - Spotlight → Uncheck `Show Spotligh search` and `Show Finder search window`
   - Launchpad & Dock → Uncheck `Turn Dock hiding on/off`
   - Screenshots → Uncheck all the shortcuts
+  - Input Sources → Uncheck all the shortcuts
 - System Settings and related
   - Configure Lock Screen, Screen Saver, Background, Mouse Tracking/Scrolling speed and Hot corners
   - Accessibility → Zoom → Check `Use scroll gesture with modifier keys to zoom`
