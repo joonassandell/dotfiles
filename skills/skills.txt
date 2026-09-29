@@ -1,0 +1,3 @@
+JuliusBrussee/caveman caveman
+schpet/linear-cli linear-cli
+vercel-labs/skills find-skills
