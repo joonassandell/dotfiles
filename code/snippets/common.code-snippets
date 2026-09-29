@@ -1,0 +1,10 @@
+{
+	"Classname with cn()": {
+		"scope": "javascript,typescript,typescriptreact",
+		"prefix": "cn",
+		"body": [
+			"className={cn(\"$1\")}",
+			"$2"
+		]
+	}
+}

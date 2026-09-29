@@ -41,4 +41,8 @@
     "command": "workbench.view.scm",
     "when": "workbench.scm.active"
   }
+  // {
+  //   "key": "cmd+i",
+  //   "command": "composerMode.agent"
+  // }
 ]

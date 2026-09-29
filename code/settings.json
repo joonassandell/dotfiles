@@ -1,22 +1,10 @@
 {
   "auto-close-tag.disableOnLanguage": ["typescript"],
-  "beautify.config": {
-    "css": {
-      "indent_size": 2,
-      "selector_separator_newline": true
-    },
-    "html": {
-      "indent_size": 2
-    }
-  },
-  "beautify.language": {
-    "css": ["css", "less", "scss"],
-    "html": ["htm", "html"]
-  },
   "editor.accessibilitySupport": "off",
   "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": "explicit"
+    "source.fixAll.eslint": "explicit",
   },
+  "explorer.compactFolders": false,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.fontFamily": "Operator Mono Lig, Fira Code, Menlo, Monaco, 'Courier New', monospace",
   "editor.fontLigatures": true,
@@ -28,31 +16,30 @@
   "editor.minimap.enabled": true,
   "editor.multiCursorModifier": "ctrlCmd",
   "editor.tokenColorCustomizations": {
-    "comments": "#818998"
+    "comments": "#818998",
   },
   "editor.quickSuggestions": {
     "comments": false,
     "other": true,
-    "strings": true
+    "strings": true,
   },
   "editor.rulers": [80],
   "editor.renderControlCharacters": true,
   "editor.renderWhitespace": "all",
+  "editor.wordWrap": "on",
   "eslint.codeAction.showDocumentation": {
-    "enable": false
+    "enable": false,
   },
   "eslint.debug": true,
   "eslint.enable": true,
   "eslint.format.enable": true,
-  "eslint.run": "onSave",
-  "eslint.validate": ["html", "handlebars", "json", "jsonc"],
   "explorer.autoReveal": false,
   "explorer.confirmDelete": false,
   "explorer.confirmDragAndDrop": false,
   "explorer.openEditors.visible": 1,
   "files.associations": {
     "*.ts": "typescript",
-    "*.twig": "twig"
+    "*.twig": "twig",
   },
   "files.exclude": {
     "**/.netlify": true,
@@ -61,10 +48,10 @@
     "**/~": true,
     "**/dist/*": false,
     "**/node_modules": false,
-    "**/out": true
+    "**/out": true,
   },
   "files.watcherExclude": {
-    "**/wp-content/plugins/**": true
+    "**/wp-content/plugins/**": true,
   },
   "git.confirmSync": false,
   "git.enableSmartCommit": true,
@@ -90,17 +77,17 @@
       // },
       {
         "type": "at-rule",
-        "hasBlock": false
+        "hasBlock": false,
       },
       "declarations",
       "rules",
       {
         "type": "at-rule",
-        "hasBlock": true
-      }
+        "hasBlock": true,
+      },
     ],
     "properties-order": "alphabetical",
-    "unspecified-properties-position": "bottom"
+    "unspecified-properties-position": "bottom",
   },
   "security.workspace.trust.untrustedFiles": "open",
   "scss.lint.unknownAtRules": "ignore",
@@ -113,24 +100,31 @@
     "**/tests": true,
     "**/vendor/**": true,
     "**/web/wp/**": true,
-    "**/wp-content/plugins/**": true
+    "**/wp-content/plugins/**": true,
   },
   "search.useIgnoreFiles": false,
-  "tailwindCSS.validate": false,
+  "security.promptForLocalFileProtocolHandling": false,
+  "tailwindCSS.validate": true,
+  "tailwindCSS.classFunctions": ["cva"],
   "tailwind-fold.autoFold": false,
   "tailwind-fold.foldedText": "…",
   "typescript.tsserver.experimental.enableProjectDiagnostics": true,
   "typescript.updateImportsOnFileMove.enabled": "always",
-  "twig-language-2.formatting": false,
-  "twig-language-2.tabSize": 2,
-  "twig-language.formatting": false,
-  "twig-language.tabSize": 2,
   "update.mode": "none",
   "workbench.colorTheme": "Atom One Dark",
   "workbench.editor.enablePreviewFromQuickOpen": false,
   "workbench.iconTheme": null,
-  "workbench.sideBar.location": "left",
-  "workbench.statusBar.visible": true,
+  "workbench.editorAssociations": {
+    "*.copilotmd": "vscode.markdown.preview.editor",
+    "*.svg": "default",
+  },
+  "chat.agent.maxRequests": 999,
+  "github.copilot.enable": {
+    "*": false,
+  },
+  "claudeCode.preferredLocation": "sidebar",
+  "claudeCode.hideOnboarding": true,
+  "claudeCode.focusView": true,
   "window.commandCenter": false,
-  "editor.wordWrap": "on"
+  "workbench.activityBar.location": "top",
 }

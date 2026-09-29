@@ -55,8 +55,8 @@ alias show-ssh-keys="ssh-add -l"
 alias simple-server="python -m SimpleHTTPServer"
 alias simulator="open /Applications/Xcode.app/Contents/Developer/Applications/Simulator.app"
 alias top="bunx vtop"
-alias zsh-open-secret="cursor ~/Joonas\ Sandell/Apps/macOS/.zshrc.secret"
-alias zsh-open="cursor ~/Repositories/dotfiles/zsh/.zshrc"
+alias zsh-open-secret="code ~/Joonas\ Sandell/Apps/macOS/.zshrc.secret"
+alias zsh-open="code ~/Repositories/dotfiles/zsh/.zshrc"
 
 # Npm aliases
 alias npm-check-updates="npx npm-check-updates"
