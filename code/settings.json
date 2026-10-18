@@ -2,7 +2,7 @@
   "auto-close-tag.disableOnLanguage": ["typescript"],
   "editor.accessibilitySupport": "off",
   "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": "explicit",
+    "source.fixAll.eslint": "explicit"
   },
   "explorer.compactFolders": false,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
@@ -16,19 +16,19 @@
   "editor.minimap.enabled": true,
   "editor.multiCursorModifier": "ctrlCmd",
   "editor.tokenColorCustomizations": {
-    "comments": "#818998",
+    "comments": "#818998"
   },
   "editor.quickSuggestions": {
     "comments": false,
     "other": true,
-    "strings": true,
+    "strings": true
   },
   "editor.rulers": [80],
   "editor.renderControlCharacters": true,
   "editor.renderWhitespace": "all",
   "editor.wordWrap": "on",
   "eslint.codeAction.showDocumentation": {
-    "enable": false,
+    "enable": false
   },
   "eslint.debug": true,
   "eslint.enable": true,
@@ -39,7 +39,7 @@
   "explorer.openEditors.visible": 1,
   "files.associations": {
     "*.ts": "typescript",
-    "*.twig": "twig",
+    "*.twig": "twig"
   },
   "files.exclude": {
     "**/.netlify": true,
@@ -48,10 +48,10 @@
     "**/~": true,
     "**/dist/*": false,
     "**/node_modules": false,
-    "**/out": true,
+    "**/out": true
   },
   "files.watcherExclude": {
-    "**/wp-content/plugins/**": true,
+    "**/wp-content/plugins/**": true
   },
   "git.confirmSync": false,
   "git.enableSmartCommit": true,
@@ -77,17 +77,17 @@
       // },
       {
         "type": "at-rule",
-        "hasBlock": false,
+        "hasBlock": false
       },
       "declarations",
       "rules",
       {
         "type": "at-rule",
-        "hasBlock": true,
-      },
+        "hasBlock": true
+      }
     ],
     "properties-order": "alphabetical",
-    "unspecified-properties-position": "bottom",
+    "unspecified-properties-position": "bottom"
   },
   "security.workspace.trust.untrustedFiles": "open",
   "scss.lint.unknownAtRules": "ignore",
@@ -100,7 +100,7 @@
     "**/tests": true,
     "**/vendor/**": true,
     "**/web/wp/**": true,
-    "**/wp-content/plugins/**": true,
+    "**/wp-content/plugins/**": true
   },
   "search.useIgnoreFiles": false,
   "security.promptForLocalFileProtocolHandling": false,
@@ -116,15 +116,16 @@
   "workbench.iconTheme": null,
   "workbench.editorAssociations": {
     "*.copilotmd": "vscode.markdown.preview.editor",
-    "*.svg": "default",
+    "*.svg": "default"
   },
   "chat.agent.maxRequests": 999,
   "github.copilot.enable": {
-    "*": false,
+    "*": false
   },
   "claudeCode.preferredLocation": "sidebar",
   "claudeCode.hideOnboarding": true,
   "claudeCode.focusView": true,
   "window.commandCenter": false,
   "workbench.activityBar.location": "top",
+  "workbench.experimental.modernUI": false
 }
