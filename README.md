@@ -67,8 +67,10 @@ Perform manual configurations after completing the setup especially if setting u
   - Settings → Snapshop Location → `~/Joonas Sandell/Photos/Snapshots`
   - Check [System Setting](https://help.elgato.com/hc/en-us/articles/30069817477777-Elgato-Camera-Hub-How-to-enable-Virtual-Camera-on-macOS-15-Sequoia): General → Camera Extenions → `Elgato Camera Hub`
   - Possibly uninstall the installed `DisplayLink Manager`
-- [CleanShot X](https://cleanshot.com)
+- [CleanShot X 4.8.11](https://updates.getcleanshot.com/v3/CleanShot-X-4.8.11.dmg)
+  - Download and install, the license covers versions up to `4.8.11` atm.
   - [Change the license](https://licenses.maketheweb.io)
+  - Settings → About → Uncheck `Automatically check for updates`
   - General → Check `Start at login`
   - General → Export location → `~/Joonas Sandell/Photos/Screenshots`
   - Quick Access → Uncheck `Move to active screen`
