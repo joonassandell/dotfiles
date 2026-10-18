@@ -22,9 +22,14 @@ info "Updating Brewfile..."
 TAPS=$(entries tap)
 BREWS=$(entries brew)
 CASKS=$(entries cask)
-OTHER=$(grep -vE "^(tap|brew|cask) '|^$" "$BREWFILE")
+OTHER=$(grep -vE "^(# *)?(tap|brew|cask) '|^$" "$BREWFILE")
+
+# Commented out entries, e.g. `# cask 'ngrok'`, are never added back
+COMMENTED=$(grep -E "^# *(tap|brew|cask) '" "$BREWFILE")
+IGNORED=$(sed -nE "s/^# *(tap|brew|cask) '([^']*)'.*/\2/p" <<< "$COMMENTED")
 
 for tap in $(brew tap | grep -v "^homebrew/"); do
+  contains "$tap" "$IGNORED" && continue
   if ! grep -qxF "$tap" <<< "$TAPS"; then
     TAPS=$(printf "%s\n%s" "$TAPS" "$tap")
     substep_success "Added tap $tap"
@@ -32,13 +37,18 @@ for tap in $(brew tap | grep -v "^homebrew/"); do
 done
 
 for formula in $(brew leaves --installed-on-request); do
+  contains "$formula" "$IGNORED" && continue
   if ! contains "$formula" "$BREWS"; then
     BREWS=$(printf "%s\n%s" "$BREWS" "$formula")
     substep_success "Added brew $formula"
   fi
 done
 
+CASKROOM=$(brew --caskroom)
 for cask in $(brew list --cask -1); do
+  contains "$cask" "$IGNORED" && continue
+  # Skip old cask names that brew symlinks to the renamed cask, e.g. docker → docker-desktop
+  [ -L "$CASKROOM/$cask" ] && continue
   if ! contains "$cask" "$CASKS"; then
     CASKS=$(printf "%s\n%s" "$CASKS" "$cask")
     substep_success "Added cask $cask"
@@ -64,6 +74,7 @@ section() {
   section tap "$TAPS"; echo
   section brew "$BREWS"; echo
   section cask "$CASKS"
+  [ -n "$COMMENTED" ] && printf "\n%s\n" "$(LC_ALL=C sort -u <<< "$COMMENTED")"
 } > "$BREWFILE"
 
 success "Finished updating Brewfile"
