@@ -1,0 +1,14 @@
+---
+"workspace:increase_font_size": cmd-+
+"terminal:executing_command_move_cursor_home": none
+"workspace:activate_next_tab": alt-cmd-right
+"editor_view:move_to_line_start": cmd-left
+"terminal:executing_command_move_cursor_end": none
+"pane_group:navigate_left": none
+"editor_view:home": none
+"pane_group:navigate_prev": alt-shift-cmd-right
+"pane_group:navigate_right": none
+"editor_view:end": none
+"editor_view:move_to_line_end": cmd-right
+"workspace:activate_prev_tab": alt-cmd-left
+"pane_group:navigate_next": alt-shift-cmd-left

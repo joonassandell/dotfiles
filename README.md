@@ -85,23 +85,6 @@ Perform manual configurations after completing the setup especially if setting u
 - [Twitch](https://twitch.tv): Create a standalone app `cd /Applications && bunx nativefier https://www.twitch.tv && mv Twitch-darwin-arm64/Twitch.app ./Twitch.app && rm -rf Twitch-darwin-arm64`
 - [Slack](https://slack.com): Login to workspaces and [add API token (Stream Deck)](https://github.com/ellreka/streamdeck-slack-status#setup) for the wanted workspaces
 - [Screenflow 7](https://www.telestream.net/download-files/screenflow/7-3/ScreenFlow-7.3.2.dmg): Download and install
-- [Warp](https://www.warp.dev)
-  - Keyboard Shortcuts:
-    - Clear `Move Cursor End Within an Executing Command`
-    - Clear `Move Cursor Home Within an Executing Command`
-    - Activate Next Tab → `⌥ ⌘ →`
-    - Activate Previous Tab → `⌥ ⌘ ←`
-    - Activate Next Pane → `⌘ ⇧ ⌥ →`
-    - Activate Previous Pane → `⌘ ⇧ ⌥ ←`
-    - Increase Font Size → `⌘ +`
-    - Move to Start of Line → `⌘ ←`
-    - Move to End of Line → `⌘ →`
-  - Appearance
-    - Window Opacity → `60` and Window Blur Radius → `64`
-    - Terminal font → `Operator Mono Lig` with Font size `15` and Line height `1.2`
-    - Check `Focus follows mouse`
-  - Features
-    - Working directory for new sessions → `~/Repositories`
 
 There are probably essential settings that are missing from this guide so do whatever is necessary.
 
