@@ -10,6 +10,9 @@ ZSH_DISABLE_COMPFIX="true"
 # Add '~/bin' to the '$PATH'
 export PATH="$HOME/bin:$PATH"
 
+# Add '~/.local/bin' to the '$PATH', e.g. Hermes Agent
+export PATH="$HOME/.local/bin:$PATH"
+
 # Path to oh-my-zsh installation
 export ZSH=$HOME/.oh-my-zsh
 
@@ -39,6 +42,7 @@ alias csv-table="mlr --icsv --opprint cat"
 alias dotfiles="cursor ~/Repositories/dotfiles"
 alias git-log="git log --oneline --decorate --all --graph"
 alias headers="httpstat"
+alias hermes="HERDR_AGENT=hermes command hermes" # Lets herdr detect the Hermes desktop launcher
 alias hosts="sudo cursor /etc/hosts"
 alias hw-info="networksetup -listallhardwareports"
 alias ip-local="ifconfig | grep broadcast"
@@ -85,12 +89,12 @@ copy-to-clipboard() {
   fi
 }
 
-# React Scan (https://react-scan.com)
-react-scan() {
-  bunx react-scan@latest $1
+# https://react.doctor
+react-doctor() {
+  bunx react-doctor@latest $1
 }
 
-# NVM (https://github.com/nvm-sh/nvm)
+# https://github.com/nvm-sh/nvm
 export NVM_DIR="$HOME/.nvm"
 [ -s "$HOMEBREW_PREFIX/opt/nvm/nvm.sh" ] && \. "$HOMEBREW_PREFIX/opt/nvm/nvm.sh"
 [ -s "$HOMEBREW_PREFIX/opt/nvm/etc/bash_completion.d/nvm" ] && \. "$HOMEBREW_PREFIX/opt/nvm/etc/bash_completion.d/nvm"
