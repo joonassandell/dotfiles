@@ -15,7 +15,6 @@ info "Installing node packages..."
 mkdir -p $HOME/.nvm
 export NVM_DIR="$HOME/.nvm"
 [ -s "$HOMEBREW_PREFIX/opt/nvm/nvm.sh" ] && \. "$HOMEBREW_PREFIX/opt/nvm/nvm.sh"
-nvm install 14.16.0
 nvm install --lts
 nvm install node
 nvm alias default 'lts/*'
