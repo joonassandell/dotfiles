@@ -1,3 +1,7 @@
 JuliusBrussee/caveman caveman
+mattpocock/skills code-review
+mattpocock/skills grill-me
+mattpocock/skills pr
+mattpocock/skills setup-matt-pocock-skills
 schpet/linear-cli linear-cli
 vercel-labs/skills find-skills

@@ -7,7 +7,7 @@ cd "$DIR"
 
 SKILLS_FILE="skills.txt"
 LOCK_FILE="$HOME/.agents/.skill-lock.json"
-AGENT="claude-code"
+AGENTS="claude-code codex"
 
 if ! command -v bun &> /dev/null; then
   error "Could not find bun command. Install packages first."
@@ -30,7 +30,7 @@ while read -r source skill || [ -n "$source" ]; do
     continue
   fi
 
-  if bunx skills add "$source" --skill "$skill" --global --yes --agent "$AGENT" > /dev/null; then
+  if bunx skills add "$source" --skill "$skill" --global --yes --agent $AGENTS > /dev/null; then
     substep_success "Installed $skill"
   else
     substep_error "Failed to install $skill"
