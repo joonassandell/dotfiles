@@ -23,11 +23,16 @@ for extension in $INSTALLED_EXTENSIONS; do
   fi
 done
 
-# Extensions in the list that are not installed are kept, only reported
+# Remove extensions in the list that are not installed
+KEPT_EXTENSIONS=$(mktemp)
 while read -r extension || [ -n "$extension" ]; do
-  [[ -z "$extension" || "$extension" == \#* ]] && continue
-  grep -qixF "$extension" <<< "$INSTALLED_EXTENSIONS" || substep_info "$extension not installed"
+  if [[ -z "$extension" || "$extension" == \#* ]] || grep -qixF "$extension" <<< "$INSTALLED_EXTENSIONS"; then
+    echo "$extension" >> "$KEPT_EXTENSIONS"
+  else
+    substep_success "Removed $extension"
+  fi
 done < "$EXTENSIONS_FILE"
+mv "$KEPT_EXTENSIONS" "$EXTENSIONS_FILE"
 
 LC_ALL=C sort -u -o "$EXTENSIONS_FILE" "$EXTENSIONS_FILE"
 
