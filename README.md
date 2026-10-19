@@ -53,6 +53,7 @@ Perform manual configurations after completing the setup especially if setting u
   - Finder sidebar: Add essential directories and remove Recents etc.
   - Install `Operator Mono` and other typefaces from NAS
   - If the keyboard layout is not recognized correctly: Run `sudo open /System/Library/CoreServices/KeyboardSetupAssistant.app/Contents/MacOS/KeyboardSetupAssistant` and edit Keyboard → Text Input → Input sources again to `Finnish and U.S.`
+  - Remote Login (SSH): System Settings → General → Sharing → `Remote Login`, e.g. for connecting over Tailscale. Can't be scripted as `systemsetup` requires Full Disk Access for the terminal
 - [One Password 6](https://c.1password.com/dist/1P/mac4/1Password-6.8.9.pkg)
   - Install and sync to `~/Drive/1Password`
   - Updates → Uncheck `Automatically check for updates`
