@@ -10,6 +10,8 @@ DESTINATION="$(realpath ~)"
 
 info "Configuring VS Code..."
 
+mkdir -p "$DESTINATION/Library/Application Support/Code/User"
+
 symlink "$SOURCE/keybindings.json" "$DESTINATION/Library/Application Support/Code/User/keybindings.json"
 symlink "$SOURCE/settings.json" "$DESTINATION/Library/Application Support/Code/User/settings.json"
 symlink "$SOURCE/snippets" "$DESTINATION/Library/Application Support/Code/User/snippets"
