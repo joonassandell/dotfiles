@@ -1,5 +1,4 @@
 {
-  "auto-close-tag.disableOnLanguage": ["typescript"],
   "editor.accessibilitySupport": "off",
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": "explicit"
@@ -13,6 +12,7 @@
   "editor.formatOnSave": true,
   "editor.glyphMargin": false,
   "editor.insertSpaces": true,
+  "editor.linkedEditing": true,
   "editor.minimap.enabled": true,
   "editor.multiCursorModifier": "ctrlCmd",
   "editor.tokenColorCustomizations": {
@@ -38,8 +38,7 @@
   "explorer.confirmDragAndDrop": false,
   "explorer.openEditors.visible": 1,
   "files.associations": {
-    "*.ts": "typescript",
-    "*.twig": "twig"
+    "*.ts": "typescript"
   },
   "files.exclude": {
     "**/.netlify": true,
@@ -115,16 +114,8 @@
   "workbench.editor.enablePreviewFromQuickOpen": false,
   "workbench.iconTheme": null,
   "workbench.editorAssociations": {
-    "*.copilotmd": "vscode.markdown.preview.editor",
     "*.svg": "default"
   },
-  "chat.agent.maxRequests": 999,
-  "github.copilot.enable": {
-    "*": false
-  },
-  "claudeCode.preferredLocation": "sidebar",
-  "claudeCode.hideOnboarding": true,
-  "claudeCode.focusView": true,
   "window.commandCenter": false,
   "workbench.activityBar.location": "top",
   "workbench.experimental.modernUI": false

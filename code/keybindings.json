@@ -23,10 +23,6 @@
     "when": "editorTextFocus"
   },
   {
-    "key": "ctrl+l",
-    "command": "aichat.newchataction"
-  },
-  {
     "key": "ctrl+shift+up",
     "command": "editor.action.insertCursorAbove",
     "when": "editorTextFocus"
@@ -41,8 +37,4 @@
     "command": "workbench.view.scm",
     "when": "workbench.scm.active"
   }
-  // {
-  //   "key": "cmd+i",
-  //   "command": "composerMode.agent"
-  // }
 ]
