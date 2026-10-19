@@ -1,10 +1,4 @@
 JuliusBrussee/caveman caveman
-mattpocock/skills code-review
-mattpocock/skills grill-me
-mattpocock/skills pr
-mattpocock/skills setup-matt-pocock-skills
-schpet/linear-cli linear-cli
-vercel-labs/skills find-skills
 emilkowalski/skills animate
 emilkowalski/skills animation-performance
 emilkowalski/skills animation-vocabulary
@@ -15,3 +9,10 @@ emilkowalski/skills find-animation-opportunities
 emilkowalski/skills improve-animations
 emilkowalski/skills mobile-native
 emilkowalski/skills review-animations
+mattpocock/skills code-review
+mattpocock/skills grill-me
+mattpocock/skills pr
+mattpocock/skills setup-matt-pocock-skills
+schpet/linear-cli linear-cli
+vercel-labs/skills find-skills
+vojtaholik/good-css good-css
