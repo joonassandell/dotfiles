@@ -33,7 +33,7 @@ source $ZSH/oh-my-zsh.sh
 # =======================================
 
 # Load additional dotfiles from NAS
-source ~/Joonas\ Sandell/Apps/MacOS/.zshrc.secret
+source ~/Joonas\ Sandell/Apps/macOS/.zshrc.secret
 
 # Various aliases
 alias cat="bat"

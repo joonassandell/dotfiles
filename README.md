@@ -77,7 +77,6 @@ Perform manual configurations after completing the setup especially if setting u
   - Quick Access → Uncheck `Move to active screen`
   - Screenshots → Uncheck `Scale Retina screenshots to 1x`
   - Shortcuts → Capture Area & Copy to Clipboard → `^ ⇧ ⌘ 4`
-- [Cursor](https://cursor.com): Install extensions from `cursor/profile/Default.code-profile` in Cursor Profiles
 - [Sequel Pro](https://sequelpro.com): Symlink favorites `ln -s ~/Joonas\ Sandell/Apps/Sequel\ Pro ~/Library/Application\ Support/Sequel\ Pro`
 - [Fork](https://git-fork.com)
   - Configure Accounts

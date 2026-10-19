@@ -119,7 +119,7 @@ defaults write com.apple.dock autohide-time-modifier -float 0.5s
 defaults write com.apple.dock static-only -bool true
 
 # =======================================
-# Always-on server
+# Various
 # =======================================
 
 # Never sleep on power adapter
