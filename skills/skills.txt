@@ -10,7 +10,10 @@ emilkowalski/skills improve-animations
 emilkowalski/skills mobile-native
 emilkowalski/skills review-animations
 mattpocock/skills code-review
+mattpocock/skills domain-modeling
 mattpocock/skills grill-me
+mattpocock/skills grill-with-docs
+mattpocock/skills grilling
 mattpocock/skills pr
 mattpocock/skills setup-matt-pocock-skills
 schpet/linear-cli linear-cli
