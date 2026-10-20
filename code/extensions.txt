@@ -1,12 +1,12 @@
 akamud.vscode-javascript-snippet-pack
 akamud.vscode-theme-onedark
+antfu.file-nesting
 bradlc.vscode-tailwindcss
 csstools.postcss
 dbaeumer.vscode-eslint
 dsznajder.es7-react-js-snippets
 editorconfig.editorconfig
 esbenp.prettier-vscode
-formulahendry.auto-rename-tag
 github.vscode-github-actions
 mikestead.dotenv
 mrmlnc.vscode-postcss-sorting
