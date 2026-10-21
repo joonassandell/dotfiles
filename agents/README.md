@@ -6,7 +6,7 @@ My global setup for coding agents (Claude Code, Codex, Hermes). The rules and my
 
 1. **Set up the repo (only if the project needs it):** `/setup-matt-pocock-skills`. Run it once per repo, before the first use of the other engineering skills. It asks where issues live (GitHub, GitLab, local markdown or other), and writes `docs/agents/` and an `## Agent skills` block into the repo's `AGENTS.md` or `CLAUDE.md`. Skip it for small or personal projects. `/code-review` needs it to find the spec from an issue.
 2. **Start the work:** for a Linear issue run `linear issue start <ID>` and accept the branch name Linear generates. Otherwise branch from `<base>` with `<prefix>/<short-kebab-name>`.
-3. **Shape the idea:** `/grill-me` by default. It writes no files. Use `/grill-with-docs` instead in projects that keep domain docs, since it also writes `GLOSSARY.md` and ADRs as it goes. Which one fits depends on the project. `/ask-matt` suggests which skill fits when unsure.
+3. **Shape the idea:** `/grill-me` by default. It writes no files. Use `/grill-with-docs` instead in projects that keep domain docs, since it also writes `GLOSSARY.md` and ADRs as it goes. Which one fits depends on the project.
 4. **Build:** commit atomically as Conventional Commits.
 5. **Review:** `/code-review <base>`. It reviews the diff on two axes, Standards (does it follow the repo's documented standards) and Spec (does it do what the issue or spec asked), in parallel sub-agents. The axes are reported separately and never merged into one verdict.
 6. **Write the PR body:** `/pr`. Summary as a small visual, Evidence that it works, and Merge Danger (one-way or two-way door, and the blast radius).
