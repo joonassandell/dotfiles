@@ -1,6 +1,5 @@
 akamud.vscode-javascript-snippet-pack
 akamud.vscode-theme-onedark
-antfu.file-nesting
 bradlc.vscode-tailwindcss
 csstools.postcss
 dbaeumer.vscode-eslint
