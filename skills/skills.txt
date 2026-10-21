@@ -1,4 +1,5 @@
 JuliusBrussee/caveman caveman
+coreyhaines31/marketingskills copywriting
 emilkowalski/skills animate
 emilkowalski/skills animation-performance
 emilkowalski/skills animation-vocabulary
@@ -16,6 +17,7 @@ mattpocock/skills grill-with-docs
 mattpocock/skills grilling
 mattpocock/skills pr
 mattpocock/skills setup-matt-pocock-skills
+miqdadbadjuber/anti-slop antislop-copywriting
 schpet/linear-cli linear-cli
 vercel-labs/skills find-skills
 vojtaholik/good-css good-css
