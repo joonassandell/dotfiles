@@ -42,7 +42,6 @@ alias csv-table="mlr --icsv --opprint cat"
 alias dotfiles="cursor ~/Repositories/dotfiles"
 alias git-log="git log --oneline --decorate --all --graph"
 alias headers="httpstat"
-alias hermes="HERDR_AGENT=hermes command hermes" # Lets herdr detect the Hermes desktop launcher
 alias hosts="sudo cursor /etc/hosts"
 alias hw-info="networksetup -listallhardwareports"
 alias ip-local="ifconfig | grep broadcast"
@@ -78,6 +77,10 @@ alias bun-reinstall-delete-lock="sudo rm -rf node_modules/ && rm -rf bun.lockb &
 alias bun-reinstall="sudo rm -rf node_modules/ && bun install"
 alias bun-upgrade-interactive="bunx npm-check-updates -i"
 alias bun-upgrade="bunx npm-check-updates -u"
+
+# Hermes aliases
+alias hermes="HERDR_AGENT=hermes command hermes" # Lets herdr detect the Hermes desktop launcher
+alias hermes-webui-restart="HERMES_WEBUI_PYTHON=/opt/homebrew/bin/python3 ~/Repositories/hermes-webui/ctl.sh restart --no-browser" # Run after Hermes updates; the WebUI needs Python 3.11+
 
 # Copy to clipboard
 copy-to-clipboard() {
