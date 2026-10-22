@@ -16,12 +16,15 @@ should_dim_inactive_panes = false
 focus_pane_on_hover = true
 
 [appearance.window]
-override_opacity = 60
+override_opacity = 55
 override_blur = 64
 zoom_level = 90
 
 [appearance.tabs]
 show_indicators_button = true
+
+[appearance.icon]
+app_icon = "default"
 
 [privacy]
 telemetry_enabled = false
@@ -142,3 +145,9 @@ split_pane = { custom_dir = "", mode = "previous_dir" }
 
 [general]
 show_warning_before_quitting = false
+
+[terminal]
+
+[terminal.input]
+input_box_type_setting = "universal"
+honor_ps1 = false
