@@ -46,32 +46,32 @@ function run() {
 }
 
 function showBoth() {
-// Usable area of the main screen (below the menu bar, beside the Dock),
-// shrunk by MARGIN on every outer edge. The windows touch in the middle.
-const screen = $.NSScreen.screens.objectAtIndex(0);
-const f = screen.frame, v = screen.visibleFrame;
-const X = Math.round(v.origin.x) + MARGIN;
-const Y = Math.round(f.size.height - (v.origin.y + v.size.height)) + MARGIN;
-const W = Math.round(v.size.width) - 2 * MARGIN;
-const H = Math.round(v.size.height) - 2 * MARGIN;
-const HALF = Math.floor(W / 2);
+  // Usable area of the main screen (below the menu bar, beside the Dock),
+  // shrunk by MARGIN on every outer edge. The windows touch in the middle.
+  const screen = $.NSScreen.screens.objectAtIndex(0);
+  const f = screen.frame, v = screen.visibleFrame;
+  const X = Math.round(v.origin.x) + MARGIN;
+  const Y = Math.round(f.size.height - (v.origin.y + v.size.height)) + MARGIN;
+  const W = Math.round(v.size.width) - 2 * MARGIN;
+  const H = Math.round(v.size.height) - 2 * MARGIN;
+  const HALF = Math.floor(W / 2);
 
-const se = Application('System Events');
+  const se = Application('System Events');
 
-// Opens the app, waits for its window, then sets position and size directly.
-function place(name, x) {
-  Application(name).activate();
-  const proc = se.processes.byName(name);
-  for (let i = 0; i < 30; i++) {
-    try { if (proc.windows.length > 0) break; } catch (e) {}
-    delay(0.1);
+  // Opens the app, waits for its window, then sets position and size directly.
+  function place(name, x) {
+    Application(name).activate();
+    const proc = se.processes.byName(name);
+    for (let i = 0; i < 30; i++) {
+      try { if (proc.windows.length > 0) break; } catch (e) {}
+      delay(0.1);
+    }
+    const win = proc.windows[0];
+    win.position = [x, Y];
+    win.size = [HALF, H];
   }
-  const win = proc.windows[0];
-  win.position = [x, Y];
-  win.size = [HALF, H];
-}
 
-place('Hermes', X);
-place('Warp', X + HALF);
+  place('Hermes', X);
+  place('Warp', X + HALF);
 }
 EOF
