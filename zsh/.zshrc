@@ -47,8 +47,8 @@ alias hw-info="networksetup -listallhardwareports"
 alias ip-local="ifconfig | grep broadcast"
 alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
 alias kill-port-3000="bunx kill-port 3000"
-alias ls="ls -a1F --color"
-alias lsl="ls -lahGF --color"
+alias ls="eza --all --oneline --group-directories-first --icons" # https://github.com/eza-community/eza/tree/main/man
+alias lsl="eza --all --oneline --group-directories-first --icons --long --header --mounts --git"
 alias matrix="bunx matrix-rain"
 alias preview="fzf --preview 'bat --color=always {}'"
 alias reload="clear && reset && source ~/.zshrc" # Run CMD+K to remove Wrap history
