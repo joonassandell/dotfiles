@@ -41,10 +41,9 @@ source ~/Joonas\ Sandell/Apps/macOS/.zshrc.secret
 alias cat="bat"
 alias csv-json="mlr --icsv --ojson tail" # Add -n2 to limit lines
 alias csv-table="mlr --icsv --opprint cat"
-alias dotfiles="cursor ~/Repositories/dotfiles"
 alias git-log="git log --oneline --decorate --all --graph"
 alias headers="httpstat"
-alias hosts="sudo cursor /etc/hosts"
+alias hosts="sudo code /etc/hosts"
 alias hw-info="networksetup -listallhardwareports"
 alias ip-local="ifconfig | grep broadcast"
 alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
@@ -85,7 +84,7 @@ alias hermes="HERDR_AGENT=hermes command hermes" # Lets herdr detect the Hermes 
 alias hermes-webui-restart="HERMES_WEBUI_PYTHON=/opt/homebrew/bin/python3 ~/Repositories/hermes-webui/ctl.sh restart --no-browser" # Run after Hermes updates; the WebUI needs Python 3.11+
 
 # Copy to clipboard
-copy-to-clipboard() {
+copy() {
   if [ -e "$1" ]; then
     cat "$1" | pbcopy
     echo "Contents of $1 copied to clipboard."
@@ -98,6 +97,7 @@ copy-to-clipboard() {
 react-doctor() {
   bunx react-doctor@latest $1
 }
+
 # Shift+Enter inserts a newline (Ghostty sends Alt+Enter, see ghostty/config.ghostty)
 shift-enter-newline() { LBUFFER+=$'\n' }
 zle -N shift-enter-newline
@@ -113,13 +113,12 @@ zle -N copy-selection-to-clipboard
 bindkey '^[^]' copy-selection-to-clipboard
 bindkey -M shift-select '^[^]' copy-selection-to-clipboard
 
-
 # https://github.com/nvm-sh/nvm
 export NVM_DIR="$HOME/.nvm"
 [ -s "$HOMEBREW_PREFIX/opt/nvm/nvm.sh" ] && \. "$HOMEBREW_PREFIX/opt/nvm/nvm.sh"
 [ -s "$HOMEBREW_PREFIX/opt/nvm/etc/bash_completion.d/nvm" ] && \. "$HOMEBREW_PREFIX/opt/nvm/etc/bash_completion.d/nvm"
 
-# Install the specified Node version when an .nvmrc is found (https://github.com/creationix/nvm#zsh)
+# Install the specified Node version when an .nvmrc is found
 autoload -U add-zsh-hook
 load-nvmrc() {
   local node_version="$(nvm version)"
@@ -141,7 +140,7 @@ load-nvmrc() {
 add-zsh-hook chpwd load-nvmrc
 load-nvmrc
 
-# Docker (https://www.docker.com)
+# https://www.docker.com
 export COMPOSE_INTERACTIVE_NO_CLI=1 # https://github.com/docker/compose/issues/5696
 
 # Bun completions
