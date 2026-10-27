@@ -25,6 +25,7 @@ brew 'pnpm'
 brew 'ripgrep'
 brew 'rjyo/moshi/moshi-hook'
 brew 'schpet/tap/linear'
+brew 'starship'
 brew 'zsh'
 
 cask 'affinity'

@@ -16,9 +16,6 @@ export PATH="$HOME/.local/bin:$PATH"
 # Path to oh-my-zsh installation
 export ZSH=$HOME/.oh-my-zsh
 
-# Theme
-ZSH_THEME="robbyrussell"
-
 # Plugins
 plugins=(
   docker
@@ -129,3 +126,6 @@ export COMPOSE_INTERACTIVE_NO_CLI=1 # https://github.com/docker/compose/issues/5
 
 # Bun completions
 [ -s "/Users/joonassandell/.bun/_bun" ] && source "/Users/joonassandell/.bun/_bun"
+
+# https://starship.rs
+eval "$(starship init zsh)"
