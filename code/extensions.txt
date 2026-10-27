@@ -2,10 +2,13 @@ akamud.vscode-javascript-snippet-pack
 akamud.vscode-theme-onedark
 bradlc.vscode-tailwindcss
 csstools.postcss
+dart-code.dart-code
+dart-code.flutter
 dbaeumer.vscode-eslint
 dsznajder.es7-react-js-snippets
 editorconfig.editorconfig
 esbenp.prettier-vscode
+felixangelov.bloc
 github.vscode-github-actions
 mikestead.dotenv
 mrmlnc.vscode-postcss-sorting
