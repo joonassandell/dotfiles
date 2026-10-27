@@ -1,0 +1,34 @@
+background = #0C1014
+background-opacity = 0.95
+background-blur = 20
+
+cursor-color = #FFFFFF
+cursor-style = bar
+
+font-family = Operator Mono Lig
+font-size = 17
+
+theme = Github Dark Default
+# theme = Argonaut
+# theme = Atom One Dark
+# theme = Ayu
+# theme = Dracula
+# theme = TokyoNight
+
+# window-padding-x = 12,12
+# window-padding-y = 12,12
+# window-padding-balance = true
+window-save-state = always
+
+working-directory = ~/Repositories
+
+# Shift+Enter sends Alt+Enter, which herdr forwards to zsh (see zsh/.zshrc)
+keybind = shift+enter=text:\x1b\r
+
+# Cmd+C also sends Alt+Ctrl+] so zsh can copy its own selection (see zsh/.zshrc).
+# unconsumed: keeps passing Cmd+C itself to apps, so Hermes can copy its own selection.
+keybind = unconsumed:cmd+c=copy_to_clipboard:mixed
+keybind = chain=text:\x1b\x1d
+
+keybind = cmd+alt+left=previous_tab
+keybind = cmd+alt+right=next_tab
