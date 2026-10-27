@@ -27,6 +27,7 @@ brew 'rjyo/moshi/moshi-hook'
 brew 'schpet/tap/linear'
 brew 'starship'
 brew 'zsh'
+brew 'zsh-autosuggestions'
 
 cask 'affinity'
 cask 'brave-browser'

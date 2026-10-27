@@ -23,6 +23,10 @@ plugins=(
   ssh-agent
 )
 
+# zsh-autosuggestions
+source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+# Path to your Oh My Zsh installation
 source $ZSH/oh-my-zsh.sh
 
 # =======================================
