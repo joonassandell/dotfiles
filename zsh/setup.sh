@@ -46,3 +46,16 @@ fi
 info "Installing oh-my-zsh..."
 RUNZSH=no sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)" "" --keep-zshrc
 success "Finished installing oh-my-zsh"
+
+info "Installing zsh-shift-select..."
+
+ZSH_CUSTOM="${ZSH_CUSTOM:-$DESTINATION/.oh-my-zsh/custom}"
+
+# Shift+Alt+arrows selects text in the command line (https://github.com/jirutka/zsh-shift-select)
+if [ -d "$ZSH_CUSTOM/plugins/zsh-shift-select" ]; then
+    substep_success "zsh-shift-select is already installed"
+else
+    git clone --depth 1 https://github.com/jirutka/zsh-shift-select.git "$ZSH_CUSTOM/plugins/zsh-shift-select"
+fi
+
+success "Finished installing zsh-shift-select"
