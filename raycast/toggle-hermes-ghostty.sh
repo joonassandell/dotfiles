@@ -2,14 +2,14 @@
 
 # Required parameters:
 # @raycast.schemaVersion 1
-# @raycast.title Toggle Hermes + Warp
+# @raycast.title Toggle Hermes + Ghostty
 # @raycast.mode silent
 
 # Optional parameters:
 # @raycast.icon hermes.png
 
 # Documentation:
-# @raycast.description Opens Hermes on the left half and Warp on the right half. Hides both if either is frontmost.
+# @raycast.description Opens Hermes on the left half and Ghostty on the right half. Hides both if either is frontmost.
 # @raycast.author Joonas Sandell
 # @raycast.authorURL https://joonassandell.com
 
@@ -19,7 +19,7 @@ osascript -l JavaScript <<'EOF'
 ObjC.import('AppKit');
 
 const MARGIN = 80;
-const apps = ['Hermes', 'Warp'];
+const apps = ['Hermes', 'Ghostty'];
 const ws = $.NSWorkspace.sharedWorkspace;
 
 // The frontmost app is hidden first. Hiding it makes macOS activate another app, which
@@ -72,6 +72,6 @@ function showBoth() {
   }
 
   place('Hermes', X);
-  place('Warp', X + HALF);
+  place('Ghostty', X + HALF);
 }
 EOF
