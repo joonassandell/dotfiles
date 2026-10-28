@@ -2,7 +2,7 @@
 
 I maintain this repository as my personal dotfiles. Last tested succesfully with Macbook Pro M4, macOS `Sequoia 15.1`.
 
-<img src="./terminal.png" alt="Warp terminal" width="100%" />
+<img src="./terminal.png" alt="Terminal" width="100%" />
 
 ## Getting started
 
