@@ -1,0 +1,4 @@
+name: webui-restart
+description: Restart hermes-webui whenever the gateway starts (after Hermes updates, reboots, gateway restarts)
+events:
+  - gateway:startup
