@@ -17,6 +17,14 @@ symlink "$SOURCE/AGENTS.md" "$DESTINATION/.agents/AGENTS.md"
 symlink "$DESTINATION/.agents/AGENTS.md" "$DESTINATION/.claude/CLAUDE.md"
 symlink "$DESTINATION/.agents/AGENTS.md" "$DESTINATION/.codex/AGENTS.md"
 
+# Repo to text project map. It lives in the synced Projects folder, so link it only once the sync has delivered it
+PROJECTS_MAP="$DESTINATION/Joonas Sandell/Projects/PROJECTS.md"
+if [ -f "$PROJECTS_MAP" ]; then
+    symlink "$PROJECTS_MAP" "$DESTINATION/.agents/PROJECTS.md"
+else
+    info "Projects map not found yet. Re-run this script after the Projects sync finishes"
+fi
+
 # Own skills. Skills installed with `skills add` are handled in `skills/setup.sh`
 for skill in "$SOURCE"/skills/*/; do
     name=$(basename "$skill")
