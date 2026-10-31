@@ -84,6 +84,7 @@ Perform manual configurations after completing the setup especially if setting u
   - Integration → Terminal Client → `Ghostty`
 - [Twitch](https://twitch.tv): Create a standalone app `cd /Applications && bunx nativefier https://www.twitch.tv && mv Twitch-darwin-arm64/Twitch.app ./Twitch.app && rm -rf Twitch-darwin-arm64`
 - [Slack](https://slack.com): Login to workspaces and [add API token (Stream Deck)](https://github.com/ellreka/streamdeck-slack-status#setup) for the wanted workspaces
+- [Claude Code](https://claude.com/claude-code): Let it read the agent rules and project docs, which sit outside any repo. Add to `~/.claude/settings.json`: `"permissions": { "additionalDirectories": ["~/.agents", "~/Joonas Sandell/Projects"] }`
 - [Screenflow 7](https://www.telestream.net/download-files/screenflow/7-3/ScreenFlow-7.3.2.dmg): Download and install
 
 There are probably essential settings that are missing from this guide so do whatever is necessary.
