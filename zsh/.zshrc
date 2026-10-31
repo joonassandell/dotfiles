@@ -4,9 +4,6 @@
 #
 # https://github.com/robbyrussell/oh-my-zsh/blob/master/templates/zshrc.zsh-template
 
-# Skip the verification of oh-my-zsh insecure directories
-ZSH_DISABLE_COMPFIX="true"
-
 # Add '~/bin' to the '$PATH'
 export PATH="$HOME/bin:$PATH"
 
