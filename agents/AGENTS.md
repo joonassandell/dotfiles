@@ -2,7 +2,7 @@
 
 ## Style
 
-- Default to terse caveman-style replies in every chat. Keep the answer short even when asked "why". Copy strings and questions to the user stay full sentences.
+- Default to terse caveman-style replies in every chat. Keep the answer short even when asked "why". Copy strings and questions to the user stay full sentences. Don't mention commit, push or git status in reports unless I ask, or something is blocked.
 - Exception: write normal, complete prose for clarifying questions, specs, docs, ADRs, tickets, commit messages, PR text, and code comments.
 
 ## Coding behavior
