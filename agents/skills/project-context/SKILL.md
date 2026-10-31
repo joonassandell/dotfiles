@@ -25,7 +25,7 @@ Project folder = the nearest folder upward from the cwd that has a `CONTEXT.md`.
 ## Rules for every command
 
 - Propose, then write. Show a numbered list of proposed changes, each with its target file. Write only the ones I approve ("all", numbers, or edits). Never edit silently, never overwrite existing text; extend or propose a replacement.
-- Write only in the project folder, plus lines in `~/.agents/PROJECTS.md`. Do not commit. The team Google Drive is read-only.
+- Write only in the project folder, plus lines in `~/.agents/PROJECTS.md`. Project folders have no version control, so never mention commits or git status in reports. Shared team folders, like a team Google Drive, are always read-only.
 - Before proposing anything, read the existing files and skip what is already there. If something contradicts an existing entry, say so and propose superseding it.
 - File text is plain prose for a human reader (no caveman style). One fact per line, short.
 - Where an item goes: a term goes to `GLOSSARY.md`. A decision that is hard to reverse, surprising without context and a real trade-off becomes an ADR; any other decision is one dated line under `Decided` in `CONTEXT.md`. An undecided idea goes to `Docs/ideas.md`. Status or focus goes to `CONTEXT.md`. A how-to or tip for working in this project goes under Tips in `CONTEXT.md`.
@@ -40,7 +40,7 @@ Sets up or repairs the project in the current folder. Safe to re-run.
 3. In Hermes, find the project's chats: `hermes sessions list --workspace <folder name>`. Mention the count; offer `sync --all` afterwards.
 4. Ask only what the files do not answer, one question at a time: goal, current focus, related projects (absolute paths of their `CONTEXT.md`).
 5. Draft `CONTEXT.md`, the pointer block, `GLOSSARY.md` terms already clear from the material. Show the drafts as the numbered list.
-6. Write the approved ones. For `AGENTS.md`, create it or replace only the block between `<!-- project-context:start -->` and `<!-- project-context:end -->`; keep everything else. Do not commit.
+6. Write the approved ones. For `AGENTS.md`, create it or replace only the block between `<!-- project-context:start -->` and `<!-- project-context:end -->`; keep everything else.
 7. Report in a few lines what was written and what was skipped.
 
 ## update
