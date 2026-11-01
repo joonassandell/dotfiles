@@ -39,37 +39,17 @@ customCSS: | # css
     --ui-bg-chrome: #0d1117 !important;
     --ui-bg-editor: #161b22 !important;
     --ui-inline-code-foreground: #7eb8f6;
-    /* --ui-bg-elevated: #1c2128 !important; */
 
-    /* --theme-primary: #c9d1d9 !important; */
+    --theme-primary: #c9d1d9 !important;
     --theme-sidebar-seed: #090d13 !important;
     --theme-bubble-seed: #1e2a38 !important;
     --theme-midground: #58a6ff !important;
     --theme-card-seed: #161b22 !important;
     --theme-warm: #c9d1d9 !important;
 
-    /* --theme-background-seed: #0d1117 !important; */
-    /* --theme-foreground: #c9d1d9 !important; */
-    /* --theme-elevated-seed: #1c2128 !important; */
-    /* --theme-secondary: #2a3038 !important; */
-    /* --theme-accent-soft: #1e2530 !important; */
-
-    /* --dt-muted-foreground: #8b949e !important; */
     --dt-border: #30363d !important;
     --dt-muted: #21262d !important;
     --dt-input: #30363d !important;
-
-    /* --dt-card-foreground: #c9d1d9 !important; */
-    /* --dt-popover-foreground: #c9d1d9 !important; */
-    /* --dt-primary-foreground: #cf4848 !important; */
-    /* --dt-secondary-foreground: #adb5bf !important; */
-    /* --dt-accent-foreground: #c0c8d0 !important; */
-    /* --dt-ring: #58a6ff !important; */
-    /* --dt-destructive: #cf4848 !important; */
-    /* --dt-destructive-foreground: #fef2f2 !important; */
-    /* --dt-sidebar-border: #1c2228 !important; */
-    /* --dt-user-bubble-border: #2e4060 !important; */
-    /* --dt-font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace  !important; */
   }
 
   [data-slot=aui_user-message-root] {
@@ -80,8 +60,9 @@ customCSS: | # css
   }
 
   [data-sidebar=content] {
-    /* Top sidebar items */
     > [data-slot=sidebar-group]:first-child {
+      padding-bottom: calc(var(--spacing) * 4);
+
       li:nth-child(1),
       li:nth-child(3),
       li:nth-child(6) {
@@ -89,7 +70,6 @@ customCSS: | # css
       }
     }
 
-    /* Search */
     > div:nth-child(2) {
       display: none;
     }
