@@ -1,0 +1,76 @@
+# ~/.hermes/hermes-agent/apps/shared/src/theme-presets.ts:525
+name: joonassandell
+description: My custom theme based on Slate
+
+colors:
+  background: "#0d1117"
+  banner_border: "#4169e1"
+  banner_title: "#7eb8f6"
+  banner_accent: "#8EA8FF"
+  banner_dim: "#545E6B"
+  banner_text: "#c9d1d9"
+  ui_accent: "#7eb8f6"
+  ui_label: "#8EA8FF"
+  ui_ok: "#63D0A6"
+  ui_error: "#F7A072"
+  ui_warn: "#e6a855"
+  prompt: "#c9d1d9"
+  input_rule: "#4169e1"
+  response_border: "#7eb8f6"
+  status_bar_bg: "#151C2F"
+  status_bar_text: "#C9D1D9"
+  status_bar_strong: "#7EB8F6"
+  status_bar_dim: "#5D6672"
+  status_bar_good: "#63D0A6"
+  status_bar_warn: "#E6A855"
+  status_bar_bad: "#F7A072"
+  status_bar_critical: "#FF7A7A"
+  session_label: "#7eb8f6"
+  session_border: "#545E6B"
+  completion_menu_bg: "#151C2F"
+  completion_menu_current_bg: "#324867"
+  selection_bg: "#3A5375"
+  shell_dollar: "#7eb8f6"
+  voice_status_bg: "#151C2F"
+
+customCSS: | # css
+  :root {
+    /* Final surfaces, exact (styles.css otherwise mixes the seeds) */
+    /* --ui-bg-chrome: #0d1117 !important; */
+    /* --ui-bg-editor: #161b22 !important; */
+    /* --ui-bg-elevated: #1c2128 !important; */
+    /* --ui-bg-sidebar: #090d13 !important; */
+    /* --ui-chat-bubble-background: #1e2a38 !important; */
+
+    /* Seeds, still used by other derived tokens */
+    --theme-primary: #c9d1d9 !important;
+    --theme-sidebar-seed: #090d13 !important;
+    --theme-bubble-seed: #1e2a38 !important;
+    --theme-midground: #58a6ff !important;
+    --theme-card-seed: #161b22 !important;
+    --theme-warm: #c9d1d9 !important;
+
+    /* --theme-background-seed: #0d1117 !important; */
+    /* --theme-foreground: #c9d1d9 !important; */
+    /* --theme-elevated-seed: #1c2128 !important; */
+    /* --theme-secondary: #2a3038 !important; */
+    /* --theme-accent-soft: #1e2530 !important; */
+
+    /* Tokens Desktop sets directly */
+    /* --dt-muted-foreground: #8b949e !important; */
+    --dt-border: #30363d !important;
+    --dt-muted: #21262d !important;
+    --dt-input: #30363d !important;
+
+    /* --dt-card-foreground: #c9d1d9 !important; */
+    /* --dt-popover-foreground: #c9d1d9 !important; */
+    /* --dt-primary-foreground: #cf4848 !important; */
+    /* --dt-secondary-foreground: #adb5bf !important; */
+    /* --dt-accent-foreground: #c0c8d0 !important; */
+    /* --dt-ring: #58a6ff !important; */
+    /* --dt-destructive: #cf4848 !important; */
+    /* --dt-destructive-foreground: #fef2f2 !important; */
+    /* --dt-sidebar-border: #1c2228 !important; */
+    /* --dt-user-bubble-border: #2e4060 !important; */
+    /* --dt-font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace  !important; */
+  }
