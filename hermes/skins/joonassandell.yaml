@@ -18,7 +18,7 @@ colors:
   prompt: "#c9d1d9"
   input_rule: "#4169e1"
   response_border: "#7eb8f6"
-  status_bar_bg: "#07090e" # E.g. composer, command item & kbd bg
+  status_bar_bg: "#151c2f" # E.g. composer, cmdk item & kbd bg
   status_bar_text: "#c9d1d9"
   status_bar_strong: "#7eb8f6"
   status_bar_dim: "#5d6672"
@@ -42,21 +42,19 @@ customCSS: | # css
     --ui-bg-chrome: #0d1117 !important;
     --ui-inline-code-foreground: #7eb8f6;
     --ui-selection-background: #7eb8f64d;
+    --ui-bg-editor: var(--ui-bg-elevated) !important;
 
-    /* E.g. kbd bg, quota card bg, popover bg. Same as sidebar active item. */
-    --ui-bg-elevated: #1B2029 !important;
+     /* E.g. cmdk item active bg */
+    --theme-accent-soft: #272e3b !important;
 
-    /* Only composer bg. Same as chat bubble bg. */
-    --ui-bg-editor: #151923 !important;
+    /* E.g. kbd bg, quota card bg, popover bg */
+    --theme-elevated-seed: #151c2f !important;
 
     /* E.g. tabs active border and sidebar subtitle. Otherwise inherits from ui_accent. */
     --theme-primary: #c9d1d9 !important;
 
-    /* E.g. composer bg. TBA, e.g. #151c2f */
-    --theme-card-seed: red !important;
-
-    /* E.g. chat bubble and command bg */
-    --theme-bubble-seed: #151c2f !important;
+    /* E.g. cmdk bg and chat bubble */
+    --theme-bubble-seed: var(--theme-elevated-seed) !important;
 
     /* E.g. composer border, kbd border, scheduled dialog border */
     --theme-stroke-secondary-accent-mix: 8% !important;
@@ -67,8 +65,8 @@ customCSS: | # css
     /* E.g. slash cmd in chat bubble, composer icons in slash popover */
     --theme-warm: var(--theme-primary) !important;
 
-    /* E.g. command top border, settings mixture of agents enabled box */
-    --dt-border: #30363d !important;
+    /* E.g. cmdk top border, in settings mixture of agents enabled box */
+    --dt-border: var(--ui-stroke-secondary) !important;
 
     /* e.g. some badges in capabilities and settings */
     --dt-muted: var(--ui-bg-elevated) !important;
@@ -76,17 +74,13 @@ customCSS: | # css
     /* E.g. switch background */
     --dt-input: var(--dt-border) !important;
 
-    /* E.g. sidebar active bg */
-    /* --theme-midground: #58a6ff !important; */
-
-    /* E.g. command item active bg */
-    /* --theme-accent-soft: #1e2a38 !important; */
-
-    /* E.g. Icons at the top bar, muted text in chat, scroll button */
-    /* --dt-muted-foreground: var(--ui-text-secondary) !important; */
-
     /* Increase border radius slightly */
     --radius-scalar: 0.4;
+  }
+
+  /* User message chat bubble */
+  [data-slot=aui_user-message-root] {
+    --dt-foreground: #dd9b77;
   }
 
   /* Enhance kbd contrast */
@@ -95,9 +89,9 @@ customCSS: | # css
     color: var(--ui-text-primary);
   }
 
-  /* User message chat bubble */
-  [data-slot=aui_user-message-root] {
-    --dt-foreground: #dd9b77;
+  /* Add proper border color to cmdk */
+  [role=dialog]:has([data-slot=command-list]) {
+    border-color: var(--ui-stroke-secondary) !important;
   }
 
   /* Make composer a pill */
@@ -105,10 +99,20 @@ customCSS: | # css
     border-radius: 999px;
   }
 
+  /* Fix unnecessary scrollgap in cmdk */
+  [data-slot=command-list] {
+    scrollbar-width: none;
+
+    [data-slot=kbd] {
+      display: none;
+    }
+  }
+
   /* Clean up sidebar */
   [data-sidebar=content] {
     /* Top navigation */
     > [data-slot=sidebar-group]:first-child {
+      padding-top: calc(var(--spacing) * 2);
       padding-bottom: calc(var(--spacing) * 4);
 
       li:nth-child(1),
