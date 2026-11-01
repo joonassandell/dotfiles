@@ -1,18 +1,16 @@
-# ~/.hermes/hermes-agent/apps/shared/src/theme-presets.ts:525
 name: joonassandell
-description: My custom theme based on Slate
+description: My custom theme based on Slate. Makes user messages stand out and adds clearer section separation, with less visual clutter in the CLI and desktop app.
 
 colors:
-  background: "#0d1117"
-  banner_border: "#4169e1"
+  banner_border: "#545E6B"
   banner_title: "#7eb8f6"
   banner_accent: "#8EA8FF"
-  banner_dim: "#545E6B"
+  banner_dim: "#7eb8f6"
   banner_text: "#c9d1d9"
   ui_accent: "#7eb8f6"
-  ui_label: "#8EA8FF"
+  ui_label: "#F7A072"
   ui_ok: "#63D0A6"
-  ui_error: "#F7A072"
+  ui_error: "#cf4848"
   ui_warn: "#e6a855"
   prompt: "#c9d1d9"
   input_rule: "#4169e1"
@@ -33,17 +31,17 @@ colors:
   shell_dollar: "#7eb8f6"
   voice_status_bg: "#151C2F"
 
+tool_prefix: " "
+
 customCSS: | # css
   :root {
-    /* Final surfaces, exact (styles.css otherwise mixes the seeds) */
-    /* --ui-bg-chrome: #0d1117 !important; */
-    /* --ui-bg-editor: #161b22 !important; */
+    --ui-bg-sidebar: #07090e !important;
+    --ui-bg-chrome: #0d1117 !important;
+    --ui-bg-editor: #161b22 !important;
+    --ui-inline-code-foreground: #7eb8f6;
     /* --ui-bg-elevated: #1c2128 !important; */
-    /* --ui-bg-sidebar: #090d13 !important; */
-    /* --ui-chat-bubble-background: #1e2a38 !important; */
 
-    /* Seeds, still used by other derived tokens */
-    --theme-primary: #c9d1d9 !important;
+    /* --theme-primary: #c9d1d9 !important; */
     --theme-sidebar-seed: #090d13 !important;
     --theme-bubble-seed: #1e2a38 !important;
     --theme-midground: #58a6ff !important;
@@ -56,7 +54,6 @@ customCSS: | # css
     /* --theme-secondary: #2a3038 !important; */
     /* --theme-accent-soft: #1e2530 !important; */
 
-    /* Tokens Desktop sets directly */
     /* --dt-muted-foreground: #8b949e !important; */
     --dt-border: #30363d !important;
     --dt-muted: #21262d !important;
@@ -73,4 +70,27 @@ customCSS: | # css
     /* --dt-sidebar-border: #1c2228 !important; */
     /* --dt-user-bubble-border: #2e4060 !important; */
     /* --dt-font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace  !important; */
+  }
+
+  [data-slot=aui_user-message-root] {
+    --dt-user-bubble: hsl(21deg 5% 13%);
+    --dt-foreground: hsl(21deg 50% 70%);
+    --ui-stroke-tertiary: hsl(21deg 15% 22%);
+    --ui-stroke-secondary: hsl(21deg 15% 28%);
+  }
+
+  [data-sidebar=content] {
+    /* Top sidebar items */
+    > [data-slot=sidebar-group]:first-child {
+      li:nth-child(1),
+      li:nth-child(3),
+      li:nth-child(6) {
+        display: none;
+      }
+    }
+
+    /* Search */
+    > div:nth-child(2) {
+      display: none;
+    }
   }
