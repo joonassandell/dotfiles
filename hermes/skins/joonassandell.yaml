@@ -1,3 +1,6 @@
+# https://hermes-agent.nousresearch.com/docs/user-guide/features/skins
+# https://hermes-agent.nousresearch.com/docs/user-guide/features/skins#on-the-desktop-app
+
 name: joonassandell
 description: My custom theme based on Slate. Makes user messages stand out and adds clearer section separation, with less visual clutter in the CLI and desktop app.
 
@@ -15,7 +18,7 @@ colors:
   prompt: "#c9d1d9"
   input_rule: "#4169e1"
   response_border: "#7eb8f6"
-  status_bar_bg: "#151c2f"
+  status_bar_bg: "#07090e" # E.g. composer, command item & kbd bg
   status_bar_text: "#c9d1d9"
   status_bar_strong: "#7eb8f6"
   status_bar_dim: "#5d6672"
@@ -37,29 +40,74 @@ customCSS: | # css
   :root {
     --ui-bg-sidebar: #07090e !important;
     --ui-bg-chrome: #0d1117 !important;
-    --ui-bg-editor: #161b22 !important;
     --ui-inline-code-foreground: #7eb8f6;
+    --ui-selection-background: #7eb8f64d;
 
+    /* E.g. kbd bg, quota card bg, popover bg. Same as sidebar active item. */
+    --ui-bg-elevated: #1B2029 !important;
+
+    /* Only composer bg. Same as chat bubble bg. */
+    --ui-bg-editor: #151923 !important;
+
+    /* E.g. tabs active border and sidebar subtitle. Otherwise inherits from ui_accent. */
     --theme-primary: #c9d1d9 !important;
-    --theme-sidebar-seed: #090d13 !important;
-    --theme-bubble-seed: #1e2a38 !important;
-    --theme-midground: #58a6ff !important;
-    --theme-card-seed: #161b22 !important;
-    --theme-warm: #c9d1d9 !important;
 
+    /* E.g. composer bg. TBA, e.g. #151c2f */
+    --theme-card-seed: red !important;
+
+    /* E.g. chat bubble and command bg */
+    --theme-bubble-seed: #151c2f !important;
+
+    /* E.g. composer border, kbd border, scheduled dialog border */
+    --theme-stroke-secondary-accent-mix: 8% !important;
+
+    /* E.g. chat bubble and sidebar separator border */
+    --theme-stroke-tertiary-accent-mix: 5% !important;
+
+    /* E.g. slash cmd in chat bubble, composer icons in slash popover */
+    --theme-warm: var(--theme-primary) !important;
+
+    /* E.g. command top border, settings mixture of agents enabled box */
     --dt-border: #30363d !important;
-    --dt-muted: #21262d !important;
-    --dt-input: #30363d !important;
+
+    /* e.g. some badges in capabilities and settings */
+    --dt-muted: var(--ui-bg-elevated) !important;
+
+    /* E.g. switch background */
+    --dt-input: var(--dt-border) !important;
+
+    /* E.g. sidebar active bg */
+    /* --theme-midground: #58a6ff !important; */
+
+    /* E.g. command item active bg */
+    /* --theme-accent-soft: #1e2a38 !important; */
+
+    /* E.g. Icons at the top bar, muted text in chat, scroll button */
+    /* --dt-muted-foreground: var(--ui-text-secondary) !important; */
+
+    /* Increase border radius slightly */
+    --radius-scalar: 0.4;
   }
 
+  /* Enhance kbd contrast */
+  [data-slot=kbd] {
+    --ui-stroke-secondary: var(--ui-stroke-primary) !important;
+    color: var(--ui-text-primary);
+  }
+
+  /* User message chat bubble */
   [data-slot=aui_user-message-root] {
-    --dt-user-bubble: hsl(21deg 5% 13%);
-    --dt-foreground: hsl(21deg 50% 70%);
-    --ui-stroke-tertiary: hsl(21deg 15% 22%);
-    --ui-stroke-secondary: hsl(21deg 15% 28%);
+    --dt-foreground: #dd9b77;
   }
 
+  /* Make composer a pill */
+  [data-slot="composer-surface"] {
+    border-radius: 999px;
+  }
+
+  /* Clean up sidebar */
   [data-sidebar=content] {
+    /* Top navigation */
     > [data-slot=sidebar-group]:first-child {
       padding-bottom: calc(var(--spacing) * 4);
 
@@ -70,6 +118,7 @@ customCSS: | # css
       }
     }
 
+    /* Search */
     > div:nth-child(2) {
       display: none;
     }
