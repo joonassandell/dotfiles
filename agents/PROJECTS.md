@@ -37,7 +37,7 @@ Related projects: `CONTEXT.md` lists other projects' `CONTEXT.md` paths with a l
 ## Rules
 
 - **Not every project needs this.** A project follows the flow once `/project-context init` has created its `CONTEXT.md`. Projects without one are left alone.
-- **Nothing goes into a repo.** Instead, `~/Joonas Sandell/Projects/PROJECTS.md` maps repos to projects, one per line: `~/Repositories/my-app -> ~/Joonas Sandell/Projects/My App`. A line can name a folder that holds several repos, which covers all of them. The global `AGENTS.md` tells agents to read it, through the symlink `~/.agents/PROJECTS.md` that `setup.sh` creates. It stays out of dotfiles because it names work repos.
+- **Nothing goes into a repo.** Chat reads only files in the folder it starts in. Repo has no project files, so chat in repo never sees project context. Adding the repo as a Hermes project folder only groups chats in the sidebar. So `~/Joonas Sandell/Projects/PROJECTS.md` maps repos to projects, one per line: `~/Repositories/my-app -> ~/Joonas Sandell/Projects/My App`. A line can name a folder that holds several repos, which covers all of them. The global `AGENTS.md` tells agents to read it. It stays out of dotfiles because it names work repos.
 - **`Projects/` holds only project folders**
 
 ## The `project-context` skill
@@ -71,8 +71,9 @@ Every recipe is the short main path.
 
 1. If the project doesn't exist yet, create it as in "New project".
 2. If you don't have the repo yet, clone it into `~/Repositories/<project-name>`.
-3. In the repo folder, run `herdr --session <project-name>`, then `hermes`.
-4. In Hermes, run `/project-context init`. It asks which project folder the repo belongs to, links it, and writes nothing in the repo.
+3. Add the repo as a folder of the project, so its chats group under the project. In the Hermes desktop app, or `hermes project add-folder <slug> "<repo path>"` (the slug is in `hermes project list`).
+4. In the repo folder, run `herdr --session <project-name>`, then `hermes`.
+5. In Hermes, run `/project-context init`. It asks which project folder the repo belongs to, links it, and writes nothing in the repo.
 
 **New code project** (no `project-context`)
 
