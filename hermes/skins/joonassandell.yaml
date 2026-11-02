@@ -94,18 +94,27 @@ customCSS: | # css
     border-color: var(--ui-stroke-secondary) !important;
   }
 
-  /* Make composer a pill */
-  [data-slot="composer-surface"] {
-    border-radius: 999px;
-  }
-
-  /* Fix unnecessary scrollgap in cmdk */
+  /* Fix unnecessary scrollgap in cmdk, remove kdb */
   [data-slot=command-list] {
     scrollbar-width: none;
 
     [data-slot=kbd] {
       display: none;
     }
+  }
+
+  /* Add less distractive composer on scroll (= disable) */
+  [data-slot=composer-root] {
+    --composer-fill: var(--dt-card) !important;
+  }
+
+  [data-slot=composer-fade] {
+    opacity: 1 !important;
+  }
+
+  /* No need for scrollbar */
+  [data-slot=aui_thread-viewport] {
+    scrollbar-width: none;
   }
 
   /* Clean up sidebar */
@@ -126,4 +135,41 @@ customCSS: | # css
     > div:nth-child(2) {
       display: none;
     }
+  }
+
+  /* Set nicer radius and container around the chat */
+  :root {
+    --ui-editor-surface-background: var(--ui-bg-sidebar);
+    --sticky-human-top: calc(var(--spacing) * 4);
+    --composer-shell-pad-block-end: calc(var(--spacing) * 4);
+  }
+
+  [data-zone-header]:has([data-composer-target]) {
+    > div:nth-child(2) > div {
+      border-width: 1px;
+      border-radius: calc(var(--radius-scalar) * 3rem);
+      margin: 0 calc(var(--spacing) * 2) calc(var(--spacing) * 2) 0;
+
+      :root:has([data-slot="statusbar"]) & {
+        margin-bottom: 0;
+      }
+    }
+
+    [role=tablist] {
+      margin-left: calc(var(--spacing) * 2);
+      margin-top: 3px;
+    }
+
+    [data-slot=context-menu-trigger] {
+      [role=tab] {
+        &[data-active=true] {
+          color: #ffffff;
+          box-shadow: unset;
+        }
+      }
+    }
+  }
+
+  [data-slot=statusbar] {
+    height: calc(var(--spacing) * 8);
   }
