@@ -86,8 +86,8 @@ Perform manual configurations after completing the setup especially if setting u
 - [Screenflow 7](https://www.telestream.net/download-files/screenflow/7-3/ScreenFlow-7.3.2.dmg): Download and install
 - [Claude Code](https://claude.com/claude-code): Let it read the agent rules and project docs, which sit outside any repo. Add to `~/.claude/settings.json`: `"permissions": { "additionalDirectories": ["~/.agents", "~/Joonas Sandell/Projects"] }`
 - [Hermes](https://hermes-agent.nousresearch.com)
-  - Restore from a backup with `hermes import <backup.zip>`, then run `hermes/setup.sh` again to symlink the `webui-restart` gateway hook
-  - The WebUI (`~/Repositories/hermes-webui`) needs Python 3.11+, so `HERMES_WEBUI_PYTHON` must point to one (see the `hermes-webui-restart` alias). Put `HERMES_WEBUI_PASSWORD` in its `.env`.
+  - Restore from a backup with `hermes import <backup.zip>`, then run `hermes/setup.sh` again to symlink the Hermes files
+  - WebUI (optional): `git clone https://github.com/nesquena/hermes-webui ~/Repositories/hermes-webui`, uncomment the `webui-restart` hook lines in `hermes/setup.sh` and run it. It needs Python 3.11+, so `HERMES_WEBUI_PYTHON` must point to one (see the `hermes-webui-restart` alias). Put `HERMES_WEBUI_PASSWORD` in its `.env`. Stop it with the `hermes-webui-stop` alias.
   - Dashboard: set `dashboard.public_url` and `dashboard.basic_auth.username` with `hermes config set`, and the password in `~/.hermes/.env` as `HERMES_DASHBOARD_BASIC_AUTH_PASSWORD`.
   - Dashboard service: `hermes/setup.sh` symlinks `hermes/launchd/ai.hermes.dashboard.plist` to `~/Library/LaunchAgents`. Load it in your own terminal with `launchctl bootstrap gui/$(id -u) ~/Library/LaunchAgents/ai.hermes.dashboard.plist`. The paths in the plist are hardcoded to `/Users/joonassandell`. `hermes update --plan` should then list the dashboard as `launchd`
   - Reach the dashboard (e.g. from iPhone) over Tailscale: `tailscale serve --bg --https=8443 9119` (the WebUI uses port 443)

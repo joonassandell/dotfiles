@@ -13,8 +13,9 @@ info "Configuring Hermes..."
 # The Hermes home exists after Hermes has run or a backup has been imported
 # (`hermes import <backup.zip>`)
 if [ -d "$DESTINATION/.hermes" ]; then
-    mkdir -p "$DESTINATION/.hermes/hooks"
-    symlink "$SOURCE/hooks/webui-restart" "$DESTINATION/.hermes/hooks/webui-restart"
+    # Optional, restarts the WebUI with the gateway (see the README). Uncomment to use:
+    # mkdir -p "$DESTINATION/.hermes/hooks"
+    # symlink "$SOURCE/hooks/webui-restart" "$DESTINATION/.hermes/hooks/webui-restart"
 
     # Own Desktop/CLI skin. Link the file, not the folder: Hermes may add other skins there
     mkdir -p "$DESTINATION/.hermes/skins"
