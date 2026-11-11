@@ -53,39 +53,37 @@ One skill in `agents/skills/project-context/`. Its name avoids the built-in comm
 
 ## Starting and converting
 
-Every recipe is the short main path.
+Paste the prompt in a Hermes chat. The agent does the rest. Only starting herdr is by hand.
 
 **New project**
 
-1. In the Hermes desktop app, create a project with the folder `~/Joonas Sandell/Projects/<project-name>/`.
-2. Start a chat in that project.
-3. Run `/project-context init`.
+Prompt, in any chat:
+
+```
+Create a Hermes project "<Project Name>" with the folder ~/Joonas Sandell/Projects/<Project Name>, then run /project-context init.
+```
 
 **Convert an existing project**
 
-1. Start a chat in the project folder and run `/project-context init`.
-2. Run `/project-context sync --all`, then `/project-context review`. This pulls what the old chats decided into the files. Once per project, from any chat.
-3. In every project chat that needs the context, run `/project-context update` once. It loads the project files.
+1. In a chat in the project folder: `/project-context init`
+2. In any chat, once per project: `/project-context sync --all`, then `/project-context review`. This pulls what the old chats decided into the files.
+3. In every project chat that needs the context: `/project-context update`. It loads the project files.
 
 **Add a repo to a project**
 
-1. If the project doesn't exist yet, create it as in "New project".
-2. If you don't have the repo yet, clone it into `~/Repositories/<project-name>`.
-3. Add the repo as a folder of the project, so its chats group under the project. In the Hermes desktop app, or `hermes project add-folder <slug> "<repo path>"` (the slug is in `hermes project list`).
-4. In the repo folder, run `herdr --session <project-name>`, then `hermes`.
-5. In Hermes, run `/project-context init`. It asks which project folder the repo belongs to, links it, and writes nothing in the repo.
+1. If you don't have the repo, clone it into `~/Repositories/<repo>`. If the project doesn't exist, create it first (New project).
+2. In the repo folder, run `herdr --session <repo>`, then `hermes`.
+3. Prompt, in that chat:
 
-**New code project** (no `project-context`)
+```
+Add this repo as a folder of the project "<Project Name>", then run /project-context init.
+```
 
-1. `mkdir ~/Repositories/<project-name> && cd ~/Repositories/<project-name> && git init -b main`
-2. In `~/Repositories/<project-name>`, run `herdr --session <project-name>`, then `hermes`.
-3. Continue with the coding flow in [WORKFLOW.md](WORKFLOW.md).
+**New code project**
 
-**New code project with project context**
-
-1. In the Hermes desktop app, create a project with the folder `~/Joonas Sandell/Projects/<project-name>/`, then run `/project-context init` in it.
-2. `mkdir ~/Repositories/<project-name> && cd ~/Repositories/<project-name> && git init -b main`
-3. Follow "Add a repo to a project", from step 3.
+1. `mkdir ~/Repositories/<repo> && cd ~/Repositories/<repo> && git init -b main`
+2. Run `herdr --session <repo>`, then `hermes`.
+3. For project context too: create the project (New project), then use the prompt in step 3 of "Add a repo to a project".
 4. Continue with the coding flow in [WORKFLOW.md](WORKFLOW.md).
 
 ## Daily use
