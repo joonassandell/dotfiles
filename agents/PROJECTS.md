@@ -76,7 +76,7 @@ Create a Hermes project "<Project Name>" with the folder ~/Joonas Sandell/Projec
 3. Prompt, in that chat:
 
 ```
-Add this repo as a folder of the project "<Project Name>", then run /project-context init.
+Run /project-context init for the project "<Project Name>". It adds the repo as a Hermes folder and links it.
 ```
 
 **New code project**
