@@ -39,7 +39,7 @@ Sets up or repairs the project in the current folder. Safe to re-run.
 2. Inventory: list the folder, read `IDEA.md`, `AGENTS.md`, README and any existing docs. If a per-project skill exists for it, read it as source material and offer to move its content into the files, then to delete it or cut it to a two-line pointer.
 3. In Hermes, find the project's chats: `hermes sessions list --workspace <folder name>`. Mention the count; offer `sync --all` afterwards.
 4. Ask only what the files do not answer, one question at a time: goal, current focus, related projects (absolute paths of their `CONTEXT.md`).
-5. Draft `CONTEXT.md`, the pointer block, `GLOSSARY.md` terms already clear from the material. Show the drafts as the numbered list.
+5. Draft `IDEA.md` if it is missing (one sentence on what the project is, from the goal), `CONTEXT.md`, the pointer block, `GLOSSARY.md` terms already clear from the material. Show the drafts as the numbered list.
 6. Write the approved ones. For `AGENTS.md`, create it or replace only the block between `<!-- project-context:start -->` and `<!-- project-context:end -->`; keep everything else.
 7. Report in a few lines what was written and what was skipped.
 
