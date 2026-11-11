@@ -1,6 +1,6 @@
 # Dotfiles of Joonas Sandell
 
-I maintain this repository as my personal dotfiles. Latest full bootstrap tested successfully with MacBook Pro M4, macOS `Sequoia 15.1`. Currently running in latest macOS 27+.
+I maintain this repository as my personal dotfiles. Latest full bootstrap tested successfully with MacBook Pro M4, macOS `Sequoia 15.1`. Currently running in latest macOS `27+`.
 
 <img src="./terminal.png" alt="Terminal" width="100%" />
 
