@@ -25,6 +25,7 @@ Bias toward caution over speed. For trivial tasks (typo, obvious one-liner), use
 - Prefixes: `feat/`, `fix/`, `chore/`, `refactor/`, `docs/`, `test/`, `perf/`, `ci/`.
 - Commits follow Conventional Commits 1.0.0 (https://www.conventionalcommits.org/en/v1.0.0/): `type(scope): description`, `!` or `BREAKING CHANGE:` footer for breaking changes.
 - Commits are atomic: one logical change each, project stays working after each commit.
+- Add a short body to a commit when the subject doesn't explain why.
 - Do not push, open PRs, or merge unless asked.
 
 ## Finishing work
