@@ -120,4 +120,10 @@
   "workbench.activityBar.location": "top",
   "workbench.experimental.modernUI": false,
   "workbench.sideBar.location": "right",
+  "github.copilot.enable": {
+    "*": false,
+    "plaintext": false,
+    "markdown": false,
+    "scminput": false,
+  },
 }
