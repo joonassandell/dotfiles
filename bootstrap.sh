@@ -15,16 +15,6 @@ else
     error "Failed to obtain sudo credentials"
 fi
 
-# Install XCode Command Line Tools
-info "Installing XCode Command Line Tools..."
-if xcode-select --print-path &>/dev/null; then
-    success "XCode Command Line Tools already installed"
-elif xcode-select --install &>/dev/null; then
-    success "Finished installing XCode Command Line Tools"
-else
-    error "Failed to install XCode Command Line Tools"
-fi
-
 # Execute package control
 ./packages/setup.sh
 
