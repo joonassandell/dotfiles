@@ -77,6 +77,7 @@ Perform manual configurations after completing the setup especially if setting u
   - Screenshots → Uncheck `Scale Retina screenshots to 1x`
   - Shortcuts → Capture Area & Copy to Clipboard → `^ ⇧ ⌘ 4`
 - [Sequel Pro](https://sequelpro.com): Symlink favorites `ln -s ~/Joonas\ Sandell/Apps/Sequel\ Pro ~/Library/Application\ Support/Sequel\ Pro`
+- [Xcode](https://apps.apple.com/app/xcode/id497799835): Install from the App Store, then run `sudo xcodebuild -license accept` and `xcodebuild -runFirstLaunch`
 - [Fork](https://git-fork.com)
   - Configure Accounts
   - General → Default Source Folder → `~/Repositories`
