@@ -102,6 +102,11 @@ customCSS: | # css
     border-color: var(--ui-stroke-secondary);
   }
 
+  /* No need for scrollbars. Fixes unnecessary scrollgaps and gives more space. */
+  * {
+    scrollbar-width: none;
+  }
+
   /* Remove kdb from cmdk */
   [data-slot=command-list] {
     [data-slot=kbd] {
@@ -118,16 +123,16 @@ customCSS: | # css
     opacity: 1;
   }
 
+  /* Remove distractive composer focus outline */
+  [data-slot=composer-surface]:has([data-slot=composer-rich-input]:focus-visible) {
+    --dt-composer-ring: var(--ui-stroke-secondary) ;
+  }
+
   /* Disable the highlight in "active project" */
   [data-slot=sidebar-group] [data-slot="context-menu-trigger"] {
     [data-slot="row-button"] span:not(:hover) {
       color: var(--ui-text-secondary);
     }
-  }
-
-  /* No need for scrollbars. Fixes unnecessary scrollgaps and gives more space. */
-  * {
-    scrollbar-width: none;
   }
 
   /* Clean up sidebar */
@@ -164,6 +169,7 @@ customCSS: | # css
     > div:nth-child(2) > div {
       border-width: 1px;
       border-radius: calc(var(--radius-scalar) * 3rem);
+      border-end-end-radius: calc(var(--radius-scalar) * 1.5rem);
       margin: 0 calc(var(--spacing) * 2) calc(var(--spacing) * 2) 0;
 
       :root:has([data-slot="statusbar"]) & {
