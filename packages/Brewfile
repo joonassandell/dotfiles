@@ -59,5 +59,4 @@ cask 'vlc'
 
 # brew 'awscli'
 # brew 'pnpm@9'
-# cask 'cyberduck'
 # cask 'ngrok'
