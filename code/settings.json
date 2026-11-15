@@ -3,32 +3,31 @@
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": "explicit"
   },
-  "explorer.compactFolders": false,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.fontFamily": "Operator Mono Lig, Fira Code, Menlo, Monaco, 'Courier New', monospace",
   "editor.fontLigatures": true,
   "editor.fontSize": 16,
   "editor.formatOnPaste": false,
   "editor.formatOnSave": true,
-  "editor.hideCursorInOverviewRuler": true,
-  "editor.scrollbar.horizontal": "hidden",
-  "editor.scrollbar.vertical": "hidden",
-  "editor.scrollbar.verticalScrollbarSize": 0,
   "editor.glyphMargin": false,
+  "editor.hideCursorInOverviewRuler": true,
   "editor.insertSpaces": true,
   "editor.linkedEditing": true,
   "editor.multiCursorModifier": "ctrlCmd",
-  "editor.tokenColorCustomizations": {
-    "comments": "#818998"
-  },
   "editor.quickSuggestions": {
     "comments": false,
     "other": true,
     "strings": true
   },
-  "editor.rulers": [80],
   "editor.renderControlCharacters": true,
   "editor.renderWhitespace": "all",
+  "editor.rulers": [80],
+  "editor.scrollbar.horizontal": "hidden",
+  "editor.scrollbar.vertical": "hidden",
+  "editor.scrollbar.verticalScrollbarSize": 0,
+  "editor.tokenColorCustomizations": {
+    "comments": "#818998"
+  },
   "editor.wordWrap": "on",
   "eslint.codeAction.showDocumentation": {
     "enable": false
@@ -37,6 +36,7 @@
   "eslint.enable": true,
   "eslint.format.enable": true,
   "explorer.autoReveal": false,
+  "explorer.compactFolders": false,
   "explorer.confirmDelete": false,
   "explorer.confirmDragAndDrop": false,
   "explorer.openEditors.visible": 1,
@@ -59,7 +59,15 @@
   "git.enableSmartCommit": true,
   "git.ignoreMissingGitWarning": true,
   "git.openRepositoryInParentFolders": "always",
+  "github.copilot.enable": {
+    "*": false,
+    "plaintext": false,
+    "markdown": false,
+    "scminput": false
+  },
   "javascript.updateImportsOnFileMove.enabled": "always",
+  "js/ts.tsserver.experimental.enableProjectDiagnostics": true,
+  "js/ts.updateImportsOnFileMove.enabled": "always",
   "npm.packageManager": "bun",
   "postcssSorting.config": {
     "order": [
@@ -79,7 +87,6 @@
     "properties-order": "alphabetical",
     "unspecified-properties-position": "bottom"
   },
-  "security.workspace.trust.untrustedFiles": "open",
   "scss.lint.unknownAtRules": "ignore",
   "search.exclude": {
     "**/.next": true,
@@ -94,28 +101,21 @@
   },
   "search.useIgnoreFiles": false,
   "security.promptForLocalFileProtocolHandling": false,
-  "tailwindCSS.validate": true,
-  "tailwindCSS.classFunctions": ["cva"],
+  "security.workspace.trust.untrustedFiles": "open",
   "tailwind-fold.autoFold": false,
   "tailwind-fold.foldedText": "…",
-  "js/ts.tsserver.experimental.enableProjectDiagnostics": true,
-  "js/ts.updateImportsOnFileMove.enabled": "always",
+  "tailwindCSS.classFunctions": ["cva"],
+  "tailwindCSS.validate": true,
   "update.mode": "none",
+  "window.commandCenter": false,
+  "workbench.activityBar.location": "top",
   "workbench.colorTheme": "Atom One Dark",
   "workbench.editor.enablePreviewFromQuickOpen": false,
-  "workbench.iconTheme": null,
   "workbench.editorAssociations": {
     "*.svg": "default"
   },
-  "window.commandCenter": false,
-  "workbench.activityBar.location": "top",
   "workbench.experimental.modernUI": false,
+  "workbench.iconTheme": null,
   "workbench.sideBar.location": "right",
-  "workbench.tree.renderIndentGuides": "none",
-  "github.copilot.enable": {
-    "*": false,
-    "plaintext": false,
-    "markdown": false,
-    "scminput": false
-  }
+  "workbench.tree.renderIndentGuides": "none"
 }
