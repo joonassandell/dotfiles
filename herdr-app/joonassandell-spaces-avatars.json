@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "spaces": {
+    "freepress": {
+      "kind": "image",
+      "source": "/Users/joonassandell/Repositories/dotfiles/assets/freepress-icon.svg",
+      "mode": "copy",
+      "match": "freepress"
+    },
+    "dotfiles": {
+      "kind": "icon",
+      "icon": "code",
+      "background": "ansi4",
+      "foreground": "#ffffff"
+    }
+  }
+}
