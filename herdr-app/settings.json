@@ -4,10 +4,10 @@
     "enabled": true
   },
   "font": "Operator Mono Lig",
-  "font_size": 14,
+  "font_size": 14.0,
   "font_ligatures": true,
+  "ui_font": "SF Pro",
   "telemetry": false,
-  "minimum_contrast": 1,
-  "theme": "tokyo-night",
-  "ui_font": "SF Pro"
+  "minimum_contrast": 1.0,
+  "theme": "tokyo-night"
 }
