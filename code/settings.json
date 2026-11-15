@@ -1,7 +1,7 @@
 {
   "editor.accessibilitySupport": "off",
   "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": "explicit",
+    "source.fixAll.eslint": "explicit"
   },
   "explorer.compactFolders": false,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
@@ -10,25 +10,28 @@
   "editor.fontSize": 16,
   "editor.formatOnPaste": false,
   "editor.formatOnSave": true,
+  "editor.hideCursorInOverviewRuler": true,
+  "editor.scrollbar.horizontal": "hidden",
+  "editor.scrollbar.vertical": "hidden",
+  "editor.scrollbar.verticalScrollbarSize": 0,
   "editor.glyphMargin": false,
   "editor.insertSpaces": true,
   "editor.linkedEditing": true,
-  "editor.minimap.enabled": true,
   "editor.multiCursorModifier": "ctrlCmd",
   "editor.tokenColorCustomizations": {
-    "comments": "#818998",
+    "comments": "#818998"
   },
   "editor.quickSuggestions": {
     "comments": false,
     "other": true,
-    "strings": true,
+    "strings": true
   },
   "editor.rulers": [80],
   "editor.renderControlCharacters": true,
   "editor.renderWhitespace": "all",
   "editor.wordWrap": "on",
   "eslint.codeAction.showDocumentation": {
-    "enable": false,
+    "enable": false
   },
   "eslint.debug": true,
   "eslint.enable": true,
@@ -38,7 +41,7 @@
   "explorer.confirmDragAndDrop": false,
   "explorer.openEditors.visible": 1,
   "files.associations": {
-    "*.ts": "typescript",
+    "*.ts": "typescript"
   },
   "files.exclude": {
     "**/.netlify": true,
@@ -47,10 +50,10 @@
     "**/~": true,
     "**/dist/*": false,
     "**/node_modules": false,
-    "**/out": true,
+    "**/out": true
   },
   "files.watcherExclude": {
-    "**/wp-content/plugins/**": true,
+    "**/wp-content/plugins/**": true
   },
   "git.confirmSync": false,
   "git.enableSmartCommit": true,
@@ -62,31 +65,19 @@
     "order": [
       "custom-properties",
       "dollar-variables",
-      // {
-      //   "type": "at-rule",
-      //   "name": "if"
-      // },
-      // {
-      //   "type": "at-rule",
-      //   "name": "else"
-      // },
-      // {
-      //   "type": "at-rule",
-      //   "name": "else if"
-      // },
       {
         "type": "at-rule",
-        "hasBlock": false,
+        "hasBlock": false
       },
       "declarations",
       "rules",
       {
         "type": "at-rule",
-        "hasBlock": true,
-      },
+        "hasBlock": true
+      }
     ],
     "properties-order": "alphabetical",
-    "unspecified-properties-position": "bottom",
+    "unspecified-properties-position": "bottom"
   },
   "security.workspace.trust.untrustedFiles": "open",
   "scss.lint.unknownAtRules": "ignore",
@@ -99,7 +90,7 @@
     "**/tests": true,
     "**/vendor/**": true,
     "**/web/wp/**": true,
-    "**/wp-content/plugins/**": true,
+    "**/wp-content/plugins/**": true
   },
   "search.useIgnoreFiles": false,
   "security.promptForLocalFileProtocolHandling": false,
@@ -107,23 +98,24 @@
   "tailwindCSS.classFunctions": ["cva"],
   "tailwind-fold.autoFold": false,
   "tailwind-fold.foldedText": "…",
-  "typescript.tsserver.experimental.enableProjectDiagnostics": true,
-  "typescript.updateImportsOnFileMove.enabled": "always",
+  "js/ts.tsserver.experimental.enableProjectDiagnostics": true,
+  "js/ts.updateImportsOnFileMove.enabled": "always",
   "update.mode": "none",
   "workbench.colorTheme": "Atom One Dark",
   "workbench.editor.enablePreviewFromQuickOpen": false,
   "workbench.iconTheme": null,
   "workbench.editorAssociations": {
-    "*.svg": "default",
+    "*.svg": "default"
   },
   "window.commandCenter": false,
   "workbench.activityBar.location": "top",
   "workbench.experimental.modernUI": false,
   "workbench.sideBar.location": "right",
+  "workbench.tree.renderIndentGuides": "none",
   "github.copilot.enable": {
     "*": false,
     "plaintext": false,
     "markdown": false,
-    "scminput": false,
-  },
+    "scminput": false
+  }
 }
