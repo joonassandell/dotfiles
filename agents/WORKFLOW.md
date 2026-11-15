@@ -26,7 +26,7 @@ My common workflows for coding agents (Hermes, Claude and any other agent). The 
 6. `/pr`, then push and create the PR
 7. `Clean up <ID>` once done
 
-## Details
+## Project details
 
 ### Solo projects
 
@@ -52,7 +52,19 @@ For repos like my dotfiles, where a branch and a PR are more ceremony than they 
 4. **PR.** `/pr`, then push and create the PR. The agent drafts the title and body (the repo's PR template if there is one, otherwise the `/pr` format), shows them and waits for my approval, then pushes and opens the PR or MR with `gh` or `glab`, and stops. Merging is done by the team on the host.
 5. **Clean up.** The orchestrator checks the branch is merged, then removes the worktree and the local branch. It asks before dropping unmerged commits.
 
-### Notes
+## Herdr
+
+I use the Herdr desktop app with my custom theme and mods (`../herdr-app`). The terminal `herdr` works the same way for the points below.
+
+- **Worktree location:** the app's own worktree command puts a checkout in `~/.herdr/worktrees/<repo folder name>/<branch, slashes as dashes>`. The orchestrator makes them itself for repos in a group (below).
+- **Project context:** an agent in a worktree runs in that path, not in the repo. So `PROJECTS.md` needs a line for the worktree folder next to the repo's own line. `/project-context init` adds it.
+- **A folder of repos:** say `~/Repositories/<group>/` is not a repo itself and holds `<repo-a>` and `<repo-b>`, each with its own git.
+  - Each repo gets its own space.
+  - The orchestrator puts worktrees in `~/.herdr/worktrees/<group>/<repo-a>/<branch>`, so the same branch name in two repos can't collide. The app's own command would use `~/.herdr/worktrees/<repo-a>/` instead, so start these worktrees from the orchestrator.
+  - `PROJECTS.md` has one line for `~/Repositories/<group>` and one for `~/.herdr/worktrees/<group>`. Each covers everything inside it.
+  - Hermes commonly gets `~/Repositories/<group>` as a folder.
+
+## Notes
 
 - For a new repo, run `/setup-matt-pocock-skills` first, if it fits the project.
 - **`<base>`:** the project's default branch, usually `main`. How it is found, plus the branch prefixes and commit rules, are in the Git workflow section of [AGENTS.md](AGENTS.md).
