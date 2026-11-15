@@ -1,0 +1,15 @@
+#!/bin/bash
+# `node` for programs that don't load .zshrc (for example the Herdr app).
+# It runs the nvm default Node, so there is still only one Node install.
+# In a terminal, nvm's own node comes first in PATH and this script isn't used.
+
+export NVM_DIR="$HOME/.nvm"
+NVM_SH="${HOMEBREW_PREFIX:-/opt/homebrew}/opt/nvm/nvm.sh"
+
+[ -s "$NVM_SH" ] || { echo "node: nvm not found at $NVM_SH" >&2; exit 127; }
+. "$NVM_SH" --no-use
+
+NODE="$(nvm which default 2>/dev/null)"
+[ -x "$NODE" ] || { echo "node: no nvm default version, run 'nvm install --lts'" >&2; exit 127; }
+
+exec "$NODE" "$@"
