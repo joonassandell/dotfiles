@@ -10,6 +10,9 @@ export PATH="$HOME/bin:$PATH"
 # Add '~/.local/bin' to the '$PATH', e.g. Hermes Agent
 export PATH="$HOME/.local/bin:$PATH"
 
+# Add the global Flutter SDK to the '$PATH' (set with 'fvm global <version>')
+export PATH="$HOME/fvm/default/bin:$PATH"
+
 # Path to oh-my-zsh installation
 export ZSH=$HOME/.oh-my-zsh
 
