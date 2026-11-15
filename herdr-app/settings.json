@@ -1,0 +1,13 @@
+{
+  "zoom": 1.2,
+  "sounds": {
+    "enabled": true
+  },
+  "font": "Operator Mono Lig",
+  "font_size": 14,
+  "font_ligatures": true,
+  "telemetry": false,
+  "minimum_contrast": 1,
+  "theme": "tokyo-night",
+  "ui_font": "SF Pro"
+}
