@@ -1,0 +1,24 @@
+# Various aliases
+alias cat="bat"
+alias csv-json="mlr --icsv --ojson tail" # Add -n2 to limit lines
+alias csv-table="mlr --icsv --opprint cat"
+alias git-log="git log --oneline --decorate --all --graph"
+alias headers="httpstat"
+alias hosts="sudo code /etc/hosts"
+alias hw-info="networksetup -listallhardwareports"
+alias ip-local="ifconfig | grep broadcast"
+alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
+alias kill-port-3000="bunx kill-port 3000"
+alias ls="eza --all --oneline --group-directories-first --icons" # https://github.com/eza-community/eza/tree/main/man
+alias lsl="eza --all --oneline --group-directories-first --icons --long --header --mounts --git"
+alias matrix="bunx matrix-rain"
+alias preview="fzf --preview 'bat --color=always {}'"
+alias reload="clear && reset && source ~/.zshrc" # Run CMD+K to remove Wrap history
+alias repo="cd ~/Repositories/"
+alias search="rg -i"
+alias show-ssh-keys="ssh-add -l"
+alias simple-server="python -m SimpleHTTPServer"
+alias simulator="open /Applications/Xcode.app/Contents/Applications/DeviceHub.app"
+alias top="bunx vtop"
+alias zsh-open-secret="code ~/Joonas\ Sandell/Apps/macOS/.secret.zshrc"
+alias zsh-open="code ~/Repositories/dotfiles/zsh/.zshrc"
