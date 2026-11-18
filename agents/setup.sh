@@ -25,6 +25,11 @@ else
     info "Projects map not found yet. Re-run this script after the Projects sync finishes"
 fi
 
+# Claude Code SessionStart hooks: the project context for the cwd, and the caveman skill rules. Enable it with a SessionStart entry in `~/.claude/settings.json` (see agents/README.md)
+mkdir -p "$DESTINATION/.claude/hooks"
+symlink "$SOURCE/hooks/project-context.sh" "$DESTINATION/.claude/hooks/project-context.sh"
+symlink "$SOURCE/hooks/caveman.sh" "$DESTINATION/.claude/hooks/caveman.sh"
+
 # Own skills. Skills installed with `skills add` are handled in `skills/setup.sh`
 for skill in "$SOURCE"/skills/*/; do
     name=$(basename "$skill")
