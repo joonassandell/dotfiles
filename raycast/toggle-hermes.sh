@@ -6,7 +6,7 @@
 # @raycast.mode silent
 
 # Optional parameters:
-# @raycast.icon hermes.png
+# @raycast.icon ../assets/hermes.png
 
 # Documentation:
 # @raycast.description Opens or closes Hermes. Needed because the Raycast hotkey doesn't close the app.

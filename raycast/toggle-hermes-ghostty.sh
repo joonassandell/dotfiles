@@ -6,7 +6,7 @@
 # @raycast.mode silent
 
 # Optional parameters:
-# @raycast.icon hermes.png
+# @raycast.icon ../assets/hermes.png
 
 # Documentation:
 # @raycast.description Opens Hermes on the left half and Ghostty on the right half. Hides both if either is frontmost.
