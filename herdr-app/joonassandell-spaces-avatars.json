@@ -8,10 +8,24 @@
       "match": "freepress"
     },
     "dotfiles": {
-      "kind": "icon",
-      "icon": "code",
-      "background": "ansi4",
-      "foreground": "#ffffff"
+      "kind": "image",
+      "source": "/Users/joonassandell/Repositories/dotfiles/assets/joonassandell-avatar.svg",
+      "mode": "reference"
+    },
+    "portfolio": {
+      "kind": "image",
+      "source": "/Users/joonassandell/Repositories/dotfiles/assets/joonassandell-icon.svg",
+      "mode": "reference"
+    },
+    "ui-lab": {
+      "kind": "image",
+      "source": "/Users/joonassandell/Repositories/dotfiles/assets/joonassandell-icon.svg",
+      "mode": "reference"
+    },
+    "history": {
+      "kind": "image",
+      "source": "/Users/joonassandell/Repositories/dotfiles/assets/joonassandell-avatar.svg",
+      "mode": "reference"
     }
   }
 }
