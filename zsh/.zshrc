@@ -13,6 +13,9 @@ export PATH="$HOME/.local/bin:$PATH"
 # Add the global Flutter SDK to the '$PATH' (set with 'fvm global <version>')
 export PATH="$HOME/fvm/default/bin:$PATH"
 
+# Add the Android SDK platform-tools (adb) to the '$PATH'
+export PATH="$HOME/Library/Android/sdk/platform-tools:$PATH"
+
 # Path to oh-my-zsh installation
 export ZSH=$HOME/.oh-my-zsh
 
