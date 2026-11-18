@@ -37,7 +37,7 @@ source $ZSH/oh-my-zsh.sh
 # User config
 # =======================================
 
-source ~/Joonas\ Sandell/Apps/macOS/.secret.zshrc
+source ~/Joonas\ Sandell/Apps/macOS/.private.zshrc
 source ~/Repositories/dotfiles/zsh/aliases.zsh
 source ~/Repositories/dotfiles/zsh/npm-bun.zsh
 source ~/Repositories/dotfiles/zsh/hermes.zsh
