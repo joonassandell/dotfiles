@@ -41,6 +41,12 @@ defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode2 -bool true
 # Save to disk (not to iCloud) by default
 defaults write NSGlobalDomain NSDocumentSaveNewDocumentsToCloud -bool false
 
+# Don't ask to keep changes when closing documents
+defaults write NSGlobalDomain NSCloseAlwaysConfirmsChanges -bool false
+
+# Show hidden files in the open and save dialogs of other apps (the Finder setting below covers Finder only)
+defaults write NSGlobalDomain AppleShowAllFiles -bool true
+
 # =======================================
 # Finder
 # =======================================
@@ -117,6 +123,21 @@ defaults write com.apple.dock autohide-time-modifier -float 0.5s
 
 # Show only open applications in the Dock
 defaults write com.apple.dock static-only -bool true
+
+# =======================================
+# Windows
+# =======================================
+
+# Turn off window tiling by dragging
+defaults write com.apple.WindowManager EnableTilingByEdgeDrag -bool false
+defaults write com.apple.WindowManager EnableTopTilingByEdgeDrag -bool false
+defaults write com.apple.WindowManager EnableTilingOptionAccelerator -bool false
+
+# Tiled windows have no margins
+defaults write com.apple.WindowManager EnableTiledWindowMargins -bool false
+
+# Don't group windows by application in Mission Control
+defaults write com.apple.dock expose-group-apps -bool false
 
 # =======================================
 # Various
