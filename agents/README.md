@@ -13,8 +13,19 @@ My global setup for agents (Hermes, Claude and others): shared rules, my own ski
 Enable them once by adding this to `hooks.SessionStart` in `~/.claude/settings.json`:
 
 ```json
-{ "matcher": "^(startup|clear|compact)$", "hooks": [
-  { "type": "command", "command": "sh ~/.claude/hooks/project-context.sh", "timeout": 10 },
-  { "type": "command", "command": "sh ~/.claude/hooks/caveman.sh", "timeout": 10 }
-] }
+{
+  "matcher": "^(startup|clear|compact)$",
+  "hooks": [
+    {
+      "type": "command",
+      "command": "sh ~/.claude/hooks/project-context.sh",
+      "timeout": 10
+    },
+    {
+      "type": "command",
+      "command": "sh ~/.claude/hooks/caveman.sh",
+      "timeout": 10
+    }
+  ]
+}
 ```
