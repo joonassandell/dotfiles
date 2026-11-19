@@ -20,6 +20,7 @@ if [ -d "$DESTINATION/.hermes" ]; then
     # Own Desktop/CLI skin. Link the file, not the folder: Hermes may add other skins there
     mkdir -p "$DESTINATION/.hermes/skins"
     symlink "$SOURCE/skins/joonassandell.yaml" "$DESTINATION/.hermes/skins/joonassandell.yaml"
+    symlink "$SOURCE/skins/joonassandell-slate.yaml" "$DESTINATION/.hermes/skins/joonassandell-slate.yaml"
 
     # The dashboard service is loaded separately, see the README
     mkdir -p "$DESTINATION/Library/LaunchAgents"
