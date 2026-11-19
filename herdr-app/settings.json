@@ -1,17 +1,17 @@
 {
-  "zoom": 1.2000000476837158,
+  "font": "Operator Mono Lig",
+  "font_ligatures": true,
+  "font_size": 14,
+  "font_weight": 500,
+  "minimum_contrast": 1,
   "sounds": {
     "enabled": true
   },
-  "font_size": 14,
-  "font_ligatures": true,
-  "terminal_line_height": 1,
-  "terminal_cell_width": 1,
-  "terminal_scroll_speed": 1,
-  "ui_font": "SF Pro",
   "telemetry": false,
-  "minimum_contrast": 1,
+  "terminal_cell_width": 1,
+  "terminal_line_height": 1,
+  "terminal_scroll_speed": 1,
   "theme": "joonassandell",
-  "font": "Operator Mono Lig",
-  "font_weight": 500
+  "ui_font": "SF Pro",
+  "zoom": 1.2000000476837158
 }
