@@ -1,23 +1,19 @@
-background = #0C1014
+background = #12121A
 background-opacity = 0.95
 background-blur = 20
 
-cursor-color = #FFFFFF
+cursor-color = #c9ccd9
 cursor-style = bar
 
 font-family = Operator Mono Lig
 font-size = 17
+font-thicken = true
+font-thicken-strength = 0
 
-theme = Github Dark Default
-# theme = Argonaut
-# theme = Atom One Dark
-# theme = Ayu
-# theme = Dracula
-# theme = TokyoNight
+foreground = #c9ccd9
 
-# window-padding-x = 12,12
-# window-padding-y = 12,12
-# window-padding-balance = true
+theme = TokyoNight Night
+
 window-save-state = always
 
 working-directory = ~/Repositories
