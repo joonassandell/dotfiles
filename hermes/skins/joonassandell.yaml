@@ -2,45 +2,45 @@
 # https://hermes-agent.nousresearch.com/docs/user-guide/features/skins#on-the-desktop-app
 
 name: joonassandell
-description: My custom theme based on Slate. Makes user messages stand out and adds clearer section separation, with less visual clutter in the CLI and desktop app.
+description: My custom theme based on Tokyo Night. Makes user messages stand out and adds clearer section separation, with less visual clutter in the CLI and desktop app.
 
 colors:
-  background: "#0d111700" # Don't visible add bg to keep it transparent in CLI
-  banner_border: "#545e6b"
+  background: "#1a1b2600" # Don't visible add bg to keep it transparent in CLI
+  banner_border: "#545c7e"
   banner_title: "#7eb8f6"
-  banner_accent: "#8ea8ff"
+  banner_accent: "#8db0ff"
   banner_dim: "#7eb8f6"
-  banner_text: "#c9d1d9"
+  banner_text: "#c9ccd9"
   ui_accent: "#7eb8f6"
-  ui_label: "#f7a072"
-  ui_ok: "#63d0a6"
-  ui_error: "#cf4848"
-  ui_warn: "#e6a855"
-  prompt: "#c9d1d9"
-  input_rule: "#4169e1"
+  ui_label: "#ff9e64"
+  ui_ok: "#9ece6a"
+  ui_error: "#ff899d"
+  ui_warn: "#e0af68"
+  prompt: "#c9ccd9"
+  input_rule: "#7aa2f7"
   response_border: "#7eb8f6"
-  status_bar_bg: "#151c2f" # E.g. composer, cmdk item & kbd bg
-  status_bar_text: "#c9d1d9"
+  status_bar_bg: "#15172e" # E.g. composer, cmdk item & kbd bg
+  status_bar_text: "#c9ccd9"
   status_bar_strong: "#7eb8f6"
-  status_bar_dim: "#5d6672"
-  status_bar_good: "#63d0a6"
-  status_bar_warn: "#e6a855"
-  status_bar_bad: "#f7a072"
-  status_bar_critical: "#ff7a7a"
+  status_bar_dim: "#414868"
+  status_bar_good: "#9ece6a"
+  status_bar_warn: "#e0af68"
+  status_bar_bad: "#faba4a"
+  status_bar_critical: "#ff899d"
   session_label: "#7eb8f6"
-  session_border: "#545e6b"
-  completion_menu_bg: "#151c2f"
-  completion_menu_current_bg: "#324867"
-  selection_bg: "#3a5375"
+  session_border: "#545c7e"
+  completion_menu_bg: "#15172e"
+  completion_menu_current_bg: "#ff899d"
+  selection_bg: "#283457"
   shell_dollar: "#7eb8f6"
-  voice_status_bg: "#151c2f"
+  voice_status_bg: "#15172e"
 
 tool_prefix: " "
 
 customCSS: | # css
   :root {
-    --ui-bg-sidebar: #07090e !important;
-    --ui-bg-chrome: #0d1117 !important;
+    --ui-bg-sidebar: #12121A !important;
+    --ui-bg-chrome: #1a1b26 !important;
     --ui-inline-code-foreground: #7eb8f6 !important;
     --ui-selection-background: #7eb8f64d !important;
 
@@ -51,13 +51,13 @@ customCSS: | # css
     --ui-bg-editor: var(--ui-bg-elevated) !important;
 
      /* E.g. cmdk item active bg */
-    --theme-accent-soft: #272e3b !important;
+    --theme-accent-soft: #27283a !important;
 
     /* E.g. kbd bg, quota card bg, popover bg */
-    --theme-elevated-seed: #151c2f !important;
+    --theme-elevated-seed: #2f334d !important;
 
     /* E.g. tabs active border and sidebar subtitle. Otherwise inherits from ui_accent. */
-    --theme-primary: #c9d1d9 !important;
+    --theme-primary: #c9ccd9 !important;
 
     /* E.g. cmdk bg and chat bubble */
     --theme-bubble-seed: var(--theme-elevated-seed) !important;
@@ -89,7 +89,7 @@ customCSS: | # css
 
   /* User message chat bubble */
   [data-slot=aui_user-message-root] {
-    --dt-foreground: #dd9b77;
+    --dt-foreground: #ff9e64;
   }
 
   /* Enhance kbd contrast */
@@ -125,7 +125,7 @@ customCSS: | # css
 
   /* Remove distractive composer focus outline */
   [data-slot=composer-surface]:has([data-slot=composer-rich-input]:focus-visible) {
-    --dt-composer-ring: var(--ui-stroke-secondary) ;
+    --dt-composer-ring: var(--ui-stroke-secondary);
   }
 
   /* Disable the highlight in "active project" */
