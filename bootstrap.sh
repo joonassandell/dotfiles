@@ -19,7 +19,7 @@ fi
 ./packages/setup.sh
 
 # Run other individual setup scripts
-find * -name "setup.sh" -not -wholename "packages*" | while read setup; do
+find * -name "setup.sh" -not -wholename "packages*" -not -wholename "archive*" | while read setup; do
     ./$setup
 done
 
