@@ -41,9 +41,10 @@ Perform manual configurations after completing the setup especially if setting u
     - Control key ^ → `Command ⌘`
     - Command ⌘ → `Control key ^`
     - Function (fn) / Globe → `Command ⌘`
-    - Mission Control → `F12`
   - Spotlight → Uncheck `Show Spotligh search` and `Show Finder search window`
-  - Launchpad & Dock → Uncheck `Turn Dock hiding on/off`
+  - Dock → Uncheck `Turn Dock hiding on/off`
+  - Mission Control
+    - Switch to Desktop: Add `^⇧1`, `^⇧2` etc. depending on the window setup
   - Screenshots → Uncheck all the shortcuts
   - Input Sources → Uncheck all the shortcuts
 - System Settings and related
