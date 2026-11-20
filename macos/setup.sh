@@ -140,6 +140,20 @@ defaults write com.apple.WindowManager EnableTiledWindowMargins -bool false
 defaults write com.apple.dock expose-group-apps -bool false
 
 # =======================================
+# Menu bar
+# =======================================
+
+# Automatically hide and show the menu bar
+defaults write NSGlobalDomain _HIHideMenuBar -bool true
+defaults write com.apple.controlcenter AutoHideMenuBarOption -int 0
+
+# Hide Focus, Screen Mirroring and the microphone/camera indicator item from the menu bar, show Now Playing
+defaults write com.apple.controlcenter "NSStatusItem Visible FocusModes" -bool false
+defaults write com.apple.controlcenter "NSStatusItem Visible ScreenMirroring" -bool false
+defaults write com.apple.controlcenter "NSStatusItem Visible AudioVideoModule" -bool false
+defaults write com.apple.controlcenter "NSStatusItem Visible NowPlaying" -bool true
+
+# =======================================
 # Various
 # =======================================
 
@@ -150,8 +164,10 @@ sudo pmset -c sleep 0
 # Kill affected applications
 # =======================================
 
-for app in "Finder" \
-	"Dock"; do
+for app in "ControlCenter" \
+	"Finder" \
+	"Dock" \
+	"SystemUIServer"; do
 	killall "${app}" &> /dev/null
 done
 
