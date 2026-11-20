@@ -39,7 +39,7 @@ source $ZSH/oh-my-zsh.sh
 
 source ~/Joonas\ Sandell/Apps/macOS/.private.zshrc
 source ~/Repositories/dotfiles/zsh/aliases.zsh
-source ~/Repositories/dotfiles/zsh/android.zsh
+source ~/Repositories/dotfiles/zsh/ios-android-capture/index.zsh
 source ~/Repositories/dotfiles/zsh/npm-bun.zsh
 source ~/Repositories/dotfiles/zsh/hermes.zsh
 source ~/Repositories/dotfiles/zsh/functions.zsh
