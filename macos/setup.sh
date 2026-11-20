@@ -124,6 +124,9 @@ defaults write com.apple.dock autohide-time-modifier -float 0.5s
 # Show only open applications in the Dock
 defaults write com.apple.dock static-only -bool true
 
+# Don't bounce icons when an app wants attention
+defaults write com.apple.dock no-bouncing -bool true
+
 # =======================================
 # Windows
 # =======================================
