@@ -1,4 +1,3 @@
-# Various aliases
 alias cat="bat"
 alias csv-json="mlr --icsv --ojson tail" # Add -n2 to limit lines
 alias csv-table="mlr --icsv --opprint cat"
@@ -13,7 +12,7 @@ alias ls="eza --all --oneline --group-directories-first --icons" # https://githu
 alias lsl="eza --all --oneline --group-directories-first --icons --long --header --mounts --git"
 alias matrix="bunx matrix-rain"
 alias preview="fzf --preview 'bat --color=always {}'"
-alias reload="clear && reset && source ~/.zshrc" # Run CMD+K to remove Wrap history
+alias reload="clear && reset && source ~/.zshrc"
 alias repo="cd ~/Repositories/"
 alias search="rg -i"
 alias show-ssh-keys="ssh-add -l"
