@@ -34,6 +34,9 @@ mkdir -p $HOME/Drive
 # Disable natural scrolling
 defaults write -g com.apple.swipescrolldirection -bool false
 
+# Show scroll bars only when scrolling
+defaults write NSGlobalDomain AppleShowScrollBars -string "WhenScrolling"
+
 # Expand save panel by default
 defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true
 defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode2 -bool true
