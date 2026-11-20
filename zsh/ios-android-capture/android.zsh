@@ -1,6 +1,7 @@
 # Record or screenshot the Android screen and save it on this Mac:
 #   android-rec [name]    video. Press Ctrl+C to stop. The phone limits one recording to 3 minutes.
 #   android-shot [name]   screenshot
+# Without a name the file is <model>_<date>_<time>, for example pixel-8a_2026-11-20_14-41-10.mp4.
 #
 # The folder is set in capture.zsh. Which device to use when several are connected: ANDROID_SERIAL
 # (adb reads it itself).
@@ -14,11 +15,18 @@ _android-capture-dir() {
   _ios-android-capture-dir
 }
 
+# Prints the phone model as a file name prefix, for example pixel-8a.
+_android-prefix() {
+  local model
+  model=$(adb shell getprop ro.product.model 2>/dev/null | tr -d '\r')
+  _ios-android-capture-slug "${model:-android}"
+}
+
 android-rec() {
   local dir
   dir=$(_android-capture-dir) || return 1
 
-  local file="$dir/${1:-android_$(date +%Y-%m-%d_%H-%M-%S)}.mp4"
+  local file="$dir/${1:-$(_android-prefix)_$(date +%Y-%m-%d_%H-%M-%S)}.mp4"
   local remote="/sdcard/android-rec-$$.mp4"
 
   # Ctrl+C must stop the recording on the phone, not this function: the pull below still has to run.
@@ -43,7 +51,7 @@ android-shot() {
   local dir
   dir=$(_android-capture-dir) || return 1
 
-  local file="$dir/${1:-android_$(date +%Y-%m-%d_%H-%M-%S)}.png"
+  local file="$dir/${1:-$(_android-prefix)_$(date +%Y-%m-%d_%H-%M-%S)}.png"
   if adb exec-out screencap -p > "$file" && [[ -s "$file" ]]; then
     echo "Saved $file"
   else

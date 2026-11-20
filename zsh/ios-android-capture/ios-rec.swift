@@ -2,7 +2,8 @@
 // "New Movie Recording" does. Stops on Ctrl+C. Built and run by `ios-rec` in ios.zsh.
 //
 // Usage: ios-rec <output.mov> [device name]
-// Without a device name, the only connected iPhone is used.
+// Without a device name, the only connected iPhone is used, or it asks when there are several.
+// With IOS_REC_PICKED set to a path, the name of the phone used is written there.
 
 import AVFoundation
 import CoreMediaIO
@@ -41,10 +42,30 @@ if found.isEmpty {
   fail(wanted.map { "No iPhone named \($0) found. Connect it with a USB cable and unlock it." }
     ?? "No iPhone found. Connect it with a USB cable and unlock it.")
 }
-if found.count > 1 {
-  fail("Several iPhones connected. Set IOS_DEVICE to one of: \(found.map(\.localizedName).joined(separator: ", "))")
+// Phones show up one by one, so give a second one a moment before deciding there is only one.
+if wanted == nil {
+  RunLoop.current.run(until: Date().addingTimeInterval(1))
+  found = screens()
 }
-let device = found[0]
+// With several phones, ask which one (or fail when there is no one to ask).
+var device = found[0]
+if found.count > 1 {
+  let names = found.map(\.localizedName)
+  guard isatty(STDIN_FILENO) != 0 else {
+    fail("Several iPhones connected. Set IOS_DEVICE to one of: \(names.joined(separator: ", "))")
+  }
+  FileHandle.standardError.write("Several iPhones connected:\n".data(using: .utf8)!)
+  for (i, name) in names.enumerated() {
+    FileHandle.standardError.write("  \(i + 1)) \(name)\n".data(using: .utf8)!)
+  }
+  FileHandle.standardError.write("Which one? ".data(using: .utf8)!)
+  guard let line = readLine(), let pick = Int(line.trimmingCharacters(in: .whitespaces)),
+        found.indices.contains(pick - 1) else { fail("No phone picked.") }
+  device = found[pick - 1]
+}
+if let path = ProcessInfo.processInfo.environment["IOS_REC_PICKED"] {
+  try? device.localizedName.write(toFile: path, atomically: true, encoding: .utf8)
+}
 
 let session = AVCaptureSession()
 guard let input = try? AVCaptureDeviceInput(device: device), session.canAddInput(input) else {
@@ -63,7 +84,7 @@ final class Delegate: NSObject, AVCaptureFileOutputRecordingDelegate {
   // Printed only now: finding the phone and warming up takes a few seconds.
   func fileOutput(_ output: AVCaptureFileOutput, didStartRecordingTo url: URL,
                   from connections: [AVCaptureConnection]) {
-    print("Recording to \(url.path). Press Ctrl+C to stop.")
+    print("Recording \(device.localizedName). Press Ctrl+C to stop.")
     fflush(stdout)
   }
 

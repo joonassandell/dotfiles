@@ -14,3 +14,9 @@ _ios-android-capture-dir() {
   fi
   mkdir -p "$dir" && print -r -- "$dir"
 }
+
+# Prints a model as a file name prefix: "iPhone 14 Pro" -> iphone-14-pro, "Pixel 8a" -> pixel-8a.
+# Anything in parentheses is dropped, so a phone name like "iPhone 13 (Joonas)" works too.
+_ios-android-capture-slug() {
+  print -r -- "$1" | sed -E 's/\([^)]*\)//g; s/[^A-Za-z0-9]+/-/g; s/^-+//; s/-+$//' | tr '[:upper:]' '[:lower:]'
+}
