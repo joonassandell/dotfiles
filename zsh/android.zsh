@@ -1,23 +1,30 @@
-# Record the Android screen and save the video on this Mac: `android-rec [name]`.
-# Press Ctrl+C to stop. The phone limits one recording to 3 minutes.
+# Record or screenshot the Android screen and save it on this Mac:
+#   android-rec [name]    video. Press Ctrl+C to stop. The phone limits one recording to 3 minutes.
+#   android-shot [name]   screenshot
 #
-# Settings, read each time it runs
-#   ANDROID_REC_DIR          folder for the videos. Default: ~/Desktop
+# Settings, read each time they run. Set them in the private zshrc to customize:
+#   ANDROID_REC_DIR          folder for the files. Default: ~/Desktop
 #   ANDROID_REC_BY_WORKTREE  set to 1 to save in a subfolder named after the current git worktree
-#                            (created if missing). Outside a git repo the videos go straight in the folder.
+#                            (created if missing). Outside a git repo the files go straight in the folder.
 #   ANDROID_SERIAL           which device to use when several are connected (adb reads it itself)
-android-rec() {
+
+# Prints the folder to save in, and creates it.
+_android-capture-dir() {
   if ! command -v adb >/dev/null; then
     echo "adb not found. Add the Android SDK platform-tools to PATH." >&2
     return 1
   fi
-
   local dir="${ANDROID_REC_DIR:-$HOME/Desktop}"
   if [[ -n "$ANDROID_REC_BY_WORKTREE" ]]; then
     local top
     top=$(git rev-parse --show-toplevel 2>/dev/null) && dir="$dir/${top:t}"
   fi
-  mkdir -p "$dir" || return 1
+  mkdir -p "$dir" && print -r -- "$dir"
+}
+
+android-rec() {
+  local dir
+  dir=$(_android-capture-dir) || return 1
 
   local file="$dir/${1:-$(date +%Y-%m-%d_%H-%M-%S)}.mp4"
   local remote="/sdcard/android-rec-$$.mp4"
@@ -36,6 +43,20 @@ android-rec() {
     echo "Saved $file"
   else
     echo "Pull failed. The video is still on the phone at $remote" >&2
+    return 1
+  fi
+}
+
+android-shot() {
+  local dir
+  dir=$(_android-capture-dir) || return 1
+
+  local file="$dir/${1:-$(date +%Y-%m-%d_%H-%M-%S)}.png"
+  if adb exec-out screencap -p > "$file" && [[ -s "$file" ]]; then
+    echo "Saved $file"
+  else
+    rm -f "$file"
+    echo "Screenshot failed. Is a phone connected, with the screen on?" >&2
     return 1
   fi
 }
