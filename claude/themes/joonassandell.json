@@ -1,0 +1,21 @@
+{
+  "name": "Joonas Sandell",
+  "base": "dark-ansi",
+  "overrides": {
+    "claude": "#7eb8f6",
+    "claudeShimmer": "#ffffff",
+    "clawd_body": "#d77757",
+    "error": "#ff899d",
+    "permission": "#7eb8f6",
+    "permissionShimmer": "#ffffff",
+    "promptBorder": "#333A4A",
+    "promptBorderShimmer": "#ffffff",
+    "selectionBg": "#283457",
+    "subtle": "#545c7e",
+    "success": "#9ece6a",
+    "suggestion": "#7eb8f6",
+    "text": "#ff9e64",
+    "userMessageBackground": "#1a1b26",
+    "warning": "#e0af68"
+  }
+}

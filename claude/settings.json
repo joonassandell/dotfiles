@@ -1,0 +1,52 @@
+{
+  "attribution": {
+    "commit": "",
+    "pr": "",
+    "sessionUrl": false
+  },
+  "permissions": {
+    "additionalDirectories": [
+      "~/.agents",
+      "~/Joonas Sandell/Projects"
+    ]
+  },
+  "model": "opus[1m]",
+  "hooks": {
+    "SessionStart": [
+      {
+        "matcher": "^(startup|resume|clear|compact|fork)$",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash '/Users/joonassandell/.claude/hooks/herdr-agent-state.sh' session",
+            "timeout": 10
+          }
+        ]
+      },
+      {
+        "matcher": "^(startup|clear|compact)$",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "sh /Users/joonassandell/.claude/hooks/project-context.sh",
+            "timeout": 10
+          }
+        ]
+      },
+      {
+        "matcher": "^(startup|clear|compact)$",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "sh /Users/joonassandell/.claude/hooks/caveman.sh",
+            "timeout": 10
+          }
+        ]
+      }
+    ]
+  },
+  "advisorModel": "fable",
+  "tui": "fullscreen",
+  "skipWorkflowUsageWarning": true,
+  "theme": "custom:joonassandell"
+}

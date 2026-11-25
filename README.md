@@ -86,7 +86,6 @@ Perform manual configurations after completing the setup especially if setting u
 - [Twitch](https://twitch.tv): Create a standalone app `cd /Applications && bunx nativefier https://www.twitch.tv && mv Twitch-darwin-arm64/Twitch.app ./Twitch.app && rm -rf Twitch-darwin-arm64`
 - [Slack](https://slack.com): Login to workspaces and [add API token (Stream Deck)](https://github.com/ellreka/streamdeck-slack-status#setup) for the wanted workspaces
 - [Screenflow 7](https://www.telestream.net/download-files/screenflow/7-3/ScreenFlow-7.3.2.dmg): Download and install
-- [Claude Code](https://claude.com/claude-code): Let it read the agent rules and project docs, which sit outside any repo. Add to `~/.claude/settings.json`: `"permissions": { "additionalDirectories": ["~/.agents", "~/Joonas Sandell/Projects"] }`
 - [Hermes](https://hermes-agent.nousresearch.com)
   - Restore from a backup with `hermes import <backup.zip>`, then run `hermes/setup.sh` again to symlink the Hermes files
   - WebUI (optional): `git clone https://github.com/nesquena/hermes-webui ~/Repositories/hermes-webui`, uncomment the `webui-restart` hook lines in `hermes/setup.sh` and run it. It needs Python 3.11+, so `HERMES_WEBUI_PYTHON` must point to one (see the `hermes-webui-restart` alias). Put `HERMES_WEBUI_PASSWORD` in its `.env`. Stop it with the `hermes-webui-stop` alias.
