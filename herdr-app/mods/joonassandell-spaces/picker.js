@@ -301,7 +301,7 @@ export default class Picker extends View {
         .child(h_flex().gap(9).items_center().min_w(0).child(this.preview(18))
           .child(div().max_w(180).truncate().text_color(t.foreground).child(this.space?.name ?? 'Space is gone'))))
       .child(group('jss-mode', MODES, d.kind, mode => { d.kind = mode; this.error = ''; this.page = 0; }))
-      .child(v_flex().id('jss-body').flex_1().min_h(0).gap(14).overflow_y_scrollbar()
+      .child(v_flex().id('jss-body').flex_1().min_h(0).gap(14).overflow_y_scroll()
         .child(this.content())
         .when(d.kind === 'image', el => el.child(divider()).child(this.reference()))
         .when(d.kind === 'monogram' || d.kind === 'icon', el => el.child(divider()).child(this.colors()))
