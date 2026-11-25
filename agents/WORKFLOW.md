@@ -12,7 +12,7 @@ My common workflows for coding agents (Hermes, Claude and any other agent). The 
 
 ## Yolo projects
 
-1. `You can commit to main and push if I say commit, commit push, or push.`
+1. `/direct`
 2. `<issue-description>`
 3. Build, then `commit`, `commit push` or `push`
 
@@ -40,7 +40,7 @@ My common workflows for coding agents (Hermes, Claude and any other agent). The 
 
 For repos like my dotfiles, where a branch and a PR are more ceremony than they are worth.
 
-1. **Allow it.** Tell the chat once: "You can commit to main and push if I say commit, commit push, or push." It lasts for that chat only, so say it again in a new one. My words in the chat override the rule in `AGENTS.md` against committing to `<base>`.
+1. **Allow it.** `/direct` once in the chat. It lasts for that chat only, so run it again in a new one. My words in the chat override the rule in `AGENTS.md` against committing to `<base>`.
 2. **Describe the task.** As in Solo projects.
 3. **Build and commit.** Commit atomically as Conventional Commits, on `<base>`. A branch, `/grill-me`, a review and a PR are optional. `commit` commits, `commit push` commits and pushes, and `push` pushes what is committed. The agent doesn't push otherwise.
 
