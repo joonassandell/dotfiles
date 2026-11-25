@@ -84,6 +84,7 @@ Perform manual configurations after completing the setup especially if setting u
   - Screenshots → Uncheck `Scale Retina screenshots to 1x`
   - Shortcuts → Capture Area & Copy to Clipboard → `^ ⇧ ⌘ 4`
 - [Xcode](https://apps.apple.com/app/xcode/id497799835): Install from the App Store, then run `sudo xcodebuild -license accept` and `xcodebuild -runFirstLaunch`
+- [Herdr](https://herdr.dev): In the welcome, turn off the Files and Changes panels
 - [Fork](https://git-fork.com)
   - Configure Accounts
   - General → Default Source Folder → `~/Repositories`
