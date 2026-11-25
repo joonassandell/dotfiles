@@ -2,7 +2,7 @@
   "background": "#1a1b26",
   "foreground": "#c9ccd9",
   "selection": "#283457",
-  "cursor": "#c0caf5",
+  "cursor": "#c9ccd9",
   "ansi": [
     "#15161e",
     "#f7768e",
