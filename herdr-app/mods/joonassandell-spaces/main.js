@@ -4,12 +4,15 @@ import Spaces from './spaces.js';
 import Menu from './menu.js';
 import Picker from './picker.js';
 import { MOD } from './model.js';
+import { footer } from './footer.js';
 
 export default class JoonasSandellSpaces extends Spaces {
   init(_props, cx) {
     const p = props() ?? {};
     // An empty sidebar strip under the macOS window buttons, in place of the hidden brand row.
     if (p.mode === 'spacer') { this.spacer = true; return; }
+    // The sidebar footer with Settings only (see footer.js).
+    if (p.mode === 'footer') { this.footer = true; return; }
     if (p.mode === 'picker' || p.mode === 'menu') {
       this.overlayContent = cx.new(p.mode === 'picker' ? Picker : Menu, p);
       return;
@@ -26,6 +29,7 @@ export default class JoonasSandellSpaces extends Spaces {
   }
   render() {
     if (this.spacer) return div().size_full().bg(theme().chrome);
+    if (this.footer) return footer();
     return this.overlayContent ?? super.render();
   }
 }

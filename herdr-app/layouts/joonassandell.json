@@ -68,13 +68,13 @@
           "id": "sidebar-footer",
           "type": "block",
           "content": {
-            "mod": "workspace-chrome",
+            "mod": "joonassandell-spaces",
             "props": {
-              "footer": true
+              "mode": "footer"
             }
           },
           "size": {
-            "px": 69
+            "px": 41
           }
         }
       ],
