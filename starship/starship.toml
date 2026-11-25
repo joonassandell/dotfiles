@@ -5,3 +5,7 @@
 
 [aws]
 disabled = true
+
+[character]
+success_symbol = "[❯](bold #c9ccd9)"
+error_symbol = "[❯](bold #ff899d)"
