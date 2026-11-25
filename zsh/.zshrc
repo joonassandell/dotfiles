@@ -55,3 +55,10 @@ export COMPOSE_INTERACTIVE_NO_CLI=1 # https://github.com/docker/compose/issues/5
 
 # https://starship.rs
 eval "$(starship init zsh)"
+
+# An empty line before every prompt but the first, so a new or cleared terminal
+# starts at the top (starship's add_newline is off)
+_prompt_spacing() { (( _prompt_spaced )) && print; _prompt_spaced=1; }
+autoload -Uz add-zsh-hook
+add-zsh-hook precmd _prompt_spacing
+clear() { command clear "$@"; _prompt_spaced=0; }

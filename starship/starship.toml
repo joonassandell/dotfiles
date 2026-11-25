@@ -3,6 +3,9 @@
 # Get editor completions based on the config schema
 "$schema" = 'https://starship.rs/config-schema.json'
 
+# No empty line before the prompt: zsh adds it itself, except above the first one (.zshrc)
+add_newline = false
+
 [aws]
 disabled = true
 
