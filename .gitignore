@@ -1,2 +1,5 @@
 .DS_Store
 __pycache__/
+
+# Herdr mod API typings, rewritten by the app on every run
+gpui-kit.d.ts
