@@ -22,6 +22,7 @@ symlink "$SOURCE/themes/joonassandell.json" "$DESTINATION/.config/herdr-app/them
 mkdir -p "$DESTINATION/.config/herdr-app/layouts" "$DESTINATION/.config/herdr-app/mods"
 symlink "$SOURCE/layouts/joonassandell.json" "$DESTINATION/.config/herdr-app/layouts/joonassandell.json"
 symlink "$SOURCE/mods/joonassandell-spaces" "$DESTINATION/.config/herdr-app/mods/joonassandell-spaces"
+symlink "$SOURCE/mods/joonassandell-status" "$DESTINATION/.config/herdr-app/mods/joonassandell-status"
 symlink "$SOURCE/joonassandell-spaces-avatars.json" "$DESTINATION/.config/herdr-app/joonassandell-spaces-avatars.json"
 
 success "Finished configuring Herdr app"

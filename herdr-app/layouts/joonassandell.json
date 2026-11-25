@@ -176,7 +176,7 @@
           "id": "status",
           "type": "block",
           "content": {
-            "mod": "workspace-status"
+            "mod": "joonassandell-status"
           },
           "size": {
             "px": 28
