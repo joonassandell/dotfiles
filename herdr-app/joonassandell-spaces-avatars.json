@@ -4,7 +4,7 @@
     "freepress": {
       "kind": "image",
       "source": "/Users/joonassandell/Repositories/dotfiles/assets/freepress-icon.svg",
-      "mode": "copy",
+      "mode": "reference",
       "match": "freepress"
     },
     "dotfiles": {
@@ -26,6 +26,18 @@
       "kind": "image",
       "source": "/Users/joonassandell/Repositories/dotfiles/assets/joonassandell-avatar.svg",
       "mode": "reference"
+    },
+    "freepress/docs": {
+      "kind": "image",
+      "source": "/Users/joonassandell/Repositories/dotfiles/assets/freepress-icon.svg",
+      "mode": "reference",
+      "match": "freepress"
+    },
+    "freepress/mobile": {
+      "kind": "image",
+      "source": "/Users/joonassandell/Repositories/dotfiles/assets/freepress-icon.svg",
+      "mode": "reference",
+      "match": "fp"
     }
   }
 }

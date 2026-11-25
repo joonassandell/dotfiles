@@ -15,7 +15,7 @@
 //
 //   "background" and "foreground" are optional. Left out, they are the space's own color and white,
 //   as in Herdr. A color is "ansi1" to "ansi6" (Herdr's avatar colors) or "#rrggbb".
-//   An image "mode" is "reference" (the file stays where it is) or "copy" (the default).
+//   An image "mode" is "reference" (the file stays where it is, the default) or "copy".
 import { exec, appHome, shared, setShared } from 'herdr';
 import { ASSET_DIR, extensionOf, problem, cleanMatch } from './model.js';
 
@@ -86,7 +86,7 @@ export async function saveAvatar(name, spec) {
 const hash = (text) => { let h = 5381; for (const c of text) h = ((h << 5) + h + c.codePointAt(0)) >>> 0; return h.toString(16); };
 
 export const assetPath = (spec) => {
-  const mode = spec.mode === 'reference' ? 'reference' : 'copy';
+  const mode = spec.mode === 'copy' ? 'copy' : 'reference';
   return `${ASSET_DIR}/${hash(spec.source)}-${mode}.${extensionOf(spec.source)}`;
 };
 
@@ -97,10 +97,10 @@ export async function materialize(spec) {
   const path = assetPath(spec);
   const target = `${appHome()}/${path}`;
   // A copy made earlier stays usable if the original is gone.
-  if (spec.mode !== 'reference' && (await exec('test', ['-f', target])).code === 0) { ready.add(path); return path; }
+  if (spec.mode === 'copy' && (await exec('test', ['-f', target])).code === 0) { ready.add(path); return path; }
   if ((await exec('test', ['-f', spec.source])).code !== 0) throw new Error(`There is no file at ${spec.source}.`);
   await exec('mkdir', ['-p', `${appHome()}/${ASSET_DIR}`]);
-  const made = spec.mode === 'reference' ? await exec('ln', ['-sfn', spec.source, target]) : await exec('cp', ['-f', spec.source, target]);
+  const made = spec.mode === 'copy' ? await exec('cp', ['-f', spec.source, target]) : await exec('ln', ['-sfn', spec.source, target]);
   if (made.code !== 0) throw new Error(made.stderr.trim() || 'Could not use the image.');
   ready.add(path);
   return path;

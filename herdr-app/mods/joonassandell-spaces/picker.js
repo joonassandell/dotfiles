@@ -28,7 +28,7 @@ export default class Picker extends View {
       background: saved.background ?? null,
       foreground: saved.foreground ?? null,
       source: saved.source ?? '',
-      mode: saved.mode === 'reference' ? 'reference' : 'copy',
+      mode: saved.mode === 'copy' ? 'copy' : 'reference', // the file path is the default
       match: saved.match ?? '',
     };
     this.handle = cx.focus_handle();
