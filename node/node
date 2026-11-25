@@ -3,6 +3,20 @@
 # It runs the nvm default Node, so there is still only one Node install.
 # In a terminal, nvm's own node comes first in PATH and this script isn't used.
 
+# Remove this script's own directory from PATH while nvm runs. nvm calls
+# `node` and `npm` internally; if those resolve back to this script, it
+# starts itself again without end and fills the process table.
+SELF_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd -P)"
+LINK_DIR="$HOME/.local/bin"
+ORIG_PATH="$PATH"
+CLEAN_PATH=""
+IFS=: read -ra _parts <<< "$PATH"
+for _p in "${_parts[@]}"; do
+  [ "$_p" = "$LINK_DIR" ] || [ "$_p" = "$SELF_DIR" ] && continue
+  CLEAN_PATH="${CLEAN_PATH:+$CLEAN_PATH:}$_p"
+done
+export PATH="$CLEAN_PATH"
+
 export NVM_DIR="$HOME/.nvm"
 NVM_SH="${HOMEBREW_PREFIX:-/opt/homebrew}/opt/nvm/nvm.sh"
 
@@ -12,4 +26,5 @@ NVM_SH="${HOMEBREW_PREFIX:-/opt/homebrew}/opt/nvm/nvm.sh"
 NODE="$(nvm which default 2>/dev/null)"
 [ -x "$NODE" ] || { echo "node: no nvm default version, run 'nvm install --lts'" >&2; exit 127; }
 
+export PATH="$ORIG_PATH"
 exec "$NODE" "$@"
