@@ -10,6 +10,9 @@ font-thicken-strength = 0
 foreground = #c9ccd9
 theme = TokyoNight Night
 window-save-state = always
+window-padding-x = 12
+window-padding-y = 0,12
+window-padding-balance = true
 working-directory = ~/Repositories
 
 keybind = cmd+alt+left=previous_tab
