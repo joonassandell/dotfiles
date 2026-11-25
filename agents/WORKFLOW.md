@@ -4,7 +4,7 @@ My common workflows for coding agents (Hermes, Claude and any other agent). The 
 
 ## Solo projects
 
-1. `<issue-description>` or `<issue-description>. New worktree with Claude.`
+1. `/issue <issue-description>`
 2. Optional: `/grill-me` (or `/grill-with-docs`)
 3. Build with conventional commits
 4. `/review` or `/code-review <base>`
@@ -19,7 +19,7 @@ My common workflows for coding agents (Hermes, Claude and any other agent). The 
 ## Team projects
 
 1. `/linear-cli list issues`
-2. `New worktree with issue <ID>, start the issue and Claude.`
+2. `/issue <ID>`
 3. Optional: `/grill-me` (or `/grill-with-docs`)
 4. Build with conventional commits
 5. `/review` or `/code-review <base>`
@@ -30,7 +30,7 @@ My common workflows for coding agents (Hermes, Claude and any other agent). The 
 
 ### Solo projects
 
-1. **Describe the task.** Tell the orchestrator what to do. Add "New worktree with Claude." to get its own worktree and a Claude agent. Without it the orchestrator works on a new branch itself. Either way the branch comes from `<base>` and is named `<prefix>/<short-kebab-name>`.
+1. **Describe the task.** `/issue <description>`. In the orchestrator it gets its own worktree and a Claude agent; in a plain Claude or Hermes session in the repo, the work starts on a new branch right there. Either way the branch comes from `<base>` and is named `<prefix>/<short-kebab-name>`.
 2. **Shape the idea (optional).** `/grill-me` when the task is unclear or big. It writes no files. Use `/grill-with-docs` in repos that keep domain docs, since it also writes `GLOSSARY.md` and ADRs as it goes.
 3. **Build.** Commit atomically as [Conventional Commits](https://www.conventionalcommits.org).
 4. **Review.** `/review` or `/code-review <base>`, in the agent's own chat when in a worktree. `/review` is Claude Code's built-in bug review: it runs on my own plan, follows `CLAUDE.md`, and `--fix` applies the findings. It isn't in the `/` menu, because my `code-review` skill takes over the `/code-review` name and `/review` is the alias that stays. `/code-review <base>` reviews the diff on two axes, Standards (does it follow the repo's documented standards) and Spec (does it do what the issue or spec asked), in parallel sub-agents, reported separately and never merged into one verdict.
@@ -47,7 +47,7 @@ For repos like my dotfiles, where a branch and a PR are more ceremony than they 
 ### Team projects
 
 1. **Pick an issue.** `/linear-cli list issues`.
-2. **Start it.** The orchestrator creates a worktree on the issue's Linear branch, sets the issue to In Progress and starts Claude in it. I accept the branch name Linear generates. It sends Claude one short brief (the issue, its scope, no push or PR until I ask) and then stays out: it doesn't relay messages between Claude and me. In app repos it installs the dependencies itself and opens a pane under Claude with the run command typed but not started (the simulator's `flutter run`, `pnpm dev`), so I start it when I need it.
+2. **Start it.** `/issue <ID>`: the orchestrator creates a worktree on the issue's Linear branch, sets the issue to In Progress and starts Claude in it. I accept the branch name Linear generates. It sends Claude one short brief (the issue, its scope, no push or PR until I ask) and then stays out: it doesn't relay messages between Claude and me. In app repos it installs the dependencies itself and opens a pane under Claude with the run command typed but not started (the simulator's `flutter run`, `pnpm dev`), so I start it when I need it.
 3. **Shape, build and review.** The same as Solo projects, steps 2 to 4. `/code-review <base>` checks the diff against the Linear issue.
 4. **PR.** `/pr`, then push and create the PR. The agent drafts the title and body (the repo's PR template if there is one, otherwise the `/pr` format), shows them and waits for my approval, then pushes and opens the PR or MR with `gh` or `glab`, and stops. Merging is done by the team on the host. Screen recordings and screenshots from `ios-rec`, `ios-shot`, `android-rec` and `android-shot` (`../zsh/ios-android-capture`) land in a folder named after the worktree; before pushing, the agent attaches each one with `gh pr create --attach <file>` and lists them in a table in the PR body.
 5. **Clean up.** First the orchestrator reads the finished agent's chat and suggests what belongs in the team docs (if the project has docs), in design tasks or in other issues; I pick, and it adds only those. Then it checks the branch is merged and removes the worktree and the local branch. It asks before dropping unmerged commits.
