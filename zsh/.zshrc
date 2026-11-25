@@ -42,6 +42,7 @@ source ~/Repositories/dotfiles/zsh/aliases.zsh
 source ~/Repositories/dotfiles/zsh/ios-android-capture/index.zsh
 source ~/Repositories/dotfiles/zsh/npm-bun.zsh
 source ~/Repositories/dotfiles/zsh/hermes.zsh
+source ~/Repositories/dotfiles/zsh/herdr-app.zsh
 source ~/Repositories/dotfiles/zsh/functions.zsh
 source ~/Repositories/dotfiles/zsh/keybindings.zsh
 source ~/Repositories/dotfiles/zsh/nvm.zsh
