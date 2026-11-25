@@ -1,7 +1,7 @@
 import { div, svg, image } from 'gpui-kit';
 import { h_flex } from 'gpui-base';
 import { shared, theme } from 'herdr';
-import { MARK, INHERITED_TEXT, MOD, firstLetter } from './model.js';
+import { MARK, INHERITED_TEXT, MOD, defaultMark } from './model.js';
 
 // Herdr's own avatar is 18px, and the gap to the name is 9px (set by the row). Every kind here uses
 // the same box and the same corner radius, so only what is inside changes.
@@ -25,7 +25,7 @@ const box = (size) => h_flex().size(size).flex_none().rounded(size * RADIUS / SI
 
 // The avatar Herdr draws when nothing is chosen.
 export function defaultAvatar(name, spaceId, size = SIZE) {
-  return box(size).bg(inheritedFill(spaceId)).text_size(size * LETTER / SIZE).font_bold().text_color(INHERITED_TEXT).child(firstLetter(name));
+  return box(size).bg(inheritedFill(spaceId)).text_size(size * LETTER / SIZE).font_bold().text_color(INHERITED_TEXT).child(defaultMark(name));
 }
 
 // A chosen avatar. `path` is where the image to draw is (images only; null until it is ready).

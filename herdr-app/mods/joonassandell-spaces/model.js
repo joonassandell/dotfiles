@@ -15,9 +15,18 @@ export const IMAGE_EXTENSIONS = ['png', 'jpg', 'jpeg', 'svg', 'gif', 'webp'];
 
 const words = (name) => String(name ?? '').normalize('NFKC').split(/[^\p{L}\p{N}]+/u).filter(Boolean);
 
-// What Herdr shows by default: the first letter.
+// The whole leading emoji of a name, as in Herdr's spaces mod (newer pictographs may
+// come without VS16; a trailing selector, modifier or joiner means only part matched).
+export const EMOJI = /^(?:[#*0-9]\uFE0F?\u20E3|\p{Regional_Indicator}{2}|(?:\p{Emoji_Presentation}|(?=[\u{1F000}-\u{1FFFF}])\p{Extended_Pictographic}|\p{Extended_Pictographic}(?=\uFE0F)|\p{Emoji_Modifier_Base}(?=\p{Emoji_Modifier}))\uFE0F?[\p{Emoji_Modifier}\u{E0020}-\u{E007F}]*(?:\u200D\p{Extended_Pictographic}\uFE0F?\p{Emoji_Modifier}?)*)(?![\p{Grapheme_Extend}\p{Emoji_Modifier}\u200D])/u;
+
+// The first letter, for a monogram.
 export function firstLetter(name) {
   return [...String(name ?? '')][0]?.toUpperCase() ?? '?';
+}
+
+// What Herdr shows by default: a leading emoji, else the first letter.
+export function defaultMark(name) {
+  return EMOJI.exec(String(name ?? ''))?.[0] ?? firstLetter(name);
 }
 
 // The first letters of the first two words: "Freepress Docs" is "FD".
