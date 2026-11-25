@@ -11,7 +11,22 @@
       "type": "column",
       "children": [
         {
+          "id": "titlebar-space",
+          "type": "block",
+          "content": {
+            "mod": "joonassandell-spaces",
+            "props": {
+              "mode": "spacer"
+            }
+          },
+          "size": {
+            "px": 36
+          },
+          "window_drag": true
+        },
+        {
           "id": "brand",
+          "hidden": true,
           "type": "block",
           "content": {
             "mod": "workspace-chrome"
@@ -178,5 +193,5 @@
     "color": "border"
   },
   "titlebar": "none",
-  "traffic_lights": [12, 16]
+  "traffic_lights": [16, 16]
 }

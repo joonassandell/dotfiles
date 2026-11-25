@@ -1,4 +1,5 @@
-import { props, nextCommand, focused, openOverlay } from 'herdr';
+import { div } from 'gpui-kit';
+import { props, nextCommand, focused, openOverlay, theme } from 'herdr';
 import Spaces from './spaces.js';
 import Menu from './menu.js';
 import Picker from './picker.js';
@@ -7,6 +8,8 @@ import { MOD } from './model.js';
 export default class JoonasSandellSpaces extends Spaces {
   init(_props, cx) {
     const p = props() ?? {};
+    // An empty sidebar strip under the macOS window buttons, in place of the hidden brand row.
+    if (p.mode === 'spacer') { this.spacer = true; return; }
     if (p.mode === 'picker' || p.mode === 'menu') {
       this.overlayContent = cx.new(p.mode === 'picker' ? Picker : Menu, p);
       return;
@@ -21,5 +24,8 @@ export default class JoonasSandellSpaces extends Spaces {
       }
     });
   }
-  render() { return this.overlayContent ?? super.render(); }
+  render() {
+    if (this.spacer) return div().size_full().bg(theme().chrome);
+    return this.overlayContent ?? super.render();
+  }
 }
