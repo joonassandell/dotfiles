@@ -36,6 +36,12 @@ Perform manual configurations after completing the setup especially if setting u
   - Check `Locally deleted files will be removed from your NAS` and `Use minimalist tray icon`
   - Check `Sync files and folders with the prefix "."` to all synced folders
   - Initially sync only the essential folders: `Drive/1Password` and `Joonas Sandell/Design Resources/Fonts`
+- [Hermes](https://hermes-agent.nousresearch.com)
+  - Restore from a backup with `hermes import <backup.zip>`, then run `hermes/setup.sh` again to symlink the Hermes files
+  - WebUI (optional): `git clone https://github.com/nesquena/hermes-webui ~/Repositories/hermes-webui`, uncomment the `webui-restart` hook lines in `hermes/setup.sh` and run it. It needs Python 3.11+, so `HERMES_WEBUI_PYTHON` must point to one (see the `hermes-webui-restart` alias). Put `HERMES_WEBUI_PASSWORD` in its `.env`. Stop it with the `hermes-webui-stop` alias.
+  - Dashboard: set `dashboard.public_url` and `dashboard.basic_auth.username` with `hermes config set`, and the password in `~/.hermes/.env` as `HERMES_DASHBOARD_BASIC_AUTH_PASSWORD`.
+  - Dashboard service: `hermes/setup.sh` symlinks `hermes/launchd/ai.hermes.dashboard.plist` to `~/Library/LaunchAgents`. Load it in your own terminal with `launchctl bootstrap gui/$(id -u) ~/Library/LaunchAgents/ai.hermes.dashboard.plist`. The paths in the plist are hardcoded to `/Users/joonassandell`. `hermes update --plan` should then list the dashboard as `launchd`
+  - Reach the dashboard (e.g. from iPhone) over Tailscale: `tailscale serve --bg --https=8443 9119` (the WebUI uses port 443)
 - Keyboard shortcuts
   - Modifier Keys
     - Control key ^ → `Command ⌘`
@@ -65,7 +71,7 @@ Perform manual configurations after completing the setup especially if setting u
   - Import Stream Deck profiles from `~/Joonas Sandell/Apps/Stream Deck`
   - Add the plugins and icon packs from [Marketplace](https://marketplace.elgato.com/stream-deck)
 - [Camera Hub](https://www.elgato.com/us/en/s/downloads)
-  - Settings → Snapshop Location → `~/Joonas Sandell/Photos/Snapshots`
+  - Settings → Snapshop Location → `~/Joonas Sandell/Photos/Screenshots`
   - Check [System Setting](https://help.elgato.com/hc/en-us/articles/30069817477777-Elgato-Camera-Hub-How-to-enable-Virtual-Camera-on-macOS-15-Sequoia): General → Camera Extenions → `Elgato Camera Hub`
   - Possibly uninstall the installed `DisplayLink Manager`
 - [CleanShot X 4.8.11](https://updates.getcleanshot.com/v3/CleanShot-X-4.8.11.dmg)
@@ -77,7 +83,6 @@ Perform manual configurations after completing the setup especially if setting u
   - Quick Access → Uncheck `Move to active screen`
   - Screenshots → Uncheck `Scale Retina screenshots to 1x`
   - Shortcuts → Capture Area & Copy to Clipboard → `^ ⇧ ⌘ 4`
-- [Sequel Pro](https://sequelpro.com): Symlink favorites `ln -s ~/Joonas\ Sandell/Apps/Sequel\ Pro ~/Library/Application\ Support/Sequel\ Pro`
 - [Xcode](https://apps.apple.com/app/xcode/id497799835): Install from the App Store, then run `sudo xcodebuild -license accept` and `xcodebuild -runFirstLaunch`
 - [Fork](https://git-fork.com)
   - Configure Accounts
@@ -86,12 +91,6 @@ Perform manual configurations after completing the setup especially if setting u
 - [Twitch](https://twitch.tv): Create a standalone app `cd /Applications && bunx nativefier https://www.twitch.tv && mv Twitch-darwin-arm64/Twitch.app ./Twitch.app && rm -rf Twitch-darwin-arm64`
 - [Slack](https://slack.com): Login to workspaces and [add API token (Stream Deck)](https://github.com/ellreka/streamdeck-slack-status#setup) for the wanted workspaces
 - [Screenflow 7](https://www.telestream.net/download-files/screenflow/7-3/ScreenFlow-7.3.2.dmg): Download and install
-- [Hermes](https://hermes-agent.nousresearch.com)
-  - Restore from a backup with `hermes import <backup.zip>`, then run `hermes/setup.sh` again to symlink the Hermes files
-  - WebUI (optional): `git clone https://github.com/nesquena/hermes-webui ~/Repositories/hermes-webui`, uncomment the `webui-restart` hook lines in `hermes/setup.sh` and run it. It needs Python 3.11+, so `HERMES_WEBUI_PYTHON` must point to one (see the `hermes-webui-restart` alias). Put `HERMES_WEBUI_PASSWORD` in its `.env`. Stop it with the `hermes-webui-stop` alias.
-  - Dashboard: set `dashboard.public_url` and `dashboard.basic_auth.username` with `hermes config set`, and the password in `~/.hermes/.env` as `HERMES_DASHBOARD_BASIC_AUTH_PASSWORD`.
-  - Dashboard service: `hermes/setup.sh` symlinks `hermes/launchd/ai.hermes.dashboard.plist` to `~/Library/LaunchAgents`. Load it in your own terminal with `launchctl bootstrap gui/$(id -u) ~/Library/LaunchAgents/ai.hermes.dashboard.plist`. The paths in the plist are hardcoded to `/Users/joonassandell`. `hermes update --plan` should then list the dashboard as `launchd`
-  - Reach the dashboard (e.g. from iPhone) over Tailscale: `tailscale serve --bg --https=8443 9119` (the WebUI uses port 443)
 
 There are probably essential settings that are missing from this guide so do whatever is necessary.
 
