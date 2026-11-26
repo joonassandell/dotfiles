@@ -523,7 +523,9 @@ export default class Spaces extends View {
       .on_mouse_down("right", () => this.menu(w))
       .child(
         h_flex()
-          .gap(9)
+          // 7, not stock's 9: the 18 px avatar then puts names where the agents list's
+          // 16 px icon and 9 px gap put its titles.
+          .gap(7)
           .items_center()
           .when(Boolean(tree), el => el.child(this.treeLines(tree, t)))
           .when(!tree, el => el.child(this.spaceAvatar(w)))
