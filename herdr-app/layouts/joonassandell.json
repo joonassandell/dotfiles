@@ -113,7 +113,7 @@
                 "pane": {
                   "header": {
                     "content": {
-                      "mod": "pane"
+                      "mod": "joonassandell-pane"
                     },
                     "reveal": "always",
                     "height": 30,
