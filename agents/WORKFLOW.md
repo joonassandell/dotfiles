@@ -26,7 +26,7 @@ My common workflows for coding agents (Hermes, Claude and any other agent). The 
 5. `/review` or `/code-review <base>`
 6. `/fold`
 7. `/pr`, then push and create the PR
-8. `Clean up <ID>` once done
+8. `/cleanup <ID>` once done
 
 ## Project details
 
@@ -53,7 +53,7 @@ For repos like my dotfiles, where a branch and a PR are more ceremony than they 
 2. **Start it.** `/issue <ID>`: the orchestrator creates a worktree on the issue's Linear branch, sets the issue to In Progress and starts Claude in it. I accept the branch name Linear generates. It sends Claude one short brief (the issue, its scope, no push or PR until I ask) and then stays out: it doesn't relay messages between Claude and me. In app repos it installs the dependencies itself and opens a pane under Claude with the run command typed but not started (the simulator's `flutter run`, `pnpm dev`), so I start it when I need it.
 3. **Shape, build, review and fold.** The same as Solo projects, steps 2 to 5. `/code-review <base>` checks the diff against the Linear issue.
 4. **PR.** `/pr`, then push and create the PR. The agent drafts the title and body (the repo's PR template if there is one, otherwise the `/pr` format), shows them and waits for my approval, then pushes and opens the PR or MR with `gh` or `glab`, and stops. Merging is done by the team on the host. Screen recordings and screenshots from `ios-rec`, `ios-shot`, `android-rec` and `android-shot` (`../zsh/ios-android-capture`) land in a folder named after the worktree; before pushing, the agent attaches each one with `gh pr create --attach <file>` and lists them in a table in the PR body.
-5. **Clean up.** First the orchestrator reads the finished agent's chat and suggests what belongs in the team docs (if the project has docs), in design tasks or in other issues; I pick, and it adds only those. Then it checks the branch is merged and removes the worktree and the local branch. It asks before dropping unmerged commits.
+5. **Clean up.** `/cleanup <ID>`. First the orchestrator reads the finished agent's chat and suggests what belongs in the team docs (if the project has docs), in design tasks or in other issues; I pick, and it adds only those. Then it checks the branch is merged and removes the worktree and the local branch. It asks before dropping unmerged commits.
 
 To only try someone else's PR (`Test PR <number>, no Claude.`), the orchestrator makes the worktree with the run panes and tabs but no agent and no brief. Its clean up deletes only my local branch, never theirs.
 
