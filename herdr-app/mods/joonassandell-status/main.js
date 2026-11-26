@@ -8,9 +8,12 @@
 // the numbers are as fresh as the plugin's last check; when the newest check is
 // older than STALE_MS the quota is drawn dimmed, and older than GONE_MS (the
 // plugin is off or gone) it is hidden.
+//
+// The branch is a link: a click opens its pull request on GitHub (through `gh`), or the
+// branch's page on the remote host when there is none; Cmd+click copies the branch name.
 import { View, div, svg, PathBuilder } from "gpui-kit";
 import { h_flex } from "gpui-base";
-import { spaces, theme, exec, home, checking } from "herdr";
+import { spaces, focused, theme, exec, home, checking } from "herdr";
 
 const POLL_MS = 60_000;
 const STALE_MS = 30 * 60_000;
@@ -46,6 +49,38 @@ function until(ms) {
   const h = Math.floor(m / 60);
   if (h < 24) return `${h}h ${m % 60}m`;
   return `${Math.floor(h / 24)}d ${h % 24}h`;
+}
+
+// The web address of a git remote: git@host:owner/repo.git, ssh://git@host/owner/repo
+// and https://host/owner/repo.git all become https://host/owner/repo.
+function webUrl(remote) {
+  const m = remote.trim().match(/^(?:[a-z+]+:\/\/)?(?:[^@/]+@)?([^:/]+)[:/](.+?)(?:\.git)?\/?$/);
+  return m ? `https://${m[1]}/${m[2]}` : null;
+}
+
+// Runs a command line tool the app may not find on its own PATH.
+async function tool(name, args, cwd) {
+  for (const cmd of [name, `/opt/homebrew/bin/${name}`, `/usr/local/bin/${name}`]) {
+    try {
+      const r = await exec(cmd, args, { cwd, timeout: 10_000 });
+      if (r.code !== 127) return r;
+    } catch {}
+  }
+  return null;
+}
+
+// Opens the branch's pull request, else the branch's page on the remote host.
+async function openBranch(dir, branch) {
+  const remote = await tool("git", ["-C", dir, "remote", "get-url", "origin"]);
+  const base = remote?.code === 0 ? webUrl(remote.stdout) : null;
+  if (!base) return;
+  let url = null;
+  if (base.startsWith("https://github.com/")) {
+    const pr = await tool("gh", ["pr", "view", branch, "--json", "url", "--jq", ".url"], dir);
+    if (pr?.code === 0 && pr.stdout.trim().startsWith("https://")) url = pr.stdout.trim();
+  }
+  const tree = base.includes("gitlab") ? "/-/tree/" : "/tree/";
+  await exec("open", [url ?? `${base}${tree}${branch.split("/").map(encodeURIComponent).join("/")}`]);
 }
 
 // A ring that fills clockwise from the top: the track in `track`, `fraction` of it in `color`.
@@ -97,10 +132,23 @@ export default class JoonassandellStatus extends View {
     const t = theme();
     const space = spaces().find(s => s.active);
     const label = (icon, text) => h_flex().gap(6).items_center().child(svg(`mods/workspace-chrome/${icon}.svg`).size(13)).child(text);
+    const branch = (name) => label("branch", this.copied ? "Copied" : name).id("status-branch").cursor_pointer()
+      .hover(s => s.text_color(t.foreground))
+      .on_click((e, cx) => {
+        if (e.modifiers?.platform) {
+          cx.write_to_clipboard(name);
+          this.copied = true;
+          cx.notify();
+          cx.spawn(async (cx) => { await cx.sleep(1200); this.copied = false; cx.notify(); });
+          return;
+        }
+        const dir = focused()?.cwd || space?.folder;
+        if (dir) cx.spawn(async () => { await openBranch(dir, name); });
+      });
     const quota = this.quotaView(t);
     return h_flex().size_full().px(14).gap(16).items_center().bg(t.chrome).border_t(1).border_color(t.border).text_size(11.8).text_color(t.muted)
       .when(Boolean(space?.machine), el => el.child(label("server", space.machine)))
-      .when(Boolean(space?.branch), el => el.child(label("branch", space.branch)))
+      .when(Boolean(space?.branch), el => el.child(branch(space.branch)))
       .child(div().flex_1())
       .when(Boolean(quota), el => el.child(quota));
   }
