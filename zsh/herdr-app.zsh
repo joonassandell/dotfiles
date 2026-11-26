@@ -6,8 +6,4 @@ if [[ -n "$HC_TERMINAL_ID" ]]; then
   _herdr-app-bar-cursor() { printf '\e[6 q'; }
   autoload -Uz add-zsh-hook
   add-zsh-hook precmd _herdr-app-bar-cursor
-
-  # The pane's tty, so Hermes can show in the app's Agents list: Hermes sends it with each new
-  # session (terminal.client_env_passthrough) and its herdr-app-state plugin writes the state there.
-  export HC_TTY=$TTY
 fi
