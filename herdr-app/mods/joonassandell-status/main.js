@@ -11,7 +11,7 @@
 //
 // The branch is a link: a click opens its pull request on GitHub (through `gh`), or the
 // branch's page on the remote host when there is none; Cmd+click copies the branch name.
-import { View, div, svg, PathBuilder } from "gpui-kit";
+import { View, div, svg } from "gpui-kit";
 import { h_flex } from "gpui-base";
 import { spaces, focused, theme, exec, home, checking } from "herdr";
 
@@ -83,18 +83,12 @@ async function openBranch(dir, branch) {
   await exec("open", [url ?? `${base}${tree}${branch.split("/").map(encodeURIComponent).join("/")}`]);
 }
 
-// A ring that fills clockwise from the top: the track in `track`, `fraction` of it in `color`.
-function ring(fraction, color, track, size = 12, width = 2) {
-  const c = size / 2, r = c - width / 2;
-  const point = (f) => [c + r * Math.sin(f * 2 * Math.PI), c - r * Math.cos(f * 2 * Math.PI)];
-  const circle = PathBuilder.stroke(width).move_to(c, c - r).arc_to(r, r, 0, false, true, c, c + r).arc_to(r, r, 0, false, true, c, c - r).build();
-  const el = div().relative().size(size).flex_none().child(window.paint_path(circle, track).absolute().left(0).top(0).size(size));
-  if (fraction <= 0) return el;
-  const arc = fraction >= 0.999 ? circle : (() => {
-    const [x, y] = point(fraction);
-    return PathBuilder.stroke(width).move_to(c, c - r).arc_to(r, r, 0, fraction > 0.5, true, x, y).build();
-  })();
-  return el.child(window.paint_path(arc, color).absolute().left(0).top(0).size(size));
+// A ring that fills clockwise from the top, drawn exactly like the agents list's spinner:
+// rings/<percent>.svg are copies of spinner.svg (track at 24% opacity, round ends) with the
+// arc set to that percent, tinted with `color`.
+function ring(fraction, color, size = 12) {
+  const percent = Math.max(0, Math.min(100, Math.round(fraction * 100)));
+  return svg(`mods/joonassandell-status/rings/${percent}.svg`).size(size).flex_none().text_color(color);
 }
 
 export default class JoonassandellStatus extends View {
@@ -122,7 +116,7 @@ export default class JoonassandellStatus extends View {
       .children(WINDOWS.filter(([key]) => key in q.left).map(([key, label]) => {
         const left = q.left[key];
         return h_flex().gap(6).items_center()
-          .child(ring(left / 100, color(left), t.border))
+          .child(ring(left / 100, color(left)))
           .child(div().text_color(stale ? t.dim : t.muted).child(`${label} ${left}%`))
           .when(q.resets[key] > Date.now(), el => el.child(div().text_color(t.dim).child(`↻ ${until(q.resets[key])}`)));
       }));
