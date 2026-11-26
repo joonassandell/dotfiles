@@ -8,7 +8,8 @@ My common workflows for coding agents (Hermes, Claude and any other agent). The 
 2. Optional: `/grill-me` (or `/grill-with-docs`)
 3. Build with conventional commits
 4. `/review` or `/code-review <base>`
-5. `/pr`, then push and create the PR
+5. `/fold`
+6. `/pr`, then push and create the PR
 
 ## Yolo projects
 
@@ -23,8 +24,9 @@ My common workflows for coding agents (Hermes, Claude and any other agent). The 
 3. Optional: `/grill-me` (or `/grill-with-docs`)
 4. Build with conventional commits
 5. `/review` or `/code-review <base>`
-6. `/pr`, then push and create the PR
-7. `Clean up <ID>` once done
+6. `/fold`
+7. `/pr`, then push and create the PR
+8. `Clean up <ID>` once done
 
 ## Project details
 
@@ -34,7 +36,8 @@ My common workflows for coding agents (Hermes, Claude and any other agent). The 
 2. **Shape the idea (optional).** `/grill-me` when the task is unclear or big. It writes no files. Use `/grill-with-docs` in repos that keep domain docs, since it also writes `GLOSSARY.md` and ADRs as it goes.
 3. **Build.** Commit atomically as [Conventional Commits](https://www.conventionalcommits.org).
 4. **Review.** `/review` or `/code-review <base>`, in the agent's own chat when in a worktree. `/review` is Claude Code's built-in bug review: it runs on my own plan, follows `CLAUDE.md`, and `--fix` applies the findings. It isn't in the `/` menu, because my `code-review` skill takes over the `/code-review` name and `/review` is the alias that stays. `/code-review <base>` reviews the diff on two axes, Standards (does it follow the repo's documented standards) and Spec (does it do what the issue or spec asked), in parallel sub-agents, reported separately and never merged into one verdict.
-5. **PR.** `/pr` writes the PR body: a summary as a small visual, evidence that it works, and merge danger (one-way or two-way door, and the blast radius). Then the agent shows the draft, waits for my approval, pushes and creates the PR. For a private project, I can ask for a local merge instead of a PR: rebase on `<base>`, fast-forward merge, push if there is a remote, delete the branch.
+5. **Fold.** `/fold`, after the review's fixes are committed: it folds each fix into the commit it fixes, so reviewers read a clean history. Fixes that don't belong to this branch's commits stay as they are.
+6. **PR.** `/pr` writes the PR body: a summary as a small visual, evidence that it works, and merge danger (one-way or two-way door, and the blast radius). Then the agent shows the draft, waits for my approval, pushes and creates the PR. For a private project, I can ask for a local merge instead of a PR: rebase on `<base>`, fast-forward merge, push if there is a remote, delete the branch.
 
 ### Yolo projects
 
@@ -48,7 +51,7 @@ For repos like my dotfiles, where a branch and a PR are more ceremony than they 
 
 1. **Pick an issue.** `/linear-cli list issues`.
 2. **Start it.** `/issue <ID>`: the orchestrator creates a worktree on the issue's Linear branch, sets the issue to In Progress and starts Claude in it. I accept the branch name Linear generates. It sends Claude one short brief (the issue, its scope, no push or PR until I ask) and then stays out: it doesn't relay messages between Claude and me. In app repos it installs the dependencies itself and opens a pane under Claude with the run command typed but not started (the simulator's `flutter run`, `pnpm dev`), so I start it when I need it.
-3. **Shape, build and review.** The same as Solo projects, steps 2 to 4. `/code-review <base>` checks the diff against the Linear issue.
+3. **Shape, build, review and fold.** The same as Solo projects, steps 2 to 5. `/code-review <base>` checks the diff against the Linear issue.
 4. **PR.** `/pr`, then push and create the PR. The agent drafts the title and body (the repo's PR template if there is one, otherwise the `/pr` format), shows them and waits for my approval, then pushes and opens the PR or MR with `gh` or `glab`, and stops. Merging is done by the team on the host. Screen recordings and screenshots from `ios-rec`, `ios-shot`, `android-rec` and `android-shot` (`../zsh/ios-android-capture`) land in a folder named after the worktree; before pushing, the agent attaches each one with `gh pr create --attach <file>` and lists them in a table in the PR body.
 5. **Clean up.** First the orchestrator reads the finished agent's chat and suggests what belongs in the team docs (if the project has docs), in design tasks or in other issues; I pick, and it adds only those. Then it checks the branch is merged and removes the worktree and the local branch. It asks before dropping unmerged commits.
 
