@@ -467,6 +467,17 @@ export default class Spaces extends View {
       .when(g.behind > 0, (el) => el.child(div().flex_none().text_color(t.ansi1).child(`\u2193${g.behind}`)));
   }
 
+  // A worktree's tree lines in place of the branch glyph, drawn like the agents list's
+  // sub-agent lines: a rounded corner into the row, and for all but the last a line on down.
+  // Each starts a few pixels below the row above, so it keeps a gap under the avatar.
+  treeLines(tree, t) {
+    const h = rowHeight({ tree });
+    const line = (el) => el.absolute().left(8).border_l(1.5).border_color(t.input);
+    return div().relative().w(18).h(h).flex_none()
+      .child(line(div()).top(-2).w(9).h(h / 2 + 2).border_b(1.5).rounded_bl(6))
+      .when(tree === "├─", el => el.child(line(div()).top(h / 2).h(h / 2 + 2)));
+  }
+
   row({ w, i, g, tree }, t) {
     const on = w.active;
     const fromIndex = this.pressed === null ? -1 : spaces().findIndex(s => s.id === this.pressed);
@@ -514,7 +525,7 @@ export default class Spaces extends View {
         h_flex()
           .gap(9)
           .items_center()
-          .when(Boolean(tree), el => el.child(h_flex().w(18).flex_none().justify_center().child(svg("mods/workspace-chrome/branch.svg").size(13).flex_none().text_color(t.dim))))
+          .when(Boolean(tree), el => el.child(this.treeLines(tree, t)))
           .when(!tree, el => el.child(this.spaceAvatar(w)))
           .child(div().flex_initial().min_w(SIDE_MIN).truncate().text_color(t.foreground).child(w.name))
           .child(g ? this.gitTail(g, tree, w.name, t) : div().flex_1()),
