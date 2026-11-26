@@ -1,18 +1,19 @@
 {
-  "font": "Operator Mono Lig",
-  "font_ligatures": true,
-  "font_size": 14,
-  "font_weight": 500,
-  "minimum_contrast": 1,
-  "pane_scrollbars": false,
+  "zoom": 1.2000000476837158,
   "sounds": {
     "enabled": true
   },
-  "telemetry": false,
-  "terminal_cell_width": 1,
-  "terminal_line_height": 1,
-  "terminal_scroll_speed": 1,
-  "theme": "joonassandell",
+  "font": "Operator Mono Lig",
+  "font_size": 14.0,
+  "font_weight": 500,
+  "font_ligatures": true,
+  "terminal_line_height": 1.0,
+  "terminal_cell_width": 1.0,
+  "terminal_scroll_speed": 1.0,
   "ui_font": "SF Pro",
-  "zoom": 1.2000000476837158
+  "telemetry": false,
+  "pane_scrollbars": false,
+  "minimum_contrast": 1.0,
+  "option_as_alt": "left",
+  "theme": "joonassandell"
 }
